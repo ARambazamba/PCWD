@@ -1,4 +1,4 @@
-﻿function loadPage(page, tag, loadscript) {
+﻿function loadDemo(page, tag, loadscript) {
     $.ajax({
         type: "GET",
         url: page,

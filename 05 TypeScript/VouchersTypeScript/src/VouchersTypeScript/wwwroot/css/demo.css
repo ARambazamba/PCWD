@@ -1,0 +1,12 @@
+﻿ul {
+    -webkit-padding-start: 15px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li > a {
+     display:block;     
+     padding-bottom: 5px
+}
