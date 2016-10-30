@@ -38,7 +38,7 @@ namespace Vouchers
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
         {
             loggerFactory.AddConsole();
 
@@ -50,11 +50,19 @@ namespace Vouchers
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
+            options.DefaultFileNames.Add("demos.html");
             app.UseDefaultFiles(options);
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = (context) =>
+                {
+                    context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
+                    context.Context.Response.Headers["Pragma"] = "no-cache";
+                    context.Context.Response.Headers["Expires"] = "-1";
+                }
+            });
             app.UseMvcWithDefaultRoute();
-            SeedDatabase(context);
+            SeedDatabase(dbcontext);
         }
 
         private static void SeedDatabase(VouchersDBContext context)

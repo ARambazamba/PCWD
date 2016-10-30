@@ -5,6 +5,8 @@ window.onload = function() {
 }
 
 function addEvt(id) {
+    debugger;
+
     var div = document.getElementById("div" + id);
     div.addEventListener("click", function (evt) {        
         if (propagate===false) {
@@ -16,7 +18,9 @@ function addEvt(id) {
 }
 
 function removeAll() {
-    var divs = document.getElementsByTagName("div");
+    debugger;
+
+    var divs = document.getElementsByClassName("bubbleDiv");
     for (var i = 0; i < divs.length; i++) {
         divs[i].removeEventListener("click",null);
     }
@@ -24,10 +28,14 @@ function removeAll() {
 }
 
 function tooglePropagation() {
+    debugger;
+
     propagate = !propagate;
     writePropagation();
 }
 
 function writePropagation() {
+    debugger;
+
     document.getElementById("status").innerHTML = "Event Propgation active: " + propagate;
 }

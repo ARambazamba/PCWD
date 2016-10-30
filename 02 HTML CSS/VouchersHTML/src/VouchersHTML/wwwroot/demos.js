@@ -6,7 +6,11 @@
         dataType: "text",
         success: function (data) {
             if (data != null) {
-                let workbenchInfo = "<div id='sampleHeading'><h3>" + tag.innerText + "</h3><br/>Source: " + page + "</div>"
+                let workbenchInfo = "<div id='sampleHeading'><h3>" +
+                    tag.innerText +
+                    "</h3><br/>Source: " +
+                    page +
+                    "</div>";
                 $(".workbench").empty();                
                 $(".workbench").html(data);
                 $(".workbench").prepend(workbenchInfo);

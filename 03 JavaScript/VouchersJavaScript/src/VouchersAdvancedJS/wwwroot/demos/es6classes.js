@@ -1,5 +1,4 @@
-﻿
-function simpleClass() {
+﻿function simpleClass() {
 
     class AnimalES6a {
         constructor(name) {

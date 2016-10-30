@@ -1,112 +1,56 @@
-﻿debugger;
+﻿//# sourceURL=modules.js
+debugger;
 
 //Immediately-Invoked Function Expression (IIFE)
-
-var someVar = "I am some var";
-
-(function () {
-
-    var intlName = "Demo IIFE";
-    var clickNumber = 0;
-    var outputEl;
-
-    function buttonClicked() {
-        clickNumber++;
-        outputEl.html('Button was clicked ' + clickNumber);
-    }
-
-    function init() {
-        console.log(intlName);
-        outputEl = $('#output');
-        $('#button').click(buttonClicked);
-    }
-
-    debugger;
-    $(document).ready(init);
-
-})();
-
-debugger;
-//Search the global Namespace for  someVar, intlName
-
-debugger;
 (function () {
 
     var Person = {
-
-        init: function () {
-            this.form = $('#form');
-            this.bindEvents();
+        name: null,
+        init: function (personName) {
+            this.name = personName;
         },
-
-        bindEvents: function () {
-            this.form.on('submit', this.showName);
-        },
-
-        showName: function (event) {
-            event.preventDefault();
-            alert(this.form.find('input[type=text]').val());
+        sayName: function () {
+            console.log("Hi, i am " + this.name);
         }
     }
 
     debugger;
-    Person.init();
+    Person.init("Josef");
+    Person.sayName();
 
 })();
 
 //Revealing Module Pattern - Encapsulation with public interface
+debugger;
 
-var moduleA = (function () {
+var worker = (function (personName) {
+    var name = personName;
+    var wealth = 0;
+    console.log("A new worker was born!");
+    console.log("I am " + name + " & my current balance is " + wealth);
 
-    var privateString = "privat string";
-
-    otherString = "public string";
-
-    function privateFunction() {
-        console.log("private function was called\n" + "private variable: " + privateString);
+    function writeBalance() {
+        console.log("my current balance equals " + wealth);
     }
-
     return {
-        publicMethod: function () {
-            console.log("public function was called\n" + "private variable: " + privateString);
-            privateFunction();
+        workfor: function (amount) {
+            wealth += amount;
+            writeBalance();
         }
     };
-
-})();
-
-debugger;
-console.log(moduleA.privatString);  //undefined
-console.log(moduleA.otherString);   //undefined - access only through public interface
-
-var moduleB = (function () {
-
-    var privateString = "privat";
-
-    function privateFunction() {
-        console.log("private function was called\n" + "private variable: " + privateString);
-    }
-
-    return {
-        publicMethod: function () {
-            console.log("public function was called\n" + "private variable: " + privateString);
-            privateFunction();
-        }
-    };
-
-})();
+})("Franz");
 
 debugger;
-moduleA.publicMethod();
-moduleB.publicMethod();
-console.log("Modul.privateFunktion von außerhalb: " + moduleB.privateFunction);
+worker.workfor(1000);
+console.log("Trying to acces wealth: " + worker.wealth);
 
 
 //Namespaces
+debugger;
 
-var myNamespace = {};
-myNamespace.Modul1 = (function () { console.log("Modul1"); })();
-myNamespace.Modul2 = (function () { console.log("Modul2"); })();
+var VoucherEditor = {};
+VoucherEditor.Modul1 = (function () { console.log("Modul1 in Namespace VoucherEditor"); })();
+VoucherEditor.Modul2 = (function () { console.log("Modul2 in Namespace VoucherEditor"); })();
 
 //Extensible Modules
 

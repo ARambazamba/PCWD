@@ -27,7 +27,7 @@ namespace Vouchers
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("app.html");
             app.UseDefaultFiles(options);
-            app.UseStaticFiles(new StaticFileOptions()
+            app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = (context) =>
                 {                  

@@ -251,7 +251,7 @@ console.log(colorGenerator.next());
 console.log(colorGenerator.next());
 console.log(colorGenerator.next());
 
-    //practical usage many time together with usage
+    //practical usage many time together with for ... of
     const arrColor = [];
     for (let col of getColors()) {
         arrColor.push(col);

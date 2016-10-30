@@ -1,6 +1,8 @@
 ﻿
 //Call from Console using: closureWithOutTimeout()
 function closureWithOutTimeout() {
+    debugger;
+
     var i = 0;
     for (i; i < 3 ; i++) {
         (function () {
@@ -10,6 +12,8 @@ function closureWithOutTimeout() {
 }
 
 function closureWithTimeout() {
+    debugger;
+
     var i = 0;
     for (i; i < 3 ; i++) {
         setTimeout(function () {
@@ -19,6 +23,8 @@ function closureWithTimeout() {
 }
 
 function closureWithTimeoutParam() {
+    debugger;
+
     var i = 0;
     for (i; i < 3 ; i++) {
         setTimeout(function (ct) {
@@ -29,6 +35,8 @@ function closureWithTimeoutParam() {
     
 //Call from Console using: getVouchers()
 function getVouchers() {
+    debugger;
+
     var sum = 0;
     var voucherIDs = [1, 2, 3, 4];
 
