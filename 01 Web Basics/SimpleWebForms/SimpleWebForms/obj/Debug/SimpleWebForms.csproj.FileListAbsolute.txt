@@ -1,0 +1,72 @@
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\csc.exe
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\System.Collections.Immutable.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\System.Reflection.Metadata.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\vbc.exe
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\VBCSCompiler.exe
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\VBCSCompiler.exe.config
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.dll.config
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.pdb
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.pdb
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.SqlServer.dll
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.xml
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.SqlServer.xml
+D:\Kurs 1 SNB\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.csprojResolveAssemblyReference.cache
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\csc.exe
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\System.Collections.Immutable.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\System.Reflection.Metadata.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\vbc.exe
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\VBCSCompiler.exe
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\roslyn\VBCSCompiler.exe.config
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.dll.config
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.pdb
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.SqlServer.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.xml
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\EntityFramework.SqlServer.xml
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.csprojResolveAssemblyReference.cache
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.dll
+D:\Kurs1SNB\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.pdb
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\csc.exe
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\System.Collections.Immutable.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\System.Reflection.Metadata.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\vbc.exe
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\VBCSCompiler.exe
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\roslyn\VBCSCompiler.exe.config
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.dll.config
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\SimpleWebForms.pdb
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\EntityFramework.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\EntityFramework.SqlServer.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\EntityFramework.xml
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\EntityFramework.SqlServer.xml
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.csprojResolveAssemblyReference.cache
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.dll
+D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\obj\Debug\SimpleWebForms.pdb

@@ -1,0 +1,17 @@
+﻿<div>
+    Vouchers<br/>
+    <table style="width:90%">
+        <tr>
+            <th>Date</th>
+            <th>Text</th>
+            <th>Amount</th>
+            <th>Paid</th>
+        </tr>
+        <tr data-ng-repeat="voucher in vouchers">
+            <td>{{voucher.Date}}</td>
+            <td>{{voucher.Text}}</td>
+            <td>{{voucher.Amount}}</td>
+            <td>{{voucher.Paid}}</td>
+        </tr>
+    </table>
+</div>

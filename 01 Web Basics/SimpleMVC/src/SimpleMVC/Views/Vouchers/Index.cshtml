@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SimpleMVC.Models.Voucher>
+
+<h1>Vouchers</h1>
+<p></p>
+<table style="width: 90%">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(mode => mode.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(mode => mode.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(mode => mode.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(mode => mode.Paid)
+        </th>
+
+        <th>
+            
+        </th>
+
+    </tr>
+    @foreach (var v in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => v.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => v.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => v.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => v.Paid)
+            </td>
+
+            <th>
+                <a href="#">Details</a> 
+            </th>
+
+        </tr>
+    }
+</table>
