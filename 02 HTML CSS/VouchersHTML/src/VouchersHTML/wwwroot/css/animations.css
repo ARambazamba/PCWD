@@ -1,0 +1,17 @@
+﻿.divAnimated {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left:90%;
+    width:100%
+  }  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}

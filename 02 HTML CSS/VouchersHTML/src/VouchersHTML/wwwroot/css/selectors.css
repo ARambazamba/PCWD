@@ -1,0 +1,18 @@
+﻿
+div#pseudoElements p:last-of-type {
+    background-color: #f0e68c;
+}
+
+div#pseudoElements p:nth-of-type(2) {
+    background-color: #fdf5e6;
+}
+
+p:empty {
+    height: 60px;
+}
+
+:target {
+    border: 2px solid #D4D4D4;
+    background-color: #e5eecc;
+    height: 250px;
+}

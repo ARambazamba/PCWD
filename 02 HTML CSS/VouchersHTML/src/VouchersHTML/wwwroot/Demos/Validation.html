@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Validation</title>
+    <link href="/css/validation.css" rel="stylesheet" />
+</head>
+<body>
+<form method="post"></form>
+<h1>Validation</h1>
+<div>
+    <span>Username</span><input type="text" name="username" required><br>
+    <span>Age</span><input type="number" size="6" name="age" min="18" max="99" required><br />
+    <span>Website</span><input type="url" name="website" required placeholder="Insert URL"><br />
+    <span>IPv4 Address</span><input type="text" pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" /><br />
+    <span>Price</span><input type="text" pattern="\d+(\.\d{2})?" /><br />
+    <span>Long /Lat</span><input type="text" pattern="-?\d{1,3}\.\d+" required /><br />
+    <br/>
+    <input type="submit"/>
+</div>
+
+</body>
+</html>

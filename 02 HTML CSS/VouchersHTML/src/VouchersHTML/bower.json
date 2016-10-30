@@ -1,0 +1,9 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "morris.js": "0.5.1",
+    "moment": "2.13.0",
+    "jquery": "2.2.3"
+  }
+}
