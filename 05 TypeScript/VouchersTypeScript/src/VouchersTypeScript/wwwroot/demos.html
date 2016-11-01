@@ -3,20 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <title>TypeScript Demos Home</title>
-    <link href="/css/demo.css" rel="stylesheet" />
+    <link href="css/demo.css" rel="stylesheet" />
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="demos.js"></script>
 </head>
 <body>
-<div>
-    <h3>Demos for TypeScript</h3>
-    <ul>
-        <li><a href="/demos/types.html">Types & Arrays</a></li>
-        <li><a href="/demos/Classes.html">Classes</a></li>
-        <li><a href="/demos/functions.html">Functions</a></li>
-        <li><a href="/demos/interfaces.html">Interfaces</a></li>
-        <li><a href="/demos/modules.html">Modules & Namespaces</a></li>
-        <li><a href="/demos/generics.html">Generics</a></li>
-        <li><a href="/demos/Service.html">Consuming Services</a></li>
-    </ul>
-</div>
+
+
+    <div id="demoContainer">
+        <header class="header">
+            <h3>PowerCamp: Web Development - JavaScript Advanced - Demos</h3><br />
+        </header>
+        <div class="demoMenu">
+            <div id="status">Please choose:</div>
+            <a href="#" onclick="javascript: loadDemo('demos/types.html', this, true);">Types & Arrays</a>
+            <a href="#" onclick="javascript: loadDemo('demos/Classes.html', this, true);">Classes</a>
+            <a href="#" onclick="javascript: loadDemo('demos/functions.html', this, true);">Functions</a>
+            <a href="#" onclick="javascript: loadDemo('demos/interfaces.html', this, true);">Interfaces</a>
+            <a href="#" onclick="javascript: loadDemo('demos/modules.html', this, true);">Modules & Namespaces</a>
+            <a href="#" onclick="javascript: loadDemo('demos/generics.html', this, true);">Generics</a>
+            <a href="#" onclick="javascript: loadDemo('demos/Service.html', this, true);">Consuming Services</a>
+        </div>
+        <div class="workbench"></div>
+    </div>
 </body>
 </html>
