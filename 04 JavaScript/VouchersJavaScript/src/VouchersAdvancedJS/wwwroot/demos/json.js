@@ -25,13 +25,13 @@ function JsonBasics() {
         }
     );
 
-    console.log("Voucher " + voucher.ID + " .....");
+    console.log("Voucher " + voucher.ID + " ....." + JSON.stringify(voucher));
 }
 
 function JsonAjax() {
     debugger;
 
-    getJSON('/vouchers.json', function (vouchers) {
+    getJSON('/demos/vouchers.json', function (vouchers) {
         console.log('The content of the JSON file is: ' + JSON.stringify(vouchers));
         vouchers.forEach(function (voucher) {
             console.log(voucher.Text);
