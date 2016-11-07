@@ -14,7 +14,7 @@ function getVouchers() {
             buildCustomersTable(data.Customers);
         },
         error: function (msg) {
-            console.log("GetVouchers query error", msg);
+            console.log("GetCustomers query error", msg);
         }
     });
 }

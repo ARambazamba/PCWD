@@ -1,4 +1,5 @@
-﻿
+﻿//# sourceURL=json.js
+
 function JsonBasics() {
     debugger;
 
@@ -31,7 +32,7 @@ function JsonBasics() {
 function JsonAjax() {
     debugger;
 
-    getJSON('/demos/vouchers.json', function (vouchers) {
+    $.getJSON("/demos/vouchers.json", function (vouchers) {
         console.log('The content of the JSON file is: ' + JSON.stringify(vouchers));
         vouchers.forEach(function (voucher) {
             console.log(voucher.Text);
@@ -40,30 +41,40 @@ function JsonAjax() {
     }, function (status) {
         console.log('Something went wrong.');
     });
+
+    //getJSON('/demos/vouchers.json', function (vouchers) {
+    //    console.log('The content of the JSON file is: ' + JSON.stringify(vouchers));
+    //    vouchers.forEach(function (voucher) {
+    //        console.log(voucher.Text);
+    //    });
+    //    buildTbl(vouchers);
+    //}, function (status) {
+    //    console.log('Something went wrong.');
+    //});
 }
 
-var getJSON = function (url, successHandler, errorHandler) {
-    debugger;
+//var getJSON = function (url, successHandler, errorHandler) {
+//    debugger;
 
-    var xhr = typeof XMLHttpRequest != 'undefined'
-      ? new XMLHttpRequest()
-      : new ActiveXObject('Microsoft.XMLHTTP');
-    xhr.open('get', url, true);
-    xhr.onreadystatechange = function () {
-        var status;
-        var data;
-        if (xhr.readyState === 4) { // DONE-State
-            status = xhr.status;
-            if (status === 200) {
-                data = JSON.parse(xhr.responseText);
-                successHandler && successHandler(data);
-            } else {
-                errorHandler && errorHandler(status);
-            }
-        }
-    };
-    xhr.send();
-};
+//    var xhr = typeof XMLHttpRequest != 'undefined'
+//      ? new XMLHttpRequest()
+//      : new ActiveXObject('Microsoft.XMLHTTP');
+//    xhr.open('get', url, true);
+//    xhr.onreadystatechange = function () {
+//        var status;
+//        var data;
+//        if (xhr.readyState === 4) { // DONE-State
+//            status = xhr.status;
+//            if (status === 200) {
+//                data = JSON.parse(xhr.responseText);
+//                successHandler && successHandler(data);
+//            } else {
+//                errorHandler && errorHandler(status);
+//            }
+//        }
+//    };
+//    xhr.send();
+//};
 
 
 function buildTbl(vouchers) {
