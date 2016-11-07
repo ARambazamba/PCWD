@@ -7,8 +7,8 @@
 -debug:full
 -nostdlib
 -nologo
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\bin\Debug\netcoreapp1.0\SimpleMVC.dll"
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\bin\Debug\netcoreapp1.0\SimpleMVC.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll"
@@ -195,10 +195,10 @@
 -r:"C:\Users\Administrator\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\SimpleMVCdotnet-compile.deps.json",SimpleMVC.deps.json
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\Program.cs"
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\Startup.cs"
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\HomeController.cs"
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\VouchersController.cs"
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\Voucher.cs"
-"D:\PCWD1\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\VoucherDetail.cs"
+-resource:"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\SimpleMVCdotnet-compile.deps.json",SimpleMVC.deps.json
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Program.cs"
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Startup.cs"
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\HomeController.cs"
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\VouchersController.cs"
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\Voucher.cs"
+"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\VoucherDetail.cs"
