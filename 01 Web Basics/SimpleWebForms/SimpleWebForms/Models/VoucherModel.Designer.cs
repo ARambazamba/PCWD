@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Kurs1SNB\01\SimpleWebForms\SimpleWebForms\Models\VoucherModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\PCWD-Part1\01 Web Basics\SimpleWebForms\SimpleWebForms\Models\VoucherModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
