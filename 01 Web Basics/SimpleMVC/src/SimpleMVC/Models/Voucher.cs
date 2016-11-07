@@ -13,10 +13,7 @@ namespace SimpleMVC.Models
         public DateTime Date { get; set; }
         public decimal Amount { get; set; }
         public bool  Paid { get; set; }
-
         public bool Expense { get; set; }
-        
         public ICollection<VoucherDetail> Details { get; set; }
     }
-
 }

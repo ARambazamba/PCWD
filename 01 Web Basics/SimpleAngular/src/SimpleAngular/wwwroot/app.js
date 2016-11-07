@@ -1,4 +1,5 @@
 ﻿(function () {
+    
     var voucherApp = angular.module('voucherApp', ['ngRoute']);
 
     voucherApp.config(function ($routeProvider) {
