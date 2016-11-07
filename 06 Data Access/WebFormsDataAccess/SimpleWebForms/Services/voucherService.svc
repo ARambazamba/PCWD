@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SimpleWebForms.Services.voucherService" CodeBehind="voucherService.svc.cs" %>
