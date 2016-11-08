@@ -36,6 +36,5 @@ function tooglePropagation() {
 
 function writePropagation() {
     debugger;
-
-    document.getElementById("status").innerHTML = "Event Propgation active: " + propagate;
+    document.getElementById("divStatus").innerHTML = "Event Propgation active: " + propagate;
 }
