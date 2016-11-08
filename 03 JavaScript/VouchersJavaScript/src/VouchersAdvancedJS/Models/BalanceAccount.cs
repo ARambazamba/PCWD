@@ -11,7 +11,7 @@ namespace Vouchers
         public int ID { get; set; }
 
         [Required, StringLength(50, ErrorMessage = "Account name must not exceed 50 chars.")]
-        [MinLength(4, ErrorMessage = "@ least 4 chars ...")]
+        [MinLength(4, ErrorMessage = "Please use least 4 chars ...")]
         public string Name { get; set; } 
 
         public bool Expense { get; set; }

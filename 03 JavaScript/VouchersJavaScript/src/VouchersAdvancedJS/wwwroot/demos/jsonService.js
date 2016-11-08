@@ -1,4 +1,4 @@
-﻿//# sourceURL=readJSON.js
+﻿//# sourceURL=jsonService.js
 
 getVouchers();
 

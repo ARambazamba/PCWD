@@ -16,7 +16,7 @@ namespace Vouchers.Api
             ctx = context;
         }
 
-        // GET: api/values
+        // GET: http://localhost:5495/api/vouchers
         [HttpGet]
         public IEnumerable<Voucher> Get()
         {
@@ -24,14 +24,14 @@ namespace Vouchers.Api
             return vouchers;
         }
 
-        // GET api/values/5
+        // GET http://localhost:5495/api/vouchers/1
         [HttpGet("{id}")]
         public Voucher Get(int id)
         {
             return ctx.Vouchers.Include(f=>f.Details).FirstOrDefault(v => v.ID == id);
         }
 
-        // POST api/values
+        // http://localhost:5495/api/vouchers
         [HttpPost]
         public void Post([FromBody]Voucher value)
         {
@@ -39,7 +39,7 @@ namespace Vouchers.Api
             ctx.SaveChanges();
         }
 
-        // PUT api/values/5
+        // http://localhost:5495/api/vouchers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]Voucher value)
         {
@@ -51,7 +51,7 @@ namespace Vouchers.Api
             }
         }
 
-        // DELETE api/values/5
+        // http://localhost:5495/api/vouchers/1
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
