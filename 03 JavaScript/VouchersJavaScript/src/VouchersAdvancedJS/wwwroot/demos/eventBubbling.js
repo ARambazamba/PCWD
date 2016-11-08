@@ -1,4 +1,6 @@
-﻿var propagate = true;
+﻿//# sourceURL=eventBubbling.js
+
+var propagate = true;
 
 window.onload = function() {
     writePropagation();

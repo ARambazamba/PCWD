@@ -1,4 +1,6 @@
-﻿function simpleClass() {
+﻿//# sourceURL=es6classes.js
+
+function simpleClass() {
 
     class AnimalES6a {
         constructor(name) {

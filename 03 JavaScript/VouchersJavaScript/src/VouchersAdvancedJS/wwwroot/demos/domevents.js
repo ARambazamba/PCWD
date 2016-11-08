@@ -1,4 +1,5 @@
-﻿
+﻿//# sourceURL=domevents.js
+
 function changeLamp() {
     debugger;
 

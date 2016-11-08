@@ -1,4 +1,6 @@
-﻿function stringFunctions() {
+﻿//# sourceURL=es6lang.js
+
+function stringFunctions() {
     debugger;
     
     //Template Literals

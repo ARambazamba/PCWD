@@ -47,7 +47,6 @@ function insertVoucher() {
         data: data,
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
