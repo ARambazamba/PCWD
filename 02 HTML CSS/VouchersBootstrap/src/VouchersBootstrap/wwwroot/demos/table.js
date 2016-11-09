@@ -1,6 +1,6 @@
-﻿$(document).ready(function () {
-    getVouchers();
-});
+﻿//# sourceURL=table.js
+
+getVouchers();
 
 var pageSize = 2;
 

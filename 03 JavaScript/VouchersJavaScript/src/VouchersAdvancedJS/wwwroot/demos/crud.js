@@ -42,6 +42,7 @@ function insertVoucher() {
 
     var url = "/api/vouchers";
     var data = JSON.stringify({ Text: "Inserted by WebApi", Date: new Date() });
+
     $.ajax({
         type: "POST",
         data: data,

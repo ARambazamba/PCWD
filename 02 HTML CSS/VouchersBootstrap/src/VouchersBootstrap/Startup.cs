@@ -50,7 +50,7 @@ namespace VouchersBootstrap
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
+            options.DefaultFileNames.Add("demos.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles(new StaticFileOptions
             {

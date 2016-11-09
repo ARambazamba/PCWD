@@ -1,6 +1,7 @@
 {
-	"name": "asp.net",
-	"private": true,
-	"dependencies": {
-	}
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "morris.js": "0.5.1"
+  }
 }

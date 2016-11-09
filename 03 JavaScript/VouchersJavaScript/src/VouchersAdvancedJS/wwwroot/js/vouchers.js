@@ -30,11 +30,10 @@ function setTable(data) {
 
     for (var i = 0; i < data.length; i += 1) {
         var item = data[i];
-        var dt = new Date();
         $('#tblVoucherBody').append(
           '<tr id="' + item.ID + '" style="cursor:pointer">' +
             '<td>' + item.ID + '</td>' +
-            '<td>' + dt.toLocaleDateString("de-AT") + '</td>' +
+            '<td>' + moment(item.Date).format("DD. MM. YYYY") + '</td>' +
             '<td>' + item.Text + '</td>' +
             '<td>' + item.Amount + '</td>' +
             '<td>' + item.Paid + '</td>' +

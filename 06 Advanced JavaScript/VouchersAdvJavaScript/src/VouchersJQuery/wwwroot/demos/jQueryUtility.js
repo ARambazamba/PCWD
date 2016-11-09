@@ -1,4 +1,11 @@
-﻿$(document).ready(function() {
+﻿//$(document).ready(function() {
+//    loadfunction();
+//});
+
+loadfunction();
+
+function loadfunction()
+{
     $.validator.addMethod("startsWithA", function (value, element) {
         return /^A/.test(value);
     }, 'Field must start with A');
@@ -13,7 +20,7 @@
             password: {
                 required: true
             },
-            submitHandler: function(form) {
+            submitHandler: function (form) {
                 console.log('ajax being called...');
             },
             invalidHandler: function (event, validator) {
@@ -21,18 +28,19 @@
             }
         }
     });
-});
+}
 
 function useMap() {
+    debugger;
+
     var users = [
       { id: 1, name: "Pajer" },
       { id: 2, name: "Schulz" },
       { id: 3, name: "Müller" }
     ];
 
-    users = $.map(users, function(p) {
+    var usernames = $.map(users, function(p) {
         return {
-            Id: p.id,
             LastName: p.name
         };
     });
