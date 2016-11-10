@@ -3,6 +3,18 @@
 function conditions() {
     debugger;
 
+    if (1 == 1) {
+        
+    }
+
+    if (1=="1") {
+        
+    }
+
+    if (1 === "1") {
+        
+    }
+    
     var greeting = null;
     var time = new Date().getHours();
     if (time < 10) {

@@ -28,7 +28,7 @@ function stringFunctions() {
         return ct;
     }
 
-    console.log(`chars included in yr string: ${countString("abheben")}`);
+    console.log(`chars included in your string: ${countString("abheben")}`);
 }
 
 function letBasics() {
@@ -62,6 +62,7 @@ function constBasics() {
     const person = { name: 123 };
     person.bar = 456; // Allowed!
     console.log(person); // { name: 456 }    
+    person.name = "alex";
 }
 
 function defaultParam() {
@@ -70,7 +71,7 @@ function defaultParam() {
         return a*b;
     }
 
-        multiply(2);
+    multiply(2);
 }
 
 function forOf() {
@@ -158,7 +159,7 @@ function maps() {
     var myMap = new Map();
     var keyString = "a string",
         keyObj = {},
-        keyFunc = function () { };
+        keyFunc = function () { console.log("function in map array") };
     // setting the values
     myMap.set(keyString, "value associated with 'a string'");
     myMap.set(keyObj, "value associated with keyObj");

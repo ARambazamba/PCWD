@@ -18,6 +18,8 @@ function getVouchers() {
             writeLog("GetVouchers query error", msg);
         }
     });
+
+    /////
 }
 
 function newVoucher() {

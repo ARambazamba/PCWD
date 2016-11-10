@@ -13,7 +13,7 @@ function doAsyncCall() {
             console.log(JSON.stringify(data));
         },
         error: function (data) {
-
+            console.log("error ...");
         }
     });
     
@@ -54,11 +54,13 @@ function usingThenSuccessErrror() {
     $.getJSON(url, function (data) {
         console.log("query executed - response ok");
         console.log(JSON.stringify(data));
-    }).then(function (result) {
-        console.log("Entering \".then-branch-success\"");
-    }, function (result) {
-        console.log("Entering \".then-branch-error\"");
-    });
+    }).then(
+        function (result) {
+            console.log("Entering \".then-branch-success\"");
+        },
+        function (result) {
+            console.log("Entering \".then-branch-error\"");
+        });
 }
 
 function catchError() {

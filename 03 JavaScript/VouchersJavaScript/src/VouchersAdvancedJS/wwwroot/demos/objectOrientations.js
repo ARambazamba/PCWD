@@ -33,7 +33,17 @@ function objectInitializer() {
     dog.hunt();
 }
 
+//var cable = { Id: 17, Text: "USB Cable", Amount: 11 };
+
+//if (typeof usbcable === "undefined") {
+//    var usbcable = { Id: 17, Text: "USB Cable", Amount: 11 };
+//}
+
+//// or a shorter version
+//var mycable = window.cable || { Id: 17, Text: "USB Cable", Amount: 11 };
+
 function safelyCreate() {
+
     debugger;
 
     // not safe, if there's another object with this name we will overwrite it
@@ -71,9 +81,12 @@ function objectWithMethod() {
         }
     }
     var marko = new SoccerPlayer("Marko Arnautovic", 3);
+    var alb = new SoccerPlayer("David Alaba", 2);
+
     marko.tellScore = function () { console.log("Until now I scored " + this.goals + " goals") }
     marko.scoreGoal();
     marko.tellScore();
+    alb.tellScore();
 }
 
 function prototypeBasics() {
@@ -144,6 +157,7 @@ function inheritance() {
 
     function Student(name, grade) {
         debugger;
+        //this.name = name;
         Person.call(this, name);
         this.grade = grade;
     }

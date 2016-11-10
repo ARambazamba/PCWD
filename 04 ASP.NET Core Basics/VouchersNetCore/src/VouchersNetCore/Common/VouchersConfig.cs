@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Vouchers
 {
+    //http://json2csharp.com/ -> json to c# generieren
     public class VouchersConfig
     {
         public ConnectionStrings ConnectionStrings { get; set; }

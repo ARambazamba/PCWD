@@ -16,6 +16,7 @@ namespace Vouchers.Controlers.Api
             ctx = context;
         }
 
+        // http://BASEURL/api/balance/GetSumTotal/true
         [Route("GetSumTotal/{expense}")]
         public string GetSumTotal(bool expense)
         {

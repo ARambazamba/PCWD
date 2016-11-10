@@ -2,6 +2,17 @@
 debugger;
 
 //Immediately-Invoked Function Expression (IIFE)
+
+var PersonGlobal = {
+    name: null,
+    init: function (personName) {
+        this.name = personName;
+    },
+    sayName: function () {
+        console.log("Hi, i am " + this.name);
+    }
+}
+
 (function () {
 
     var Person = {
@@ -42,6 +53,7 @@ var worker = (function (personName) {
 
 debugger;
 worker.workfor(1000);
+worker.writeBalance();
 console.log("Trying to acces wealth: " + worker.wealth);
 
 

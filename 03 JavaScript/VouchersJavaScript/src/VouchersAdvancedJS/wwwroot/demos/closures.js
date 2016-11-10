@@ -7,9 +7,11 @@ function closureWithOutTimeout() {
     var i = 0;
     for (i; i < 3 ; i++) {
         (function () {
-            console.log('counter value is ' + i);
+            console.log('counter value in inner function is ' + i);
         }());
+        console.log('counter value in outer function is ' + i);
     }
+    console.log('outer function finished');
 }
 
 function closureWithTimeout() {
@@ -18,9 +20,11 @@ function closureWithTimeout() {
     var i = 0;
     for (i; i < 3 ; i++) {
         setTimeout(function () {
-            console.log('counter value is ' + i);
+            console.log('counter value in inner function is ' + i);
         }, 1000);
+        console.log('counter value in outer function is ' + i);
     }
+    console.log('outer function finished');
 }
 
 function closureWithTimeoutParam() {
