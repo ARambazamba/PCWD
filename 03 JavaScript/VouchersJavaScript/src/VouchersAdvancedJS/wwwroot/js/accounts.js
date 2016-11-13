@@ -1,6 +1,7 @@
 getAccounts();
 var pageSize = 5;
 
+
 function getAccounts() {
     var url = "/api/accounts";
     $.ajax({

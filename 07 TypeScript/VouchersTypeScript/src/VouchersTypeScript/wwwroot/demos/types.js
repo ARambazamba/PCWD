@@ -1,5 +1,6 @@
 function basicVariables() {
     debugger;
+    var myname = "alex";
     //Numbers
     var age;
     var weight = 83.12;

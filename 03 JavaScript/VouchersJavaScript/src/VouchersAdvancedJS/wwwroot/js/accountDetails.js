@@ -5,6 +5,32 @@ if (currentDetailID == null) {
     getAcctByID();
 }
 
+addValidator();
+
+//<!--<button type="submit" class="btn btn-xs" >Save</button>-->
+//<a href="#" onclick="submitAccount()">Submit</a>
+
+function addValidator() {
+    $('form').validate({
+
+        rules: {
+            fullname: {
+                required: true
+            },
+            invalidHandler: function (event, validator) {
+                console.log('number of invalid fields: ' + validator.numberOfInvalids());
+            }
+        }
+    });
+}
+
+function submitAccount() {
+    var valid = $('form').valid();
+    if (valid) {
+        saveAccount();
+    }
+}
+
 function getAcctByID() {
 
     $.ajax({
@@ -28,10 +54,9 @@ function saveAccount() {
 
     $.ajax({
         type: "POST",
-        data: acct,
+        data: JSON.stringify(acct),
         url: "/api/accounts/",
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (data) {
             loadPage('accounts.htm', 'accounts.js');
         },

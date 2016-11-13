@@ -23,7 +23,3 @@ function addValidator() {
 }
 
 addValidator();
-
-//$(document).ready(function () {
-//    addValidator();
-//});
