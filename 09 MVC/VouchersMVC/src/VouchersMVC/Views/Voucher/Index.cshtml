@@ -1,8 +1,6 @@
-﻿@inject Vouchers.BalanceService BalanceServ
-
+﻿@inject BalanceService BalanceServ
 @using System.Threading.Tasks
-@using Vouchers
-@model  IEnumerable<Vouchers.Voucher>
+@model  IEnumerable<Voucher>
 
 <div style="text-align: right; padding-bottom: 10px">
     <a asp-controller="Voucher" asp-action="Edit"  asp-route-id="0" class="btn btn-xs btn-default">Add a Voucher</a>
@@ -43,11 +41,9 @@
     </table>
 </div>
 
-
-
 <div style="padding-top: 10px">
-        <ul class="kpi">
-            <li>@BalanceServ.GetSumTotal(false)</li>
-            <li>@BalanceServ.GetSumTotal(true)</li>
-        </ul>
-    </div>
+    <ul class="kpi">
+        <li>@BalanceServ.GetSumTotal(false)</li>
+        <li>@BalanceServ.GetSumTotal(true)</li>
+    </ul>
+</div>

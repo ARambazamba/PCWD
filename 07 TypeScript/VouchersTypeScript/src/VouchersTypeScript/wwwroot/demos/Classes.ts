@@ -76,7 +76,7 @@ function classesConstructor() {
             return "Wuff, my name is " + this.name + ", I am a " + this.breed;
         }
         sayName() {
-            return "Wuff, my name is " + name // + ", I am a " + breed;
+            return "Wuff, my name is " + name; // + ", I am a " + breed;
         }
     }
 
@@ -191,7 +191,7 @@ function inheritance() {
         private department: string;
 
         constructor(name: string, department: string) {
-            super(name);
+            super(name); //base c#
             this.department = department;
         }
 
@@ -246,8 +246,13 @@ department.printName();
 function staticProperties() {
     debugger;
 
+    interface ICoordinate {
+        x: number;
+        y: number;
+    }
+
     class Grid {
-        static origin = { x: 0, y: 0 };
+        static origin: ICoordinate = { x: 0, y: 0 };
         calculateDistanceFromOrigin(point: { x: number; y: number; }) {
             var xDist = (point.x - Grid.origin.x);
             var yDist = (point.y - Grid.origin.y);
@@ -257,7 +262,7 @@ function staticProperties() {
     }
 
     var grid = new Grid(3);
-    var p = { x: 10, y: 20 };
+    var p : ICoordinate = { x: 10, y: 20 };
     var result = grid.calculateDistanceFromOrigin(p);
     console.log("Grid result: " + result);
 }

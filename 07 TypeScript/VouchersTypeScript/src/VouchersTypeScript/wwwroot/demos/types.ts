@@ -22,8 +22,8 @@ function basicVariables() {
     var otherDogName = "Soi";
     var x = 10;
 
-    var strings: Array<string> = [];
-    strings.push("hello");
+    var strings: Array<string> = ["hubert", "Sam"];
+    strings.push("Hans");
     //strings[1] = 1337; // compile time error
 }
 
@@ -51,6 +51,10 @@ function useEnums() {
     n = VoucherStatus.complete;
     //n = VoucherStatus.unfinished; // compile-time error
     //n = "on the way"; // compile-time error
+
+    if (n===VoucherStatus.complete) {
+        
+    }
 }
 
 function introArrays() {

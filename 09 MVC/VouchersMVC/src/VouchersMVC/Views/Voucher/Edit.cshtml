@@ -1,29 +1,26 @@
-﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal
-@using Newtonsoft.Json
-
-@model Vouchers.VoucherDetailsViewModel
-
+﻿@using Newtonsoft.Json
+@model VoucherDetailsViewModel
 @{
+    //Just there to show that you can manipulate the model in a Razor block
     var details = @Model.Details;
     var ed = @Model.EditDetail;
     var vAmount = @Model.CurrentVoucher.Amount.ToString().Replace(",", ".");
-    var vt = @Model.CurrentVoucher.ID;
 }
 
 <script type="text/javascript">
-    var data = @Html.Raw(JsonConvert.SerializeObject(this.Model));
+    var data = @Html.Raw(JsonConvert.SerializeObject(Model));
 </script>
 
 <script src="~/js/voucherDetails.js"></script>
 <form method="post">
-    <div id="divVoucherDetails" class="container">
+    <div id="divVoucherHead" class="container">
         <div class="row clearfix">
 
             <!--Voucher Head Data-->
 
             <div class="legendTitle clearfix">
                 <div class="col-md-8 col-sm-8 col-xs-6">
-                    <span>Voucher &nbsp;</span><input asp-for="CurrentVoucher.ID" readonly class="readonlyID" style="width: 60px;" />
+                    <span>Voucher &nbsp;</span><input asp-for="CurrentVoucher.ID" readonly class="readonlyID" style="width: 45px;" />
 
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-6">
@@ -36,7 +33,7 @@
             </div>
             <fieldset class="form-inline">
                 <div class="form-group">
-                    <input id="VoucherText" asp-for="CurrentVoucher.Text" size="60" type="text" placeholder="Text:" class="form-control input-sm" />
+                    <input id="VoucherText" asp-for="CurrentVoucher.Text" size="45" type="text" placeholder="Text:" class="form-control input-sm" />
                 </div>
 
                 <div class="form-group">
@@ -44,7 +41,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input asp-for="CurrentVoucher.Amount" id="txtAmount" size="20" type="text" placeholder="0" class="span7 form-control input-sm" />
+                    <input asp-for="CurrentVoucher.Amount" id="txtAmount" size="15" type="text" placeholder="0" class="span7 form-control input-sm" />
                 </div>
 
 
@@ -62,13 +59,17 @@
                             <input asp-for="CurrentVoucher.Paid" type="checkbox" name="checkboxes" id="chkPaid" value="Paid" />
                             <span class="small">Paid:</span>
                         </li>
+                        <li>
+                            <input asp-for="CurrentVoucher.Remark" type="checkbox" name="checkboxes" id="chkRemark" value="Remark" />
+                            <span class="small">Remember:</span>
+                        </li>
                     </ul>
                 </div>
             </fieldset>
         </div>
     </div>
     <div class="row clearfix">&nbsp;</div>
-    @if (@Model.Details != null)
+    @if (Model.Details != null)
     {
         <div class="container">
             <div class="row clearfix">
@@ -113,7 +114,7 @@
                                         <td> @vd.Account.Name </td>
                                         <td>
                                             <div class="right btn-group">
-                                                <a class="btn btn-xs btn-default" role="button" href="@Url.Action("DeleteDetail", "Voucher", new {DetailID = @vd.ID, VoucherID = @Model.CurrentVoucher.ID})">Delete</a> 
+                                                <a class="btn btn-xs btn-default" role="button" href="@Url.Action("DeleteDetail", "Voucher", new {DetailID = vd.ID, VoucherID = Model.CurrentVoucher.ID})">Delete</a>                         
                                                 <a href="javascript:setDetail(@vd.ID)" role="button" class="btn btn-xs btn-default">Edit</a>
                                             </div>
                                         </td>
@@ -147,10 +148,10 @@
                         <input asp-for="EditDetail.ID" id="txtDetailsID" type="text" novalidate readonly class="form-control input-sm vdElement" />
                     </div>
                     <div class="form-group">
-                        <input asp-for="EditDetail.Text" id="txtDetailsText" size="60" type="text" placeholder="Text:" class="form-control input-sm vdElement" />
+                        <input asp-for="EditDetail.Text" id="txtDetailsText" size="50" type="text" placeholder="Text:" class="form-control input-sm vdElement" />
                     </div>
                     <div class="form-group">
-                        <input asp-for="EditDetail.Amount" id="txtDetailsAmount" size="20" type="number" class="form-control input-sm vdElement" />
+                        <input asp-for="EditDetail.Amount" id="txtDetailsAmount" size="15" type="number" class="form-control input-sm vdElement" />
                     </div>
                     <div class="form-group">
                         <select asp-for="EditDetail.AccountID" id="ddAccount" class="form-control input-sm vdElement">

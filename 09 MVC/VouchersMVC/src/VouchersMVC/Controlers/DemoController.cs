@@ -37,7 +37,7 @@ namespace Vouchers
 
         public async Task<IActionResult> AsyncDemo()
         {
-            var model = await ctx.Vouchers.Where(f => f.ID == 2).ToListAsync();
+            var model = await ctx.Vouchers.Where(f => f.ID == 2).FirstOrDefaultAsync();
             return View(model);
         }
     }

@@ -53,7 +53,7 @@ namespace Vouchers.Api
         {
             VoucherViewModel result = new VoucherViewModel
             {
-                CurrentVoucher = ctx.Vouchers.FirstOrDefault(f => f.ID == id),
+                CurrentVoucher = ctx.Vouchers.Include(f => f.Details).FirstOrDefault(f => f.ID == id),
                 Accounts = ctx.BalanceAccounts.ToList()
             };
             return result;
@@ -77,6 +77,7 @@ namespace Vouchers.Api
             if (v != null)
             {
                 Mapper.CopyData(value, v);
+                //ctx.Vouchers.Add(value) -> not allowed by EF Change Tracking             
                 ctx.SaveChanges();
             }
         }

@@ -173,7 +173,7 @@ function inheritance() {
     var Employee = (function (_super) {
         __extends(Employee, _super);
         function Employee(name, department) {
-            _super.call(this, name);
+            _super.call(this, name); //base c#
             this.department = department;
         }
         Employee.prototype.getElevatorPitch = function () {

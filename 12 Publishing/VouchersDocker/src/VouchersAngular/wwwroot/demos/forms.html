@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Forms & Validation</title>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="forms.js"></script>
+</head>
+<body>
+<div ng-controller="appController">
+    <form>
+        Remember Settings:
+        <input type="checkbox" ng-model="Remember"><br/>
+        Pick a car:
+        <input type="radio" ng-model="Car" value="Mercedes">Mercedes
+        <input type="radio" ng-model="Car" value="BMW">BMW
+        <input type="radio" ng-model="Car" value="VW">VW<br/>
+        Select a car:
+        <select ng-model="Car">
+            <option value="">
+            <option value="Mercedes">Mercedes</option>
+            <option value="BMW">BMW</option>
+            <option value="VW">VW</option>
+        </select><br/>
+        <span>You picked: {{Car}}</span><p></p>
+        option using ng-repeat ... value must be a string
+        <select>
+            <option ng-repeat="f in Fruits">{{f}}</option>
+        </select>
+        <p></p>
+        ng-options ... allows value to be an object
+        <select ng-model="SelectedFruit" ng-options="f for f in Fruits"></select><br/>
+        <span>You picked: {{SelectedFruit}}</span><p></p>
+
+    </form>
+</div>
+</body>
+</html>

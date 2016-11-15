@@ -2,6 +2,7 @@
 function typedFunctions() {
     debugger;
 
+    //C# delegate ... variable that contains a function
     let addFunction = function(x: number, y: number): number {
          return x + y;
     };
@@ -25,7 +26,7 @@ function functionParameters() {
     console.log(buildName("Giro", "Galgohead"));
 
     //default param
-    function getAddress(street: string, city = "Vienna") {
+    function getAddress(street: string, city: string = "Vienna") {
         return `${street}, ${city}`;
     }
 

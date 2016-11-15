@@ -15,8 +15,8 @@ function basicVariables() {
     var dogName = "Giro";
     var otherDogName = "Soi";
     var x = 10;
-    var strings = [];
-    strings.push("hello");
+    var strings = ["hubert", "Sam"];
+    strings.push("Hans");
     //strings[1] = 1337; // compile time error
 }
 function useLetConst() {
@@ -45,6 +45,8 @@ function useEnums() {
     n = VoucherStatus.complete;
     //n = VoucherStatus.unfinished; // compile-time error
     //n = "on the way"; // compile-time error
+    if (n === VoucherStatus.complete) {
+    }
 }
 function introArrays() {
     debugger;

@@ -1,5 +1,6 @@
 function typedFunctions() {
     debugger;
+    //C# delegate ... variable that contains a function
     var addFunction = function (x, y) {
         return x + y;
     };

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="voucherApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Using $resource</title>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/angular-resource/angular-resource.js"></script>
+    <script src="usingResource.js"></script>
+
+</head>
+<body ng-controller="voucherController" ng-init="currVoucher = { Date: '01.06.2016', Amount: 22, Text: 'Hundeleine', Paid: false }">
+    <div>
+        <span>Voucher CRUD</span><br /><br />
+        <span ng-click="getVouchers()" style="cursor: pointer">Get Vouchers</span><br />
+        <span ng-click="getVoucher(2)" style="cursor: pointer">Get Voucher</span><br />
+        <span ng-click="insertVoucher(currVoucher)" style="cursor: pointer">Insert Voucher</span><br />
+        <span ng-click="updateVoucher()" style="cursor: pointer">Update Voucher</span><br />
+        Enter VoucherID: <input type="text" ng-model="voucherID" /><br />
+        <span ng-click="deleteVoucher(voucherID)" style="cursor: pointer">Delete Voucher</span><br /><br />
+    </div>
+    <div>
+        {{vouchers}}
+    </div>
+</body>
+</html>

@@ -1,25 +1,7 @@
-function consumeService() {
-    var service = new Vouchers.Demo.VoucherService();
-    service.getVouchers().then(function (data) {
-        var onClicked = function (e) {
-            var item = (e.currentTarget);
-            console.info("selected voucher row with id=" + item.id);
-        };
-        var bilder = new Vouchers.Demo.VoucherTableBuilder({
-            data: data,
-            tblBody: "tblVoucherBody",
-            tblPager: "tblVoucherPager",
-            pageSize: 5,
-            rowClicked: onClicked,
-            keyProp: "ID"
-        });
-        bilder.init();
-    });
-}
 var Vouchers;
 (function (Vouchers) {
-    var Demo;
-    (function (Demo) {
+    var Services;
+    (function (Services) {
         var VoucherService = (function () {
             function VoucherService() {
             }
@@ -43,7 +25,7 @@ var Vouchers;
             };
             return VoucherService;
         }());
-        Demo.VoucherService = VoucherService;
+        Services.VoucherService = VoucherService;
         var VoucherTableBuilder = (function () {
             function VoucherTableBuilder(options) {
                 this.options = options;
@@ -138,10 +120,10 @@ var Vouchers;
                 }
             };
             ;
-            VoucherTableBuilder.prototype.getKeyValue = function (item) {
+            VoucherTableBuilder.prototype.getKeyValue = function (item, fldName) {
                 var result = "";
-                if (item.hasOwnProperty(this.options.keyProp)) {
-                    result = item[this.options.keyProp];
+                if (item.hasOwnProperty(fldName)) {
+                    result = item[fldName];
                 }
                 return result;
             };
@@ -150,10 +132,10 @@ var Vouchers;
                 $('#' + this.options.tblBody).empty();
                 $('#' + this.options.tblPager).empty();
                 this.options.data.forEach(function (item) {
-                    $('#' + _this.options.tblBody).append('<tr id="' + _this.getKeyValue(item) + '" style="cursor:pointer">' +
+                    $('#' + _this.options.tblBody).append('<tr id="' + _this.getKeyValue(item, _this.options.keyProp) + '" style="cursor:pointer">' +
                         '<td>' + item.ID + '</td>' +
                         '<td>' + moment(item.Date).format("DD. MM. YYYY") + '</td>' +
-                        '<td>' + item.Text + '</td>' +
+                        '<td>' + _this.getKeyValue(item, "Text") + '</td>' +
                         '<td>' + item.Amount + '</td>' +
                         '<td>' + item.Paid + '</td>' +
                         '</tr>');
@@ -164,7 +146,103 @@ var Vouchers;
             };
             return VoucherTableBuilder;
         }());
-        Demo.VoucherTableBuilder = VoucherTableBuilder;
-    })(Demo = Vouchers.Demo || (Vouchers.Demo = {}));
+        Services.VoucherTableBuilder = VoucherTableBuilder;
+        var VouchersRessource = (function () {
+            function VouchersRessource(url) {
+                this.url = url;
+            }
+            VouchersRessource.prototype.getItems = function () {
+                var deferred = $.Deferred();
+                $.ajax({
+                    type: "GET",
+                    url: this.url,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        return deferred.resolve(data);
+                    },
+                    error: function (msg) {
+                        console.log("error calling service");
+                        console.log(msg);
+                        return deferred.reject(msg);
+                    }
+                });
+                return deferred;
+            };
+            VouchersRessource.prototype.getItem = function (id) {
+                var deferred = $.Deferred();
+                $.ajax({
+                    type: "GET",
+                    url: this.url + "/" + id,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        return deferred.resolve(data);
+                    },
+                    error: function (msg) {
+                        console.log("error calling service");
+                        console.log(msg);
+                        return deferred.reject(msg);
+                    }
+                });
+                return deferred;
+            };
+            VouchersRessource.prototype.save = function (item, success, error) {
+                var httpVerb = item.ID === 0 ? "POST" : "PUT";
+                $.ajax({
+                    type: httpVerb,
+                    data: JSON.stringify(item),
+                    url: this.url,
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) { success(data); },
+                    error: function (data) { error(data); }
+                });
+            };
+            VouchersRessource.prototype.delete = function (id, success, error) {
+                $.ajax({
+                    type: "DELETE",
+                    url: this.url,
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) { success(data); },
+                    error: function (data) { error(data); }
+                });
+            };
+            return VouchersRessource;
+        }());
+        Services.VouchersRessource = VouchersRessource;
+        var Voucher = (function () {
+            function Voucher() {
+            }
+            return Voucher;
+        }());
+        Services.Voucher = Voucher;
+    })(Services = Vouchers.Services || (Vouchers.Services = {}));
 })(Vouchers || (Vouchers = {}));
+function consumeService() {
+    var service = new Vouchers.Services.VoucherService();
+    service.getVouchers().then(function (data) {
+        var onClicked = function (e) {
+            var item = (e.currentTarget);
+            console.info("selected voucher row with id=" + item.id);
+        };
+        var bilder = new Vouchers.Services.VoucherTableBuilder({
+            data: data,
+            tblBody: "tblVoucherBody",
+            tblPager: "tblVoucherPager",
+            pageSize: 5,
+            rowClicked: onClicked,
+            keyProp: "ID"
+        });
+        bilder.init();
+    });
+}
+function consumeRessource() {
+    var res = new Vouchers.Services
+        .VouchersRessource("/api/vouchers/");
+    res.getItems().done(function (data) {
+        var vs = data;
+        console.log("Data received from Ressource");
+        console.log(JSON.stringify(vs));
+    });
+}
 //# sourceMappingURL=Service.js.map
