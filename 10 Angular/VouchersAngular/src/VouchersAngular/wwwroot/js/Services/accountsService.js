@@ -1,6 +1,7 @@
 ﻿
 voucherApp.service("accountsService", [
-    "$http", function($http) {
+    "$http",
+    function ($http) {
         this.getAccounts = function() {
             return $http.get("/api/accounts");
         };

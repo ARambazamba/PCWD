@@ -1,6 +1,5 @@
-"use strict";
-var Functions = require("./mathFunctions");
 function useModule() {
-    var sqr = Functions.MathFunctions.square(3);
+    var sqr = MathFunctions.square(3);
+    console.log('3 square is ' + sqr);
 }
 //# sourceMappingURL=modules.js.map

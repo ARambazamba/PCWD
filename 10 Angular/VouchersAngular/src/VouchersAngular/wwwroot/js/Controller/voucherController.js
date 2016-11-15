@@ -1,23 +1,33 @@
-﻿voucherApp.controller('voucherController', function ($scope, $location, $http, balanceFactory) {
-
+﻿var vctrl = function ($scope, $location, $http) {
     $http.get("/api/vouchers").then(function (response) {
         $scope.vouchers = response.data;
     });
+}
 
-    balanceFactory.getSum(false).then(function (response) {
-        $scope.sumIncome = response.data;
-    });
-    balanceFactory.getSum(true).then(function (response) {
-        $scope.sumExpenses = response.data;
-    });
+vctrl.$inject = ['$scope', '$location', '$http'];
+voucherApp.controller('voucherController', vctrl);
 
-    $scope.showVoucher = function (voucher) {
-        var dp = '/vdetails/' + voucher.ID;
-        $location.path(dp);
-    }
 
-    $scope.newVoucher = function () {
-        var dp = '/vdetails/0';
-        $location.path(dp);
-    }
-});
+//voucherApp.controller('voucherController', function ($scope, $location, $http, balanceFactory) {
+
+//    $http.get("/api/vouchers").then(function (response) {
+//        $scope.vouchers = response.data;
+//    });
+
+//    balanceFactory.getSum(false).then(function (response) {
+//        $scope.sumIncome = response.data;
+//    });
+//    balanceFactory.getSum(true).then(function (response) {
+//        $scope.sumExpenses = response.data;
+//    });
+
+//    $scope.showVoucher = function (voucher) {
+//        var dp = '/vdetails/' + voucher.ID;
+//        $location.path(dp);
+//    }
+
+//    $scope.newVoucher = function () {
+//        var dp = '/vdetails/0';
+//        $location.path(dp);
+//    }
+//});
