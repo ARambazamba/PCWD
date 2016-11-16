@@ -1,7 +1,7 @@
 
-var app = angular.module('voucherApp', []);
+var voucherApp = angular.module('voucherApp', []);
 
-app.controller('simpleController', function ($scope) {
+voucherApp.controller('simpleController', function ($scope) {
 
     $scope.AppName = "Vouchers App";
 
@@ -17,6 +17,7 @@ app.controller('simpleController', function ($scope) {
     }
 });
 
+//Hat keine Verwendung in dem Beispiel
 var sictrl = function ($scope) {
 
     $scope.AppName = "Vouchers App";
@@ -33,5 +34,5 @@ var sictrl = function ($scope) {
     }
 }
 
-sictrl.$inject('$scope');
-app.controller('simpleControllerV2', sictrl);
+sictrl.$inject= ['$scope'];
+voucherApp.controller('simpleControllerV2', sictrl);

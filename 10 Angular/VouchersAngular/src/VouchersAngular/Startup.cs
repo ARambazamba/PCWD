@@ -40,22 +40,21 @@ namespace Vouchers
             {
                 //https://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/CacheProfile/index.html#Microsoft.AspNetCore.Mvc.CacheProfile
                 services
-                .AddMvc()
-                .AddMvcOptions(options =>
-                {
-                    options.CacheProfiles.Add("NoCache", new CacheProfile
+                    .AddMvc()
+                    .AddMvcOptions(options =>
                     {
-                        NoStore = true,
-                        Duration = 0
-                    });
-                })
-                .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
+                        options.CacheProfiles.Add("NoCache", new CacheProfile
+                        {
+                            NoStore = true,
+                            Duration = 0
+                        });
+                    }).AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
             }
             else
             {
                 services
-                .AddMvc()
-                .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
+                    .AddMvc()
+                    .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
             }
         }
 

@@ -48,11 +48,11 @@
                 <div class="form-group">
                     <ul class="voucherRadio">
                         <li>
-                            <input type="radio" name="radios" id="rbExpense" value="Expense" checked="checked">
+                            <input type="radio" asp-for="CurrentVoucher.Expense" name="CurrentVoucher.Expense" id="rbExpense" value="true" checked="checked">
                             <span class="small">Expense:</span>
                         </li>
                         <li>
-                            <input type="radio" name="radios" id="rbIncome" value="Income" />
+                            <input type="radio" name="CurrentVoucher.Expense" id="rbIncome" value="false" />
                             <span class="small">Income:</span>
                         </li>
                         <li>

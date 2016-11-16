@@ -4,6 +4,9 @@ var srv = function ($http) {
     this.getVouchers = function () {
         return $http.get("/api/vouchers");
     };
+
+    //preperation code
+
     return {
         getVouchers: this.getVouchers
     };
