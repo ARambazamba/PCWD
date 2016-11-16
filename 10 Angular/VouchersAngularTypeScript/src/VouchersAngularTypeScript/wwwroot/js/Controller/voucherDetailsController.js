@@ -24,8 +24,8 @@ var voucherAppTS;
                 };
                 $scope.newDetail = function () {
                     $scope.VVM.EditDetail = {
-                        "ID": 0, "VoucherID": $scope.VVM.CurrentVoucher.ID,
-                        "AccountID": 0, "DetailText": "", "DetailAmount": 0, "Comment": null
+                        "ID": 0, "VoucherID": $scope.VVM.CurrentVoucher.ID, "Account": null,
+                        "AccountID": 0, "Text": "", "Amount": 0, "Comment": null
                     };
                 };
                 $scope.deleteDetail = function (detail) {

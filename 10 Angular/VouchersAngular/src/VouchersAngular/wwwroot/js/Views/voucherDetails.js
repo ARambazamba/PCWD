@@ -18,11 +18,3 @@ function initDatePicker() {
     });
     $('#dpDate').datepicker('setStartDate');
 }
-
-//function newDetail() {
-//    $("#txtDetailsID").val("");
-//    $("#txtDetailsText").val("");
-//    $("#txtDetailsAmount").val("");
-//    $("#ddAccount").val("");
-//    $("#txtComment").val("");
-//}

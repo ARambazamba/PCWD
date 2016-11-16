@@ -1,26 +1,30 @@
 ﻿module voucherAppTS.Controllers {
 
     export interface IVoucherDetailsScope extends ng.IScope {
-        VVM: any;
+        VVM: IVoucherDetailsViewModel;
         showVouchers();
         saveVoucher(voucher);
-        editDetail(detail: any),
+        editDetail(detail: IVoucherDetail),
         newDetail: () => void;
-        deleteDetail: (detail: any) => void;
-        saveVoucherDetail: (detail: any) => void;
+        deleteDetail: (detail: IVoucherDetail) => void;
+        saveVoucherDetail: (detail: IVoucherDetail) => void;
+    }
+
+    interface IVoucherRouteParams extends ng.route.IRouteParamsService {
+        ID: number;
     }
 
     export class VoucherDetailsController {
         constructor(private $scope: IVoucherDetailsScope,
             private $location: ng.ILocaleService,
-            private $routeParams: any,
-            private $resource: any,
-            private $route: any,
+            private $routeParams: IVoucherRouteParams,
+            private $resource: ng.resource.IResourceService,
+            private $route: ng.route.IRouteService,
             private $http: ng.IHttpService,
             private vs: Services.VoucherService) {
             
             $http.get('/api/vouchers/vm/' + this.$routeParams.ID).success(
-                (data, status) => $scope.VVM = data
+                (data: IVoucherDetailsViewModel, status) => $scope.VVM = data
             );
 
             $scope.showVouchers = () => {
@@ -33,14 +37,14 @@
                 );
             }
 
-            $scope.editDetail = (detail: any) => {
+            $scope.editDetail = (detail: IVoucherDetail) => {
                 $scope.VVM.EditDetail = detail;
             }
 
             $scope.newDetail = () => {
                 $scope.VVM.EditDetail = {
-                    "ID": 0, "VoucherID": $scope.VVM.CurrentVoucher.ID,
-                    "AccountID": 0, "DetailText": "", "DetailAmount": 0, "Comment": null
+                    "ID": 0, "VoucherID": $scope.VVM.CurrentVoucher.ID, "Account": null,
+                    "AccountID": 0, "Text": "", "Amount": 0, "Comment": null
                 };
             }
 

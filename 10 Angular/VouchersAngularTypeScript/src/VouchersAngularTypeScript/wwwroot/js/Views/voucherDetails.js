@@ -13,15 +13,8 @@ function initDatePicker() {
         clearBtn: true,
         calendarWeeks: true,
         autoclose: true,
-        toggleActive: true
+        toggleActive: true,
+        locale: 'de'
     });
     $('#dpDate').datepicker('setStartDate');
 }
-
-//function newDetail() {
-//    $("#txtDetailsID").val("");
-//    $("#txtDetailsText").val("");
-//    $("#txtDetailsAmount").val("");
-//    $("#ddAccount").val("");
-//    $("#txtComment").val("");
-//}
