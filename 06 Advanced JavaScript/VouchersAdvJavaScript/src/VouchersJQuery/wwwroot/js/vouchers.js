@@ -44,7 +44,7 @@ function setTable(data) {
     }
     $('#tblVoucherBody').append("</table>");
 
-    doPaging({ pagerSelector: '#tblVoucherPager', showPrevNext: true, hidePageNumbers: false, perPage: pageSize, showAll: false }, $('#tblVoucherBody'));
+    //doPaging({ pagerSelector: '#tblVoucherPager', showPrevNext: true, hidePageNumbers: false, perPage: pageSize, showAll: false }, $('#tblVoucherBody'));
 
     $('#tblVoucherBody tr').click(function (e) {
         var id = e.currentTarget.id;

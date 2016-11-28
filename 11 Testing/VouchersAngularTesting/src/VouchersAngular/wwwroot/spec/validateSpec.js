@@ -1,13 +1,13 @@
 ﻿describe("VoucherValidater", function () {
 
     var sum;
-    var details;
+    var gooddetails;
     var baddetails;
 
     beforeEach(function() {
         sum = 40;
 
-        details = [
+        gooddetails = [
             { "ID": 2, "VoucherID": 3, "AccountID": 1, "DetailText": "USB Stick", "DetailAmount": 11, "Comment": null },
             {
                 "ID": 7,
@@ -41,7 +41,7 @@
 
 
     it("returns false when null is passed as sum", function () {
-        expect(validateVoucher(null, details)).toEqual(false);
+        expect(validateVoucher(null, gooddetails)).toEqual(false);
     });
     
     it("returns false when null is passed as detail", function () {
@@ -49,7 +49,7 @@
     });
 
     it("returns true when correct data is passed", function () {
-        expect(validateVoucher(sum, details)).toEqual(true);
+        expect(validateVoucher(sum, gooddetails)).toEqual(true);
     });
 
     it("returns false when bad data is passed", function () {
@@ -57,7 +57,7 @@
     });
 
     it("returns false when wrong sum is passed", function () {
-        expect(validateVoucher(99, details)).toEqual(false);
+        expect(validateVoucher(99, gooddetails)).toEqual(false);
     });
 
 });

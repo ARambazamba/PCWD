@@ -11,7 +11,7 @@ namespace VouchersTests
         private VoucherDetailsViewModel data;
         public VouchersValidatorTests()
         {
-            data = GetMoqData();
+            data = GetMockData();
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace VouchersTests
         //    Assert.Equal(VoucherValidator.Validate(data.CurrentVoucher, data.CurrentVoucher.Details.ToArray(), data.Accounts.ToArray()), true);
         //}
 
-        private static VoucherDetailsViewModel GetMoqData()
+        private static VoucherDetailsViewModel GetMockData()
         {
             VoucherDetailsViewModel vdvm = new VoucherDetailsViewModel
             {

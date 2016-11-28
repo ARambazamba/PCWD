@@ -1,19 +1,20 @@
-﻿using Xunit;
+﻿using Vouchers.Common;
+using Xunit;
 
 namespace VouchersTests
 {
-    public class SimpleTests
+    public class CalculationTests
     {
         [Fact]
-        public void PassingTest()
+        public void TestEquality()
         {
-            Assert.Equal(4, Add(2, 2));
+            Assert.Equal(4, Calculation.Add(2, 2));
         }
 
         [Fact]
-        public void FailingTest()
+        public void TestForEqual()
         {
-            Assert.Equal(5, Add(2, 2));
+            Assert.NotEqual(5, Calculation.Add(2, 2));
         }
 
         [Theory]
@@ -22,17 +23,7 @@ namespace VouchersTests
         [InlineData(6)]
         public void IsOddTheory(int value)
         {
-            Assert.True(IsOdd(value));
-        }
-
-        private bool IsOdd(int value)
-        {
-            return value%2 == 1;
-        }
-
-        private int Add(int x, int y)
-        {
-            return x + y;
-        }
+            Assert.True(Calculation.IsOdd(value));
+        }        
     }
 }

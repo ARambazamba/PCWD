@@ -1,4 +1,4 @@
-﻿describe("Hello world", function () {
+﻿describe("HelloWorld-function", function () {
 
     it("contains 12 charactes", function () {
         expect(helloWorld().length).toEqual(12);
