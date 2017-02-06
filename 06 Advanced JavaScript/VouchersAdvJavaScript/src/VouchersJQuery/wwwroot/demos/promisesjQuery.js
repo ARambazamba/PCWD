@@ -35,6 +35,31 @@ function useGetJson() {
     }
 }
 
+function simplePromises() {
+    
+    function createSite(working) {
+        const dfd = $.Deferred();
+        // mock an asynchronous function call
+        if (working) {
+            dfd.resolve();
+        } else {
+            dfd.reject();
+        }
+        //return the promise
+        return dfd.promise();
+    };
+
+    var working = $('#chkPromise').attr('checked');
+    createSite(working).then(
+        // The Deferred object was successfully resolved
+        function() {
+            console.log("Site provisioned");
+        },
+        // The Deferred object was rejected
+        function() { console.log("Site could not be created."); }
+    );
+}
+
 function usingThen() {
     debugger;
 
