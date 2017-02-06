@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Vouchers;
-using VouchersNetCore.Common;
 
 namespace VouchersNetCore
 {
@@ -47,40 +46,32 @@ namespace VouchersNetCore
                 //app.UseBrowserLink();
             }
 
-            //Start HTML File
-            SetStartupPage(StartupType.StaticFile, app, env, "app.html");
+            var startHTML = false;
 
-            //Start MVC
-            //SetStartupPage(StartupType.Mvc, env, app);
-        }
-
-        public static void SetStartupPage(StartupType start, IApplicationBuilder app, IHostingEnvironment env, string page = "")
-        {
-            if (start == StartupType.StaticFile)
+            if (startHTML)
             {
                 DefaultFilesOptions options = new DefaultFilesOptions();
                 options.DefaultFileNames.Clear();
-                options.DefaultFileNames.Add(page);
+                options.DefaultFileNames.Add("app.html");
                 app.UseDefaultFiles(options);
-            }
-
-            if (env.IsDevelopment())
-            {
-                app.UseStaticFiles(new StaticFileOptions
+                if (env.IsDevelopment())
                 {
-                    OnPrepareResponse = context =>
+                    app.UseStaticFiles(new StaticFileOptions
                     {
-                        context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
-                        context.Context.Response.Headers["Pragma"] = "no-cache";
-                        context.Context.Response.Headers["Expires"] = "-1";
-                    }
-                });
+                        OnPrepareResponse = context =>
+                        {
+                            context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
+                            context.Context.Response.Headers["Pragma"] = "no-cache";
+                            context.Context.Response.Headers["Expires"] = "-1";
+                        }
+                    });
+                }
+                else
+                {
+                    app.UseStaticFiles();
+                }
             }
             else
-            {
-                app.UseStaticFiles();
-            }
-            if (start == StartupType.Mvc)
             {
                 app.UseMvcWithDefaultRoute();
             }

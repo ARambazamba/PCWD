@@ -1,4 +1,4 @@
-﻿var voucherApp = angular.module('voucherApp', ['ngRoute', 'ngResource']);
+﻿var voucherApp = angular.module('voucherApp', ['ngRoute', 'ngResource', 'mgcrea.ngStrap']);
 
 voucherApp.config(function ($routeProvider) {
     $routeProvider
