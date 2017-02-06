@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -14,7 +9,7 @@ namespace VouchersNetCore
 {
     public class Startup
     {
-        private IHostingEnvironment env;
+        private readonly IHostingEnvironment env;
 
         public Startup(IHostingEnvironment environment)
         {
@@ -26,9 +21,9 @@ namespace VouchersNetCore
             var cfgBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
-            IConfigurationRoot configuration = cfgBuilder.Build();
+            var configuration = cfgBuilder.Build();
             //Weak Typed
-            string conStr = configuration["ConnectionStrings:LocalDBConnection"];
+            var conStr = configuration["ConnectionStrings:LocalDBConnection"];
             //Strong Typed
             services.Configure<VouchersConfig>(configuration);
 
@@ -50,12 +45,11 @@ namespace VouchersNetCore
 
             if (startHTML)
             {
-                DefaultFilesOptions options = new DefaultFilesOptions();
+                var options = new DefaultFilesOptions();
                 options.DefaultFileNames.Clear();
                 options.DefaultFileNames.Add("app.html");
                 app.UseDefaultFiles(options);
                 if (env.IsDevelopment())
-                {
                     app.UseStaticFiles(new StaticFileOptions
                     {
                         OnPrepareResponse = context =>
@@ -65,11 +59,8 @@ namespace VouchersNetCore
                             context.Context.Response.Headers["Expires"] = "-1";
                         }
                     });
-                }
                 else
-                {
                     app.UseStaticFiles();
-                }
             }
             else
             {
