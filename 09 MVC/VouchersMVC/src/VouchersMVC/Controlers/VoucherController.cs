@@ -25,6 +25,7 @@ namespace Vouchers
         }
         
         //Voucher Details
+        [HttpGet]
         public IActionResult Edit(int Id)
         {
             var model = rep.GetVoucher(Id);

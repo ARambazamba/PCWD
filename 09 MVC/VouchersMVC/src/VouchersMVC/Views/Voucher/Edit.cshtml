@@ -8,10 +8,11 @@
 }
 
 <script type="text/javascript">
+    //serialzes the view model & makes it available for JS
     var data = @Html.Raw(JsonConvert.SerializeObject(Model));
 </script>
-
 <script src="~/js/voucherDetails.js"></script>
+
 <form method="post">
     <div id="divVoucherHead" class="container">
         <div class="row clearfix">
@@ -43,7 +44,6 @@
                 <div class="form-group">
                     <input asp-for="CurrentVoucher.Amount" id="txtAmount" size="15" type="text" placeholder="0" class="span7 form-control input-sm" />
                 </div>
-
 
                 <div class="form-group">
                     <ul class="voucherRadio">

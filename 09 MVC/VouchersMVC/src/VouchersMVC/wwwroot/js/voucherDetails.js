@@ -24,7 +24,6 @@ function setDetail(id) {
     });
 
     if (vds.length > 0) {
-
         $("#txtDetailsID").val(vds[0].ID);
         $("#txtDetailsText").val(vds[0].Text);
         $("#txtDetailsAmount").val(vds[0].Amount);

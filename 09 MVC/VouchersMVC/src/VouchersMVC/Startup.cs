@@ -30,7 +30,6 @@ namespace Vouchers
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
             services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>();
             services.AddSingleton<IVouchersRepository, VouchersRepository>();
-            //services.AddScoped<IVouchersRepository, VouchersRepository>();
             services.AddTransient<BalanceService>();
 
             if (env.IsDevelopment())
