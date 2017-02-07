@@ -31,6 +31,7 @@ namespace Vouchers
             //Fix as of https://github.com/aspnet/EntityFramework/issues/5385#issuecomment-220435119
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
             services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>();
+            services.AddSingleton<IVouchersRepository, VouchersRepository>();
 
             services.AddMvc().AddJsonOptions(ser =>
             {

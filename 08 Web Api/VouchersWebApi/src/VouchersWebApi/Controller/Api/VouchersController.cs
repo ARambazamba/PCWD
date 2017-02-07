@@ -10,10 +10,12 @@ namespace Vouchers.Api
     public class VouchersController : Controller
     {
         private VouchersDBContext ctx;
+        private IVouchersRepository rep;
 
-        public VouchersController(VouchersDBContext context)
+        public VouchersController(VouchersDBContext context, IVouchersRepository repository)
         {
             ctx = context;
+            rep = repository;
         }
 
         // GET: http://localhost:8082/api/vouchers/getconstant
@@ -27,8 +29,7 @@ namespace Vouchers.Api
         [HttpGet]
         public IEnumerable<Voucher> Get()
         {
-            var vouchers = ctx.Vouchers.OrderByDescending(v => v.Date).ToList();
-            return vouchers;
+            return rep.GetAllVouchers();
         }
 
         // GET: http://localhost:8082/api/vouchers/1
