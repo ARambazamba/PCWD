@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
+using NLog.Web;
 
 namespace Vouchers
 {
@@ -91,7 +92,7 @@ namespace Vouchers
             {
                 app.UseStaticFiles();
             }
-            app.UseIdentity();
+            //app.UseIdentity();
 
             app.UseMvcWithDefaultRoute();
             SeedDatabase(dbcontext);

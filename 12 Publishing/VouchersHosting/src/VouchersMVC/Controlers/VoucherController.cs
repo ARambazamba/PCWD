@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Vouchers
 {
-    [Authorize]
+    //[Authorize]
     public class VoucherController : Controller
     {
         private IVouchersRepository rep;
