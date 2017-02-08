@@ -293,8 +293,7 @@ function consumeService() {
 }
 
 function consumeRessource() {
-    let res: Vouchers.Services.VouchersRessource<Vouchers.Services.Voucher> = new Vouchers.Services
-        .VouchersRessource<Vouchers.Services.Voucher>("/api/vouchers/");
+    let res: Vouchers.Services.VouchersRessource<Vouchers.Services.Voucher> = new Vouchers.Services.VouchersRessource<Vouchers.Services.Voucher>("/api/vouchers/");
 
     res.getItems().done((data: Vouchers.Services.Voucher[]) => {
         let vs: Vouchers.Services.Voucher[] = data;

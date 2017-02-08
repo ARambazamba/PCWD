@@ -1,5 +1,4 @@
-﻿
-voucherApp.factory("balanceFactory", [
+﻿voucherApp.factory("balanceFactory", [
     "$http",
     function ($http) {
         return {
@@ -9,6 +8,3 @@ voucherApp.factory("balanceFactory", [
         };
     }
 ])
-
-
-

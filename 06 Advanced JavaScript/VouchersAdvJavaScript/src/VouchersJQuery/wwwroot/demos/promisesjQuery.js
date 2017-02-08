@@ -40,6 +40,9 @@ function simplePromises() {
     function createSite(working) {
         const dfd = $.Deferred();
         // mock an asynchronous function call
+        for (var i = 0; i < 100; i++) {
+            console.log("Waiting " + i);
+        }
         if (working) {
             dfd.resolve();
         } else {
@@ -67,10 +70,12 @@ function usingThen() {
         console.log("query executed - response ok");
         console.log(JSON.stringify(data));
     }).then(function (result) {
-        for (var i = 0; i < 100; i++) {
-            console.log("Waiting for response to complet .... " + i);
-        }
+        console.log("result received")
+        console.log(result)
     });
+    for (var i = 0; i < 100; i++) {
+        console.log("Waiting for response to complet .... " + i);
+    }
 }
 
 function usingThenSuccessErrror() {

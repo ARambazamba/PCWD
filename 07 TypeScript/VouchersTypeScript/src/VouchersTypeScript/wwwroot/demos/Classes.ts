@@ -105,7 +105,7 @@ function classesConstructor() {
     }
 
     var dh = new DateHour(new Date(), 2);
-
+    
     class Smurf {
         readonly name: string;
 
@@ -166,7 +166,9 @@ function inheritance() {
     }
 
     class Sighthound extends Dog {
-        constructor(name: string) { super(name); }
+        constructor(name: string) {
+             super(name);
+        }
         public speed: string = "with up to 110 km/h";
         move(meters = 500) {
             console.log("Running ..." + meters + "m. " + this.speed);

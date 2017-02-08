@@ -1,10 +1,9 @@
 ﻿
 voucherApp.controller('voucherDetailsController', function ($scope, $http, $routeParams, $resource, $location, $route) {
 
-    $http.get("/api/vouchers/vm/" + $routeParams.ID)
-        .then(function (response) {
+    $http.get("/api/vouchers/vm/" + $routeParams.ID).then(function (response) {
             $scope.VVM = response.data;
-        });
+    });
 
     $scope.showVouchers = function() {
         $location.path("/vouchers");

@@ -26,7 +26,9 @@ var ctrl = function ($scope, $http) {
     }
 
     $scope.updateVoucher = function () {
-        if ($scope.vouchers != null) {
+        //making sure that there is ONE voucher in the vm
+        $scope.getVoucher(2);
+        if ($scope.vouchers != null) {           
             $scope.vouchers.Text = "Updated " + $scope.vouchers.Text;
             $http.put("/api/vouchers/", $scope.vouchers).then(function (response) {
                 $scope.vouchers = response.data;

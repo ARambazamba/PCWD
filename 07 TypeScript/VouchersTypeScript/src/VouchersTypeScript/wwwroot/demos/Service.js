@@ -237,8 +237,7 @@ function consumeService() {
     });
 }
 function consumeRessource() {
-    var res = new Vouchers.Services
-        .VouchersRessource("/api/vouchers/");
+    var res = new Vouchers.Services.VouchersRessource("/api/vouchers/");
     res.getItems().done(function (data) {
         var vs = data;
         console.log("Data received from Ressource");

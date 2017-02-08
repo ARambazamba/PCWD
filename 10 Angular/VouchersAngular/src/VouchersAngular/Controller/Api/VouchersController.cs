@@ -87,8 +87,7 @@ namespace Vouchers.Api
         {
             string result = expenses ? "Total Expenses: " : "Total Income: ";
             var accts = ctx.BalanceAccounts.Where(f => f.Expense == expenses).Select(f => f.ID).ToList();
-            var vds =
-                ctx.VoucherDetails.Where(f => f.Account != null && accts.Contains(f.AccountID)).Sum(f => f.Amount);
+            var vds = ctx.VoucherDetails.Where(f => f.Account != null && accts.Contains(f.AccountID)).Sum(f => f.Amount);
             return result + vds;
         }
     }

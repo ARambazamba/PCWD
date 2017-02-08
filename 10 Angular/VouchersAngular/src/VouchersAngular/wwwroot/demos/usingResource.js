@@ -11,7 +11,6 @@ var ctrl = function ($scope, vouchersFactory) {
     $scope.vouchers = null;
 
     $scope.getVouchers = function () {
-
         vouchersFactory.query(function(data) {
             $scope.vouchers = data;
         });
@@ -24,7 +23,6 @@ var ctrl = function ($scope, vouchersFactory) {
     }
 
     $scope.insertVoucher = function (v) {
-
         vouchersFactory.save(v).then(function (response) {
             $scope.vouchers = response.data;
         });

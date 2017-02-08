@@ -148,8 +148,9 @@ function inheritance() {
     var Sighthound = (function (_super) {
         __extends(Sighthound, _super);
         function Sighthound(name) {
-            _super.call(this, name);
-            this.speed = "with up to 110 km/h";
+            var _this = _super.call(this, name) || this;
+            _this.speed = "with up to 110 km/h";
+            return _this;
         }
         Sighthound.prototype.move = function (meters) {
             if (meters === void 0) { meters = 500; }
@@ -173,8 +174,9 @@ function inheritance() {
     var Employee = (function (_super) {
         __extends(Employee, _super);
         function Employee(name, department) {
-            _super.call(this, name); //base c#
-            this.department = department;
+            var _this = _super.call(this, name) || this;
+            _this.department = department;
+            return _this;
         }
         Employee.prototype.getElevatorPitch = function () {
             return "Hello, my name is " + this.name + " and I work in " + this.department + ".";
@@ -199,7 +201,7 @@ var Department = (function () {
 var AccountingDepartment = (function (_super) {
     __extends(AccountingDepartment, _super);
     function AccountingDepartment() {
-        _super.call(this, 'Accounting and Auditing'); // constructors in derived classes must call super()
+        return _super.call(this, 'Accounting and Auditing') || this;
     }
     AccountingDepartment.prototype.printMeeting = function () {
         console.log('The Accounting Department meets each Monday at 10am.');
@@ -225,9 +227,9 @@ function staticProperties() {
             var yDist = (point.y - Grid.origin.y);
             return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
         };
-        Grid.origin = { x: 0, y: 0 };
         return Grid;
     }());
+    Grid.origin = { x: 0, y: 0 };
     var grid = new Grid(3);
     var p = { x: 10, y: 20 };
     var result = grid.calculateDistanceFromOrigin(p);
