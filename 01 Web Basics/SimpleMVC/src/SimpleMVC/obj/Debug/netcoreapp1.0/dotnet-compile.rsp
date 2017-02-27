@@ -1,5 +1,5 @@
---temp-output:D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\
---out:D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\bin\Debug\netcoreapp1.0\SimpleMVC.dll
+--temp-output:D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\
+--out:D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\bin\Debug\netcoreapp1.0\SimpleMVC.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -199,10 +199,10 @@
 --reference:C:\Users\Administrator\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\SimpleMVCdotnet-compile.deps.json",SimpleMVC.deps.json
-D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Program.cs
-D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Startup.cs
-D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\HomeController.cs
-D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\VouchersController.cs
-D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\Voucher.cs
-D:\PCWD-Part1\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\VoucherDetail.cs
+--resource:"D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\obj\Debug\netcoreapp1.0\SimpleMVCdotnet-compile.deps.json",SimpleMVC.deps.json
+D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\Program.cs
+D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\Startup.cs
+D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\HomeController.cs
+D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\Controllers\VouchersController.cs
+D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\Voucher.cs
+D:\PCWD\01 Web Basics\SimpleMVC\src\SimpleMVC\Models\VoucherDetail.cs

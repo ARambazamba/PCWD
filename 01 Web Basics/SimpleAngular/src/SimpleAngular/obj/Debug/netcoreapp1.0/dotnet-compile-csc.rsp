@@ -7,8 +7,8 @@
 -debug:full
 -nostdlib
 -nologo
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\bin\Debug\netcoreapp1.0\SimpleAngular.dll"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\bin\Debug\netcoreapp1.0\SimpleAngular.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll"
 -r:"C:\Users\Administrator\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll"
@@ -195,13 +195,13 @@
 -r:"C:\Users\Administrator\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Administrator\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\obj\Debug\netcoreapp1.0\SimpleAngulardotnet-compile.deps.json",SimpleAngular.deps.json
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Program.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Startup.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Common\Mapper.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\Account.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\IVouchersRepository.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\Voucher.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\VoucherDetail.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\VouchersDBContext.cs"
-"D:\PCWD-Part1\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\VouchersRepository.cs"
+-resource:"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\obj\Debug\netcoreapp1.0\SimpleAngulardotnet-compile.deps.json",SimpleAngular.deps.json
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Program.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Startup.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Common\Mapper.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\Account.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\IVouchersRepository.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\Voucher.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\VoucherDetail.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\VouchersDBContext.cs"
+"D:\PCWD\01 Web Basics\SimpleAngular\src\SimpleAngular\Models\VouchersRepository.cs"

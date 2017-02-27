@@ -1,6 +1,7 @@
 ﻿//# sourceURL=dates.js
 
 function dateFormat() {
+    debugger;
     var date = new Date();
     // Using Intl.DateTimeFormat
     console.log(new Intl.DateTimeFormat('de-AT').format(date));
@@ -18,6 +19,7 @@ function dateFormat() {
 }
 
 function usingMoments() {
+    debugger;
     console.log("Using moments.js with Dates");
     console.log("Date format: " + moment().format('MMMM Do YYYY, h:mm:ss a'));
     console.log("Relative time: " + moment("20111031", "YYYYMMDD"));
@@ -27,6 +29,7 @@ function usingMoments() {
 }
 
 function usingPrototype() {
+    debugger;
     var dt = new Date();
     console.log(dt.toGermanDate());
 }

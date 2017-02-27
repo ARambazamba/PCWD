@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Vouchers.Migrations
 {
-    public partial class VouchersIntial : Migration
+    public partial class InitialVouchersDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,4 +1,5 @@
-window.onload = function() {
+window.onload = function () {
+    console.log("app init");
     loadPage('home.htm', null, null);
 };
 
