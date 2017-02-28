@@ -62,7 +62,7 @@ function getComboboxVal(option) {
 function onTextChange(value) {
     debugger;
 
-    document.getElementById("lblResult").innerHTML = "You just wrote: " + value;
+    document.getElementById("lblResult").innerHTML = "You just wrote: " + value.value;
 }
 
 function changeLayout() {
