@@ -43,6 +43,7 @@ var worker = (function (personName) {
     function writeBalance() {
         console.log("my current balance equals " + wealth);
     }
+
     return {
         workfor: function (amount) {
             wealth += amount;
@@ -68,7 +69,7 @@ VoucherEditor.Modul2 = (function () { console.log("Modul2 in Namespace VoucherEd
 
 /* Basic Module */
 var Modul = (function () {
-    /* ... private objects ... */
+    /* ... private objects ... */    
     return {
         methode1: function() {
             console.log("methode 1 from module");

@@ -36,7 +36,6 @@ function getVoucher() {
         },
         error: onErr
     });
-
 }
 
 function insertVoucher() {
