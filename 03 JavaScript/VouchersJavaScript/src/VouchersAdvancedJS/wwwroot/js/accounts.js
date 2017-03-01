@@ -27,7 +27,7 @@ function newAccount() {
 function setAccountTable(data) {
     $('#tblAccountBody').empty();
     $('#tblAccountPager').empty();
-
+    
     for (var i = 0; i < data.length; i += 1) {
         var item = data[i];
         $('#tblAccountBody').append(
