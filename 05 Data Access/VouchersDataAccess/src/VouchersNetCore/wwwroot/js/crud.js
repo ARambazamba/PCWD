@@ -1,3 +1,12 @@
+function onErr(msg) {
+    console.log(msg.responseText);
+    $("#divOutput").html(msg);
+}
+
+function output(msg) {
+    console.log(msg);
+    $("#divOutput").html(msg);
+}
 
 function getVouchers() {
     debugger;
@@ -10,9 +19,7 @@ function getVouchers() {
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -27,9 +34,7 @@ function getVoucher() {
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 
 }
@@ -43,13 +48,10 @@ function insertVoucher() {
         data: data,
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -63,13 +65,10 @@ function updateVoucher() {
         data: vtu,
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, voucher updated - id:" + id);
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -81,13 +80,10 @@ function deleteVoucher() {
         type: "DELETE",
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, voucher deleted");
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -102,9 +98,7 @@ function getVoucherDetails() {
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -119,9 +113,7 @@ function getVoucherDetail() {
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -134,13 +126,10 @@ function insertVoucherDetail() {
         data: data,
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, data received: " + JSON.stringify(msg));
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -154,13 +143,10 @@ function updateVoucherDetail() {
         data: vtu,
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, voucherdetail updated - id:" + id);
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
@@ -172,17 +158,10 @@ function deleteVoucherDetail() {
         type: "DELETE",
         url: url,
         contentType: "application/json; charset=utf-8",
-        dataType: "json",
         success: function (msg) {
             output("query successful, voucherdetail deleted - id:" + id);
         },
-        error: function (msg) {
-            output(msg.responseText);
-        }
+        error: onErr
     });
 }
 
-function output(msg) {
-    console.log(msg);
-    $("#divOutput").html(msg);
-}
