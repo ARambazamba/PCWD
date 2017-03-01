@@ -17,6 +17,7 @@ namespace Vouchers.Api
         }
 
         // http://localhost:8070/api/vouchers
+        // "/api/vouchers"
         [HttpGet]
         public IEnumerable<Voucher> Get()
         {

@@ -53,6 +53,7 @@ namespace Vouchers
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("crud.html");
             app.UseDefaultFiles(options);
+
             if (env.IsDevelopment())
             {
                 app.UseStaticFiles(new StaticFileOptions
@@ -69,6 +70,7 @@ namespace Vouchers
             {
                 app.UseStaticFiles();
             }
+
             app.UseMvcWithDefaultRoute();
 
             SeedDatabase(dbcontext);

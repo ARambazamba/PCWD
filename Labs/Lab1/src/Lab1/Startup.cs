@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 
 namespace Lab1
 {
@@ -14,7 +15,11 @@ namespace Lab1
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(ser =>
+            {
+                ser.SerializerSettings.ContractResolver =
+                 new DefaultContractResolver();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

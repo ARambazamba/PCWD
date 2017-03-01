@@ -1,5 +1,6 @@
 
 function getVouchers() {
+    debugger;
     var url = "/api/vouchers";
     $.ajax({
         type: "GET",
@@ -16,6 +17,7 @@ function getVouchers() {
 }
 
 function getVoucher() {
+    debugger;
     var url = "/api/vouchers/2";
     $.ajax({
         type: "GET",
@@ -33,6 +35,7 @@ function getVoucher() {
 }
 
 function insertVoucher() {
+    debugger;
     var url = "/api/vouchers";
     var data = JSON.stringify({ Text: "Inserted by WebApi", Date: new Date() });
     $.ajax({
@@ -51,6 +54,7 @@ function insertVoucher() {
 }
 
 function updateVoucher() {
+    debugger;
     var id = 1003;
     var url = "/api/vouchers/" + id;
     var vtu = JSON.stringify({ "ID": id, "Text": "Updated by WebApi", "Date": "2016-04-22T16:59:32.086", "Amount": 99, "Paid": true, "Expense": false });
@@ -70,6 +74,7 @@ function updateVoucher() {
 }
 
 function deleteVoucher() {
+    debugger;
     var id = 3003;
     var url = "/api/vouchers/" + id;
     $.ajax({
@@ -86,7 +91,8 @@ function deleteVoucher() {
     });
 }
 
-function getVoucherDetails(){
+function getVoucherDetails() {
+    debugger;
     var url = "/api/voucherDetails";
     $.ajax({
         type: "GET",
@@ -102,7 +108,8 @@ function getVoucherDetails(){
     });
 }
 
-function getVoucherDetail(){
+function getVoucherDetail() {
+    debugger;
     var url = "/api/voucherDetails/1";
     $.ajax({
         type: "GET",
@@ -118,7 +125,8 @@ function getVoucherDetail(){
     });
 }
 
-function insertVoucherDetail(){
+function insertVoucherDetail() {
+    debugger;
     var url = "/api/voucherDetails";
     var data = JSON.stringify({VoucherID: 1, AccountID: 1,  Text: "Detail Inserted by WebApi", Amount: 22 });
     $.ajax({
@@ -136,7 +144,8 @@ function insertVoucherDetail(){
     });
 }
 
-function updateVoucherDetail(){
+function updateVoucherDetail() {
+    debugger;
     var id = 1;
     var url = "/api/voucherDetails/" + id;
     var vtu = JSON.stringify({ VoucherID: 1, AccountID: 1, Text: "Detail Updated by WebApi", Amount: 22 });
@@ -156,6 +165,7 @@ function updateVoucherDetail(){
 }
 
 function deleteVoucherDetail() {
+    debugger;
     var id = 1;
     var url = "/api/voucherDetails/" + id;
     $.ajax({
