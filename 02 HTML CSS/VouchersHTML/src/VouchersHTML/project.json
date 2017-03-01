@@ -13,7 +13,11 @@
   },
 
   "tools": {
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final"
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
+    "Microsoft.DotNet.Watcher.Tools": {
+      "version": "1.1.0-preview4-final",
+      "imports": "portable-net451+win8"
+    }
   },
 
   "frameworks": {
