@@ -12,6 +12,7 @@ using Newtonsoft.Json.Serialization;
 using JSNLog;
 using Microsoft.AspNetCore.Mvc;
 using NLog.Extensions.Logging;
+using NLog.Web;
 
 namespace Vouchers
 {
