@@ -1,6 +1,6 @@
 {
   "name": "bxslider-4",
-  "version": "4.2.5",
+  "version": "4.2.10",
   "homepage": "http://bxslider.com",
   "license": "MIT",
   "main": [
@@ -26,14 +26,14 @@
     "bootstrap": ">= 3.3.2",
     "highlightjs": "~8.4.0"
   },
-  "_release": "4.2.5",
+  "_release": "4.2.10",
   "_resolution": {
     "type": "version",
-    "tag": "v4.2.5",
-    "commit": "4f8b761e7b09ca875d6032ab6d131dc7d7efbdb7"
+    "tag": "v4.2.10",
+    "commit": "9a7cea0028519ac14dd852e15c55314a7c6e1b3a"
   },
   "_source": "https://github.com/wandoledzep/bxslider-4.git",
-  "_target": "~4.2.5",
+  "_target": "^4.2.10",
   "_originalSource": "bxslider-4",
   "_direct": true
 }

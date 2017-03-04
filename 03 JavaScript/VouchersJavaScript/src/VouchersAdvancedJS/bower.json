@@ -3,6 +3,16 @@
   "private": true,
   "dependencies": {
     "jquery": "2.2.3",
-    "morris.js": "~0.5.1"
+    "morris.js": "morrisjs#^0.5.1",
+    "bootstrap": "3.3.6",
+    "jquery-validation": "1.15.0",
+    "bxslider-4": "^4.2.10",
+    "bootstrap-datepicker": "^1.6.4",
+    "handsontable": "0.24.3",
+    "requirejs-plugins": "1.0.3"
+  },
+  "resolutions": {
+    "bootstrap": "3.3.6",
+    "jquery-validation": "1.15.0"
   }
 }

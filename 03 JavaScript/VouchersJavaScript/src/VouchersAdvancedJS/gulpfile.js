@@ -2,27 +2,39 @@
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
+var sass = require('gulp-sass');
 
 var paths = {
-    webroot: "./wwwroot/"
+    webroot: "./wwwroot/",
+    scss: "./wwwroot/sass/**/*.scss",
+    scssDest: "./wwwroot/css/"
 }
 
-paths.dataRequest = "./Scripts/*";
-
-
-paths.jsDest = paths.webroot + "js/";
+paths.scriptSouce = "./Scripts/*";
+paths.scriptDest = paths.webroot + "js/";
 
 
 gulp.task('min:js', function () {
-    return gulp.src([paths.dataRequest])
-        .pipe(concat(paths.jsDest + "min/site.min.js"))
+    return gulp.src([paths.scriptSouce])
+        .pipe(concat(paths.scriptDest + "min/site.min.js"))
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
 
 gulp.task('copy:js', function () {
-    return gulp.src([paths.dataRequest])
-        .pipe(gulp.dest(paths.jsDest));
+    return gulp.src([paths.scriptSouce])
+        .pipe(gulp.dest(paths.scriptDest));
 });
 
 gulp.task("both:tasks", ["min:js", "copy:js"]);
+
+gulp.task('compile:sass', function () {
+    gulp.src(paths.scss)
+        .pipe(sass())
+        .pipe(gulp.dest(paths.scssDest));
+});
+
+gulp.task('watch:sass',function() {
+    gulp.watch(paths.scss, ['compile:sass']);
+});
+

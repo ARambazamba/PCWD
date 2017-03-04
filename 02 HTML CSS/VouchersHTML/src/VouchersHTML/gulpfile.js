@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
     webroot: "./wwwroot/",
@@ -30,11 +31,12 @@ gulp.task("both:tasks", ["min:js", "copy:js"]);
 
 gulp.task('compile:sass', function () {
     gulp.src(paths.scss)
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(paths.scssDest));
 });
 
-gulp.task('watch:sass',function() {
+gulp.task('watch:sass', function () {
     gulp.watch(paths.scss, ['compile:sass']);
 });
-
