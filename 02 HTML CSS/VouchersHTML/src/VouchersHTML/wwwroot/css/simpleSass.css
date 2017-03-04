@@ -1,5 +1,4 @@
 body {
-  font: 100% Arial, sans-serif;
   color: #333; }
 
 nav ul {
@@ -12,7 +11,7 @@ nav li {
 
 nav a {
   display: block;
-  padding: 6px 12px;
+  padding: 8px;
   text-decoration: none; }
 
 /*# sourceMappingURL=maps/simpleSass.css.map */

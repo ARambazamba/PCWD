@@ -1,6 +1,7 @@
 ﻿//# sourceURL=GeoLocation.js
 
-function useGeoLocation () {
+function useGeoLocation() {
+    debugger;
     var spnLocation = null;
 
     function getLocation() {

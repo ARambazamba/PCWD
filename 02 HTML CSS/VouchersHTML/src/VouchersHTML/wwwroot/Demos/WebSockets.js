@@ -1,5 +1,7 @@
 ﻿function initSample() {
+    debugger;
     // Get references to elements on the page.
+    document.getElementById('statusSocket').innerText = "Connecting...";
     var form = document.getElementById('message-form');
     var messageField = document.getElementById('message');
     var messagesList = document.getElementById('messages');

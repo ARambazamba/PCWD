@@ -1,6 +1,7 @@
 ﻿//# sourceURL=canvas.js
 
-function drawCanvas(){
+function drawCanvas() {
+    debugger;
     var example = document.getElementById('cvRectangle');
     var context = example.getContext('2d');
     context.fillStyle = "rgb(255,0,0)";
