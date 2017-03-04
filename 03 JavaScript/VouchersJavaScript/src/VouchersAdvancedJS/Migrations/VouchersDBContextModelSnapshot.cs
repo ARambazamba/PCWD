@@ -44,6 +44,8 @@ namespace Vouchers.Migrations
 
                     b.Property<bool>("Expense");
 
+                    b.Property<string>("Number");
+
                     b.Property<bool>("Paid");
 
                     b.Property<bool>("Remark");

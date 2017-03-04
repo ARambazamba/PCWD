@@ -172,9 +172,10 @@ function methodOverriding() {
 
     function Person(name) {
         this.name = name;
-        this.sayName = function () {
-            console.log("Hi, I am " + this.name);
-        }
+    }
+
+    Person.prototype.sayName = function () {
+        console.log("Hi, I am " + this.name);
     }
 
     function Student(name, grade) {
@@ -182,7 +183,9 @@ function methodOverriding() {
         Person.call(this, name);
         this.grade = grade;
     }
+
     Student.prototype = new Person();
+
     Student.prototype.sayName = function () {
         console.log("Hi, I am " + this.name + ", i go to grade " + this.grade);
     }

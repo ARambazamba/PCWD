@@ -54,7 +54,7 @@ function getVouchers() {
             success: function (data) {                
                 sum += data.Amount;
                 console.log("Amount of voucher with id " + id + " : " + data.Amount);
-                console.log("Amount after calling voucher with id " +id + " : " + sum);
+                console.log("Amount after calling voucher with id " + id + " : " + sum);
                 debugger;
             },
             error: function (msg) {

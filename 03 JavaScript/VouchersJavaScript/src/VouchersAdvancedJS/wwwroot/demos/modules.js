@@ -5,13 +5,13 @@ debugger;
 
 var PersonGlobal = {
     name: null,
-    init: function (personName) {
+    init: function(personName) {
         this.name = personName;
     },
-    sayName: function () {
+    sayName: function() {
         console.log("Hi, i am " + this.name);
     }
-}
+};
 
 (function () {
 
@@ -43,6 +43,7 @@ var worker = (function (personName) {
     function writeBalance() {
         console.log("my current balance equals " + wealth);
     }
+
     return {
         workfor: function (amount) {
             wealth += amount;
@@ -56,7 +57,6 @@ worker.workfor(1000);
 worker.writeBalance();
 console.log("Trying to acces wealth: " + worker.wealth);
 
-
 //Namespaces
 debugger;
 
@@ -68,7 +68,7 @@ VoucherEditor.Modul2 = (function () { console.log("Modul2 in Namespace VoucherEd
 
 /* Basic Module */
 var Modul = (function () {
-    /* ... private objects ... */
+    /* ... private objects ... */    
     return {
         methode1: function() {
             console.log("methode 1 from module");

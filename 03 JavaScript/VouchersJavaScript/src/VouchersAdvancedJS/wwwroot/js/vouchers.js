@@ -1,6 +1,6 @@
 getVouchers();
 
-var pageSize = 5;
+var pageSize = 2;
 
 function getVouchers() {
     var url = "/api/vouchers";

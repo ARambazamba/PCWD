@@ -41,7 +41,7 @@ namespace VouchersNetCore
                 //app.UseBrowserLink();
             }
 
-            var startHTML = false;
+            var startHTML = true;
 
             if (startHTML)
             {

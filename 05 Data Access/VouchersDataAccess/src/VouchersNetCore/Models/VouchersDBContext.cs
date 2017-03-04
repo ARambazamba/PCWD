@@ -22,7 +22,7 @@ namespace Vouchers
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(config.ConnectionStrings.LocalDBConnection);
+            optionsBuilder.UseSqlServer(config.ConnectionStrings.SQLServerDBConnection);
             base.OnConfiguring(optionsBuilder);
         }
     }
