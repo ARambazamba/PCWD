@@ -1,4 +1,7 @@
-﻿voucherApp.controller('voucherController', function ($scope, $location, $http, balanceFactory) {
+﻿require("./app.js");
+
+
+voucherApp.controller('voucherController', function ($scope, $location, $http, balanceFactory) {
 
     $http.get("/api/vouchers").then(function (response) {
         JL().info("Getting Voucher data:" + JSON.stringify(response.data));        

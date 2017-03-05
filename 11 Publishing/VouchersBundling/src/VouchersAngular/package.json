@@ -10,10 +10,8 @@
     "gulp-uglify": "1.5.3"
   },
   "dependencies": {
-    "clean-webpack-plugin": "^0.1.15",
-    "extract-text-webpack-plugin": "^2.0.0",
     "gulp-sourcemaps": "^2.4.1",
-    "html-webpack-plugin": "^2.28.0",
+    "lodash": "^4.17.4",
     "webpack": "^2.2.1"
   }
 }
