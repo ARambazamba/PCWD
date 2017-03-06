@@ -3,7 +3,7 @@ body {
 
 nav ul {
   margin: 0;
-  padding: 0;
+  padding: 8px;
   list-style: none; }
 
 nav li {

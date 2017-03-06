@@ -8,7 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var paths = {
     webroot: "./wwwroot/",
     scss: "./wwwroot/sass/**/*.scss",
-    scssDest: "./wwwroot/css/"
+    cssDest: "./wwwroot/css/"
 }
 
 paths.scriptSouce = "./Scripts/*";
@@ -34,7 +34,7 @@ gulp.task('compile:sass', function () {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(paths.scssDest));
+        .pipe(gulp.dest(paths.cssDest));
 });
 
 gulp.task('watch:sass', function () {

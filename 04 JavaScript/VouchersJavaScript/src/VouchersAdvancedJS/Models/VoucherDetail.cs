@@ -16,6 +16,8 @@ namespace Vouchers
         [ForeignKey("AccountID")]
         public virtual BalanceAccount Account { get; set; }
 
+        public int VATRate { get; set; }
+
         public string Text { get; set; }
 
         public int Amount { get; set; }

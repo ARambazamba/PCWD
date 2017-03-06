@@ -19,6 +19,7 @@ namespace Vouchers.Api
         }
 
         // GET: http://localhost:8082/api/vouchers/getconstant
+        //[HttpGet] -> Default
         [Route("getconstant")]
         public string GetConstant()
         {
