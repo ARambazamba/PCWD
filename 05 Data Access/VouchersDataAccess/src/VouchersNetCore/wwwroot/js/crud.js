@@ -58,7 +58,7 @@ function updateVoucher() {
     debugger;
     var id = 1003;
     var url = "/api/vouchers/" + id;
-    var vtu = JSON.stringify({ "ID": id, "Text": "Updated by WebApi", "Date": "2016-04-22T16:59:32.086", "Amount": 99, "Paid": true, "Expense": false });
+    var vtu = JSON.stringify({ "ID": id, "Text": "Updated by WebApi", "Date": "2016-04-22T16:59:32.086", "Amount": 99, "Paid": true, "Expense": false, "VATRate" : 20 });
     $.ajax({
         type: "PUT",
         data: vtu,
