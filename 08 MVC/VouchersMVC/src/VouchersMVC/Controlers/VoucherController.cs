@@ -28,7 +28,7 @@ namespace Vouchers
         [HttpGet]
         public IActionResult Edit(int Id)
         {
-            var model = rep.GetVoucher(Id);
+            VoucherDetailsViewModel model = rep.GetVoucher(Id);
             return View(model);
         }
 
