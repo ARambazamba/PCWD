@@ -56,9 +56,9 @@ namespace Vouchers
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
 
-            //Install-Package Microsoft.EntityFrameworkCore.Tools - Pre
-            //Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design
-            //Scaffold-DbContext "Server=.;Database=VouchersDB;Trusted_Connection=true;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+            //Install-Package Microsoft.EntityFrameworkCore.Tools -Version 1.0.0-preview2-final -Pre
+            //Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design -Version 1.0.1
+            //Scaffold-DbContext "Server=.;Database=VoucherCodeFirstDB;Trusted_Connection=true;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
         }
     }
 }
