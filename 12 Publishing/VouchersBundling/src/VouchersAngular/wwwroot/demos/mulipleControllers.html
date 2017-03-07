@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="multCtrls">
+<head>
+    <meta charset="utf-8" />
+    <title>Multible Controlers</title>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="mulipleControllers.js"></script>
+</head>
+<body>
+<div id="container">
+    <div ng-controller="topController">
+        <h3>{{Msg}}</h3>
+    </div>
+
+    <div ng-controller="bottomController">
+        <h3>{{Msg}}</h3>
+    </div>
+
+    <div ng-controller="appController">
+        <h3>{{Title}}</h3>
+    </div>
+</div>
+</body>
+</html>

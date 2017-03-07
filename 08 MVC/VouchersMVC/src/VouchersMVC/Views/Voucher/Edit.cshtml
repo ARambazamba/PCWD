@@ -47,19 +47,19 @@
                 <div class="form-group">
                     <ul class="voucherRadio">
                         <li>
-                            <input type="radio" asp-for="CurrentVoucher.Expense" name="CurrentVoucher.Expense" id="rbExpense" value="true" checked="checked">
+                            <input type="radio" asp-for="CurrentVoucher.Expense" name="CurrentVoucher.Expense" value="true" id="rbExpense" checked="checked">
                             <span class="small">Expense:</span>
                         </li>
                         <li>
-                            <input type="radio" name="CurrentVoucher.Expense" id="rbIncome" value="false" />
+                            <input type="radio" name="CurrentVoucher.Expense" value="false" id="rbIncome"  />
                             <span class="small">Income:</span>
                         </li>
                         <li>
-                            <input asp-for="CurrentVoucher.Paid" type="checkbox" name="checkboxes" id="chkPaid" value="true"/>
+                            <input asp-for="CurrentVoucher.Paid" value="true" type="checkbox" name="checkboxes" id="chkPaid" />
                             <span class="small">Paid:</span>
                         </li>
                         <li>
-                            <input asp-for="CurrentVoucher.Remark" type="checkbox" name="checkboxes" id="chkRemark" value="true" />
+                            <input asp-for="CurrentVoucher.Remark" value="true"  type="checkbox" name="checkboxes" id="chkRemark" />
                             <span class="small">Remember:</span>
                         </li>
                     </ul>

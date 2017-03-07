@@ -27,7 +27,7 @@
         <tr ng-repeat="voucher in vouchers | filter: filterText">
             <td>{{voucher.Date | date:'dd.MM.yyyy'}}</td>
             <td>{{voucher.Text}}</td>
-            <td>{{voucher.Amount}}</td>
+            <td>{{voucher.Amount | currency}}</td>
         </tr>
         </tbody>
     </table>
@@ -44,7 +44,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="voucher in vouchers | filter: greaterThan('Amount',amount)">
+        <tr ng-repeat="voucher in vouchers | filter: greaterThan('Amount', amount)">
             <td>{{voucher.Date | date:'dd.MM.yyyy'}}</td>
             <td>{{voucher.Text}}</td>
             <td>{{voucher.Amount}}</td>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ng-show & ng-hide</title>
+    <script src="/lib/angular/angular.js"></script>
+    <link href="hideShow.css" rel="stylesheet" />
+    <script src="hideShow.js"></script>
+</head>
+<body ng-app="demoApp">
+    <div >
+        <h1>Ng-show & ng-hide</h1>
+        <p class="description">Click on the "show"-link to see the content.</p>
+        <a href="" ng-click="showme=true">Show</a>
+        <button ng-click="showme=false">Hide</button>
+
+        <div class="wrapper">
+            <p ng-hide="showme">It will appear here!</p>
+            <h2 ng-show="showme">This is mah content, yo!</h2>
+        </div>
+</div>
+ <br/>
+    <div ng-controller="AppCtrl">
+        <button ng-click="toggleCustom()">Custom</button>
+        <p></p>
+        <span ng-hide="custom">
+            From:
+            <input type="text" id="from" />
+        </span>
+        <span ng-hide="custom">
+            To:
+            <input type="text" id="to" />
+        </span>
+        <span ng-show="custom"></span>
+    </div>
+
+</body>
+</html>
