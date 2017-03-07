@@ -24,7 +24,7 @@
             <td>{{voucher.ID}}</td>
             <td>{{voucher.Date | date:'dd.MM.yyyy'}}</td>
             <td>{{voucher.Text}}</td>
-            <td>{{voucher.Amount}}</td>
+            <td>{{voucher.Amount | currency }}</td>
             <td>{{voucher.Paid}}</td>
         </tr>
         </tbody>

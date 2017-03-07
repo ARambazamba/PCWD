@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody id="tblVoucherBody">
-            <tr ng-repeat="acct in Accounts">
+            <tr ng-repeat="acct in Accounts" ng-click="showAccount(acct)">
                 <td>{{acct.ID}}</td>
                 <td>{{acct.Name | date:'dd.MM.yyyy'}}</td>
                 <td>{{acct.Expense}}</td>

@@ -20,5 +20,41 @@ namespace Vouchers
         {
             return ctx.BalanceAccounts.ToList();
         }
+
+        [HttpGet("{id}")]
+        public BalanceAccount Get(int id)
+        {
+            return ctx.BalanceAccounts.FirstOrDefault(f => f.ID == id);
+        }
+
+        [HttpPost]
+        public void Post([FromBody]BalanceAccount value)
+        {
+            if (value.ID == 0)
+            {
+                ctx.BalanceAccounts.Add(value);
+            }
+            else
+            {
+                var acct = ctx.BalanceAccounts.FirstOrDefault(f => f.ID == value.ID);
+                if (acct != null)
+                {
+                    Mapper.CopyData(value, acct);
+                }
+            }
+            ctx.SaveChanges();
+        }
+
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
     }
 }
