@@ -2,18 +2,18 @@ var voucherAppTS;
 (function (voucherAppTS) {
     var Services;
     (function (Services) {
-        var AccountsService = (function () {
-            function AccountsService($resource) {
+        var AccountService = (function () {
+            function AccountService($resource) {
                 this.$resource = $resource;
             }
-            AccountsService.prototype.getAcctResource = function () {
+            AccountService.prototype.getAcctResource = function () {
                 return (this.$resource('/api/accounts'));
             };
-            return AccountsService;
+            return AccountService;
         }());
-        AccountsService.$inject = ['$resource'];
-        Services.AccountsService = AccountsService;
-        voucherAppTS.voucherApp.service("accountService", AccountsService);
+        AccountService.$inject = ['$resource'];
+        Services.AccountService = AccountService;
+        voucherAppTS.voucherApp.service("accountService", AccountService);
     })(Services = voucherAppTS.Services || (voucherAppTS.Services = {}));
 })(voucherAppTS || (voucherAppTS = {}));
 //# sourceMappingURL=accountsService.js.map

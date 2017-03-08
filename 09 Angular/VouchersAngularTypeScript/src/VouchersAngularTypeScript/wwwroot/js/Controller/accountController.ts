@@ -6,7 +6,7 @@
 
     export class AccountController {
        
-        constructor(private $scope: IAccountScope, accountService: Services.AccountsService) {
+        constructor(private $scope: IAccountScope, accountService: Services.AccountService) {
             accountService.getAcctResource().query((data: IAccount[]) => {
                 $scope.accounts = data;
             });
