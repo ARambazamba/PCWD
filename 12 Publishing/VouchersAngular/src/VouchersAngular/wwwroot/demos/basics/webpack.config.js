@@ -1,16 +1,13 @@
-﻿var path = require('path');
-const webpack = require('webpack');
-
+﻿
 module.exports = {
-    context: path.resolve('js'),
     entry: {
-        app: './wwwroot/demos/basics/app.js'
+        app: './wwwroot/demos/basics/js/app.js'
     },
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['.js']
     },
     output: {
-        path: './wwwroot/demos/basics/',
+        path: './wwwroot/demos/basics/js/',
         filename: 'bundle.js'
     },
     module: {
