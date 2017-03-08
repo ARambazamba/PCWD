@@ -12,19 +12,19 @@
 
         <md-dialog-content>
             <div class="md-dialog-content">
-                <label>Währung</label>
+                <label>Währung</label><br />
                 <select ng-model="Settings.Currency" class="form-control-sm" required>
                     <option ng-repeat="cur in Settings.Currencies" value="{{cur}}"> {{cur}}</option>
-                </select>
+                </select><br />
 
-                <label>Wert</label>
-                <input type="number" ng-model="Settings.ForeignValue" />
+                <label>Wert</label><br />
+                <input type="number" ng-model="Settings.ForeignValue" /><br />
                 
                 <label>Datum</label><br />
                 <md-datepicker ng-model="Settings.Date" md-placeholder="Enter date"></md-datepicker><br/>
-                <input type="text" ng-model="Settings.Date" bs-datepicker />
+                <input type="text" ng-model="Settings.Date" bs-datepicker /><br />
                 
-                <label>Betrag</label>
+                <label>Betrag</label><br />
                 <input type="text" ng-model="Settings.EuroValue" ng-input-currency ng-dblclick="doConvert()" />
 
 

@@ -15,16 +15,7 @@ app.controller("materialCtrl", function ($scope, $http, $mdDialog) {
             targetEvent: evt,
             clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        })
-           .then(function (result) {
-               $scope.vm.EditDetail.StartDate = result.Date;
-               $scope.vm.EditDetail.EndDate = result.Date;
-               $scope.vm.EditDetail.BruttoAmount = result.EuroValue;
-               $scope.vm.EditDetail.NetAmount = result.EuroValue;
-               $scope.vm.EditDetail.TaxAmount = 0;
-               $scope.vm.EditDetail.Remark = "Ursprünglicher Betrag vom " + moment(result.Date).format('DD. MM. YYYY') + ": " + result.ForeignValue + " " + result.Currency + ", Kurs:" + result.ExchangeRate;
-           },
-               function () { });
+        });
     }
 });
 
