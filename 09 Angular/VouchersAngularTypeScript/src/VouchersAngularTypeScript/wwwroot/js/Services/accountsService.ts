@@ -1,20 +1,20 @@
 ﻿module voucherAppTS.Services {
 
-    export interface IAcctResource extends ng.resource.IResource<IAccount> { }
+    export interface IAccountResource extends ng.resource.IResource<IAccount> { }
 
-    export interface IAccountsService {
-        getAcctResource(): ng.resource.IResourceClass<IAcctResource>;
+    export interface IAccountService {
+        getAcctResource(): ng.resource.IResourceClass<IAccountResource>;
     }
 
-    export class AccountsService implements IAccountsService {
+    export class AccountService implements IAccountService {
         
         static $inject = ['$resource'];
         constructor(private $resource: ng.resource.IResourceService) {}
 
-        public getAcctResource(): any {
-            return this.$resource('/api/accounts');
+        public getAcctResource(): ng.resource.IResourceClass<IAccountResource> {
+            return (this.$resource('/api/accounts')) as ng.resource.IResourceClass<IAccountResource>;
         }
     }
 
-    voucherApp.service("accountService", AccountsService);
+    voucherApp.service("accountService", AccountService);
 }

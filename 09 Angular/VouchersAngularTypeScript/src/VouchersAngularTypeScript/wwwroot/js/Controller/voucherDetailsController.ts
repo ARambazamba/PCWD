@@ -2,9 +2,9 @@
 
     export interface IVoucherDetailsScope extends ng.IScope {
         VVM: IVoucherDetailsViewModel;
-        showVouchers();
-        saveVoucher(voucher);
-        editDetail(detail: IVoucherDetail),
+        showVouchers;
+        saveVoucher(voucher): void;
+        editDetail(detail: IVoucherDetail) : void,
         newDetail: () => void;
         deleteDetail: (detail: IVoucherDetail) => void;
         saveVoucherDetail: (detail: IVoucherDetail) => void;
@@ -27,34 +27,34 @@
                 (data: IVoucherDetailsViewModel, status) => $scope.VVM = data
             );
 
-            $scope.showVouchers = () => {
+            $scope.showVouchers = (): void => {
                 location.assign("#/vouchers");
             }
 
-            $scope.saveVoucher = function(voucher) {
+            $scope.saveVoucher = function(voucher): void {
                 $http.post('/api/vouchers/', voucher).success(
                     (data, status) => this.scope.VVM.CurrentVoucher.ID = data
                 );
             }
 
-            $scope.editDetail = (detail: IVoucherDetail) => {
+            $scope.editDetail = (detail: IVoucherDetail): void => {
                 $scope.VVM.EditDetail = detail;
             }
 
-            $scope.newDetail = () => {
+            $scope.newDetail = (): void => {
                 $scope.VVM.EditDetail = {
                     "ID": 0, "VoucherID": $scope.VVM.CurrentVoucher.ID, "Account": null,
                     "AccountID": 0, "Text": "", "Amount": 0, "Comment": null
                 };
             }
 
-            $scope.deleteDetail = detail => {
+            $scope.deleteDetail = (detail): void => {
                 var res = $resource("/api/VoucherDetails/" + detail.ID);
                 res.delete(detail.ID);
                 $route.reload();
             }
 
-            $scope.saveVoucherDetail = detail => {
+            $scope.saveVoucherDetail = (detail): void => {
                 var res = $resource("/api/VoucherDetails/");
                 res.save(detail);
                 $route.reload();
@@ -62,7 +62,6 @@
         }        
     }
 
-    VoucherDetailsController.$inject = ["$scope", "$location", "$routeParams", "$resource", "$route",
-        "$http", "voucherService"];
+    VoucherDetailsController.$inject = ["$scope", "$location", "$routeParams", "$resource", "$route", "$http", "voucherService"];
     voucherApp.controller("voucherDetailsController", VoucherDetailsController);        
 }

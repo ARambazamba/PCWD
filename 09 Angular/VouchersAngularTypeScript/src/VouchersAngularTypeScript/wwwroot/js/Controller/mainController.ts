@@ -1,13 +1,14 @@
 ﻿module voucherAppTS.Controllers {
 
-    export class MainController {
+    export interface IHomeScope extends ng.IScope {
+        startText: string;
+    }
 
-        scope: any;
+    export class HomeController {
 
-        constructor($scope: ng.IScope) {
-            this.scope = $scope;
-            this.scope.startText = 'Welcome to the AngularJS & TypeScript Vouchers Web!';
+        constructor(public $scope: IHomeScope) {
+            $scope.startText = 'Welcome to the AngularJS & TypeScript Vouchers Web!';
         }
     }
-    voucherApp.controller("mainController", MainController);
+    voucherApp.controller("homeController", HomeController);
 }

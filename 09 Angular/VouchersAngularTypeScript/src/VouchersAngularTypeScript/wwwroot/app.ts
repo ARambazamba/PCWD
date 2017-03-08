@@ -5,7 +5,7 @@
     export class Config {
         constructor($routeProvider: ng.route.IRouteProvider) {            
             $routeProvider
-                .when('/home', { controller: 'mainController', templateUrl: "views/home.html" })
+                .when('/home', { controller: 'homeController', templateUrl: "views/home.html" })
                 .when('/vouchers', { controller: 'voucherController', templateUrl: "views/vouchers.html" })
                 .when('/vdetails/:ID', { controller: 'voucherDetailsController', templateUrl: "views/voucherDetails.html" })
                 .when('/statistics', { controller: 'statisticsController', templateUrl: "views/statistics.html" })

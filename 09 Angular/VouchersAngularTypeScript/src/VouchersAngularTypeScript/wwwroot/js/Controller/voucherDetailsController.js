@@ -42,8 +42,7 @@ var voucherAppTS;
             return VoucherDetailsController;
         }());
         Controllers.VoucherDetailsController = VoucherDetailsController;
-        VoucherDetailsController.$inject = ["$scope", "$location", "$routeParams", "$resource", "$route",
-            "$http", "voucherService"];
+        VoucherDetailsController.$inject = ["$scope", "$location", "$routeParams", "$resource", "$route", "$http", "voucherService"];
         voucherAppTS.voucherApp.controller("voucherDetailsController", VoucherDetailsController);
     })(Controllers = voucherAppTS.Controllers || (voucherAppTS.Controllers = {}));
 })(voucherAppTS || (voucherAppTS = {}));
