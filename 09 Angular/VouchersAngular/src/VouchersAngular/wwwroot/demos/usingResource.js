@@ -11,20 +11,21 @@ var ctrl = function ($scope, vouchersFactory) {
     $scope.vouchers = null;
 
     $scope.getVouchers = function () {
-
+        //query -> get collection
         vouchersFactory.query(function(data) {
             $scope.vouchers = data;
         });
     }
 
     $scope.getVoucher = function (id) {
+        //get -> get item -> :id
         vouchersFactory.get({id:id}, function (data) {
             $scope.vouchers = data;
         });
     }
 
     $scope.insertVoucher = function (v) {
-
+        //save 
         vouchersFactory.save(v).then(function (response) {
             $scope.vouchers = response.data;
         });

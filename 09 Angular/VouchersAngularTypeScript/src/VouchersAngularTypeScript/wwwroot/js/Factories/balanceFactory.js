@@ -9,9 +9,9 @@ var voucherAppTS;
             BalanceFactory.prototype.getSum = function (expenses, callback) {
                 this.http.get("/api/vouchers/GetSum/" + expenses).then(callback());
             };
-            BalanceFactory.$inject = ["$http"];
             return BalanceFactory;
         }());
+        BalanceFactory.$inject = ["$http"];
         Factories.BalanceFactory = BalanceFactory;
         voucherAppTS.voucherApp.factory("balanceFactory", BalanceFactory);
     })(Factories = voucherAppTS.Factories || (voucherAppTS.Factories = {}));

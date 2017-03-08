@@ -9,9 +9,9 @@ var voucherAppTS;
             VoucherDetailService.prototype.getVDetailResource = function () {
                 return this.$resource('/api/VoucherDetails');
             };
-            VoucherDetailService.$inject = ['$resource'];
             return VoucherDetailService;
         }());
+        VoucherDetailService.$inject = ['$resource'];
         Services.VoucherDetailService = VoucherDetailService;
         voucherAppTS.voucherApp.service("voucherDetailService", VoucherDetailService);
     })(Services = voucherAppTS.Services || (voucherAppTS.Services = {}));

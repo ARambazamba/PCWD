@@ -9,9 +9,9 @@ var voucherAppTS;
             AccountsService.prototype.getAcctResource = function () {
                 return this.$resource('/api/accounts');
             };
-            AccountsService.$inject = ['$resource'];
             return AccountsService;
         }());
+        AccountsService.$inject = ['$resource'];
         Services.AccountsService = AccountsService;
         voucherAppTS.voucherApp.service("accountService", AccountsService);
     })(Services = voucherAppTS.Services || (voucherAppTS.Services = {}));
