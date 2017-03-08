@@ -1,7 +1,8 @@
-﻿
+﻿var webpack = require('webpack');
+
 module.exports = {
     entry: {
-        app: './wwwroot/demos/angular/js/index.js'
+        app: './wwwroot/demos/angular/js/app.js'
     },
     resolve: {
         extensions: ['.js']

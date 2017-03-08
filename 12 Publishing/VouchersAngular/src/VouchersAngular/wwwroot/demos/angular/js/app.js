@@ -1,4 +1,4 @@
-var angular = require('angular/angular.js');
+require('angular/angular.js');
 
 var app = angular.module('app', []);
 

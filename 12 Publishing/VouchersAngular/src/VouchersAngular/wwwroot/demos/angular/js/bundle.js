@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -33422,59 +33422,42 @@ $provide.value("$locale", {
 
 
 module.exports = function (app) {
-  __webpack_require__(3)(app);
-  __webpack_require__(4)(app);
+    __webpack_require__(2)(app);  
 }
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Our Vouchers</h1>\r\n<h3 ng-repeat=\"voucher in vouchers\">{{voucher.Text}} - {{voucher.Amount | currency }}</h3>"
+﻿
+module.exports = function (app) {
+    app.controller('voucherController', function ($scope) {
+        $scope.vouchers = [
+            { Text: 'Expensive', Amount: 77 },
+            { Text: 'Cheap', Amount: 22 }
+        ];
+    });
+}
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-﻿
-module.exports = function (app) {
-    app.directive('vouchersList',
-        function (vouchersFactory) {
-            return {
-                template: __webpack_require__(2),
-                restrict: 'E',
-                controller: function($scope) {
-                    $scope.vouchers = vouchersFactory;
-                }
-            }
-        });
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-
-module.exports = function (app) {
-    app.factory('vouchersFactory',
-        function() {
-            return [
-                { Text: 'Expensive', Amount: 77 },
-                { Text: 'Cheap', Amount: 22 }
-            ];
-        });
-}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var angular = __webpack_require__(0);
-
+__webpack_require__(0);
 var app = angular.module('app', []);
 
 __webpack_require__(1)(app);
 
+
+//(function () {
+
+//    'use strict';
+//    require('../vendor/angular.js');
+//    require('../vendor/angular-aria.js');
+//    require('../vendor/angular-animate.js');
+
+//    angular.module('app', [ngAria, ngAnimate]);
+//}());
 
 /***/ })
 /******/ ]);
