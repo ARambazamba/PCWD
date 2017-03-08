@@ -65,7 +65,7 @@ namespace Vouchers
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
+            options.DefaultFileNames.Add("demos/basics/basics.html");
             app.UseDefaultFiles(options);
             if (env.IsDevelopment())
             {
