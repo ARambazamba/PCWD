@@ -1,4 +1,5 @@
-module.exports = function(app) {
+
+module.exports = function (app) {
     app.factory('vouchersFactory',
         function() {
             return [

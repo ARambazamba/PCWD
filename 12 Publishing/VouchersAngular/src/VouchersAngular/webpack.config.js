@@ -1,16 +1,21 @@
 ﻿
 module.exports = {
     entry: {
-        app: './wwwroot/demos/basics/js/app.js'
+        app: './wwwroot/demos/angular/js/index.js'
     },
     resolve: {
         extensions: ['.js']
     },
     output: {
-        path: './wwwroot/demos/basics/js/',
+        path: './wwwroot/demos/angular/js/',
         filename: 'bundle.js'
     },
     module: {
-        loaders: []
+        loaders: [
+        {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            loader: "raw-loader"
+        }]
     }
 };
