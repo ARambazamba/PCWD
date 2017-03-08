@@ -72,16 +72,18 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["login"] = login;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 
 
-function login(usrname, password) {
-    if (username !== 'admin' || password !== 'radical') {
+let login = function login(usrname, password) {
+    if (usrname !== 'admin' || password !== 'radical') {
         console.log('incorrect login');
     } else {
         console.log('logged in');
     }
 }
+
+
 
 
 /***/ }),
@@ -93,12 +95,15 @@ console.log('logging from the utils.js file...');
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_js__ = __webpack_require__(0);
 __webpack_require__(1);
 __webpack_require__(0);
 
-login('admin', 'radical');
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__login_js__["login"])('admin', 'radical');
 
 document.write("Welcome to Big Hair Concerts!!");
 
