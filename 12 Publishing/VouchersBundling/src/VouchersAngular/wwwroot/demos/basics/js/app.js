@@ -1,5 +1,6 @@
-// require('./login');
-import {login} from "./login"
+require('./utils');
+require('./login');
+
 login('admin', 'radical');
 
 document.write("Welcome to Big Hair Concerts!!");

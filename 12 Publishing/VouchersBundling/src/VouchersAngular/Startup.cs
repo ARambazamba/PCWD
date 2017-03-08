@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using JSNLog;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,8 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
-using NLog.Extensions.Logging;
-using NLog.Web;
 
 namespace Vouchers
 {
@@ -66,18 +63,11 @@ namespace Vouchers
             loggerFactory.AddConsole();
             loggerFactory.AddDebug();
 
-            //https://github.com/NLog/NLog.Extensions.Logging
-            loggerFactory.AddNLog();
-            env.ConfigureNLog("nlog.config");
-
-            // See jsnlog.com/Documentation/Configuration
-            var jsnlogConfiguration = new JsnlogConfiguration();
-            app.UseJSNLog(new LoggingAdapter(loggerFactory), jsnlogConfiguration);
-
             var options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
+            options.DefaultFileNames.Add("/demos/basics/basics.html");
             app.UseDefaultFiles(options);
+
             if (env.IsDevelopment())
                 app.UseStaticFiles(new StaticFileOptions
                 {
@@ -89,7 +79,7 @@ namespace Vouchers
                     }
                 });
             else
-                app.UseStaticFiles();
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
             SeedDatabase(dbcontext);
         }

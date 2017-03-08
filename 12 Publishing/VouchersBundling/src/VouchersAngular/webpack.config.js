@@ -1,25 +1,16 @@
-﻿var path = require('path');
-const webpack = require('webpack');
-
+﻿
 module.exports = {
-    context: path.resolve('js'),
     entry: {
-        app: './wwwroot/app.js'
+        app: './wwwroot/demos/basics/js/app.js'
     },
     resolve: {
-        extensions: ['', '.js', '.es6']
+        extensions: ['.js']
     },
     output: {
-        path: './wwwroot',
-        filename: 'js/bundle.js'
+        path: './wwwroot/demos/basics/js/',
+        filename: 'bundle.js'
     },
     module: {
-        loaders: [
-			{
-			    test: /\.es6$/,
-			    exclude: /node_modules/,
-			    loader: "babel-loader"
-			}
-        ]
+        loaders: []
     }
 };
