@@ -2,9 +2,9 @@
 
     export interface IVoucherDetailsScope extends ng.IScope {
         VVM: IVoucherDetailsViewModel;
-        showVouchers();
-        saveVoucher(voucher);
-        editDetail(detail: IVoucherDetail),
+        showVouchers;
+        saveVoucher(voucher): void;
+        editDetail(detail: IVoucherDetail) : void,
         newDetail: () => void;
         deleteDetail: (detail: IVoucherDetail) => void;
         saveVoucherDetail: (detail: IVoucherDetail) => void;
@@ -62,7 +62,6 @@
         }        
     }
 
-    VoucherDetailsController.$inject = ["$scope", "$location", "$routeParams", "$resource", "$route",
-        "$http", "voucherService"];
+    VoucherDetailsController.$inject = ["$scope", "$location", "$routeParams", "$resource", "$route", "$http", "voucherService"];
     voucherApp.controller("voucherDetailsController", VoucherDetailsController);        
 }
