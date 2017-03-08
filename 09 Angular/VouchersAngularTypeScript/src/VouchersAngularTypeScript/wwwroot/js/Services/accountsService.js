@@ -7,7 +7,7 @@ var voucherAppTS;
                 this.$resource = $resource;
             }
             AccountsService.prototype.getAcctResource = function () {
-                return this.$resource('/api/accounts');
+                return (this.$resource('/api/accounts'));
             };
             return AccountsService;
         }());

@@ -1,14 +1,14 @@
 ﻿module voucherAppTS.Controllers {
 
+    export interface IAccountScope extends ng.IScope {
+        accounts: IAccount[];
+    }
+
     export class AccountController {
-        Accounts: IAccount[];
-        scope: any;
-        
-        constructor($scope: ng.IScope, accountService: Services.AccountsService) {
-            this.scope = $scope;
-            var acctRes = accountService.getAcctResource();
-            acctRes.query((data: IAccount[]) => {
-                this.scope.Accounts = data;
+       
+        constructor(private $scope: IAccountScope, accountService: Services.AccountsService) {
+            accountService.getAcctResource().query((data: IAccount[]) => {
+                $scope.accounts = data;
             });
         }
     }

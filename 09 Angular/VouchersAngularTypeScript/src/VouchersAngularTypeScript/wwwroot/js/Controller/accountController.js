@@ -4,11 +4,9 @@ var voucherAppTS;
     (function (Controllers) {
         var AccountController = (function () {
             function AccountController($scope, accountService) {
-                var _this = this;
-                this.scope = $scope;
-                var acctRes = accountService.getAcctResource();
-                acctRes.query(function (data) {
-                    _this.scope.Accounts = data;
+                this.$scope = $scope;
+                accountService.getAcctResource().query(function (data) {
+                    $scope.accounts = data;
                 });
             }
             return AccountController;

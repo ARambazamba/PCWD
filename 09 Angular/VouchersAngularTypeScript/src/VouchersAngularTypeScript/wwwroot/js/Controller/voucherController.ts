@@ -10,12 +10,10 @@
 
         constructor(private $scope: IVoucherScope,
             private $location: ng.ILocaleService,
-            private $http: ng.IHttpService,
             private voucherService: Services.VoucherService) {
 
             //set scope data
-            var vRes = voucherService.getVoucherResource();
-            vRes.query((data: IVoucher[]) => {
+            voucherService.getVoucherResource().query((data: IVoucher[]) => {
                 $scope.vouchers = data;
             });
 
@@ -30,6 +28,6 @@
         }  
     }
 
-    VoucherController.$inject = ["$scope", "$location", "$http", "voucherService"];
+    VoucherController.$inject = ["$scope", "$location", "voucherService"];
     voucherApp.controller("voucherController", VoucherController);
 }

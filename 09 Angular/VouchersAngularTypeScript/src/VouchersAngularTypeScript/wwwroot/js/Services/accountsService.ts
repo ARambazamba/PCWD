@@ -11,8 +11,8 @@
         static $inject = ['$resource'];
         constructor(private $resource: ng.resource.IResourceService) {}
 
-        public getAcctResource(): any {
-            return this.$resource('/api/accounts');
+        public getAcctResource(): ng.resource.IResourceClass<IAcctResource> {
+            return (this.$resource('/api/accounts')) as ng.resource.IResourceClass<IAcctResource>;
         }
     }
 

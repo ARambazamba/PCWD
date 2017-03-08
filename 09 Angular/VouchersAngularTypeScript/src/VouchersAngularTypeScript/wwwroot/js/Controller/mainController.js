@@ -4,8 +4,8 @@ var voucherAppTS;
     (function (Controllers) {
         var HomeController = (function () {
             function HomeController($scope) {
-                this.scope = $scope;
-                this.scope.startText = 'Welcome to the AngularJS & TypeScript Vouchers Web!';
+                this.$scope = $scope;
+                $scope.startText = 'Welcome to the AngularJS & TypeScript Vouchers Web!';
             }
             return HomeController;
         }());
