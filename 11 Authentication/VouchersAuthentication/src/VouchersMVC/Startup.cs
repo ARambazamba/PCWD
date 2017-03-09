@@ -92,7 +92,7 @@ namespace Vouchers
             {
                 app.UseStaticFiles();
             }
-            //app.UseIdentity();
+            app.UseIdentity();
 
             app.UseMvcWithDefaultRoute();
             SeedDatabase(dbcontext);
@@ -102,7 +102,7 @@ namespace Vouchers
         {
             //To Create the Code First DB go to Package Manager Console ->
             //PackageManagerConsole: 
-            //Install-Package Microsoft.EntityFrameworkCore.Tools -Pre
+            //Install-Package Microsoft.EntityFrameworkCore.Tools -Version 1.0.0-preview2-final -Pre
             //Add-Migration MigrationName
             //Update-Database
 

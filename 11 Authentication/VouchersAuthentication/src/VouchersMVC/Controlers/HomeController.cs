@@ -17,7 +17,7 @@ namespace Vouchers
             this.userManager = userManager;
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult Index()
         {
             VoucherUser user = userManager.GetUserAsync(HttpContext.User).Result;
