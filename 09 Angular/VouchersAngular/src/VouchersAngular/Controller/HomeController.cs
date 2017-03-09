@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 
 namespace Vouchers
 {
-    public class HomeController : Controller
+    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         private VouchersConfig config { get; set; }
 

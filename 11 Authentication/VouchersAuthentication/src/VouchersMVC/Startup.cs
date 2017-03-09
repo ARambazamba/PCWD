@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -26,42 +26,41 @@ namespace Vouchers
             var cfgBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
+
             IConfigurationRoot Configuration = cfgBuilder.Build();
             services.Configure<VouchersConfig>(Configuration);
 
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
-            services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>();
+            services.
+                AddEntityFrameworkSqlServer().
+                AddDbContext<VouchersDbContext>(
+                    options => options.UseSqlServer(Configuration.GetConnectionString("SQLServerDBConnection")));
+
             services.AddSingleton<IVouchersRepository, VouchersRepository>();
             services.AddScoped<IVouchersRepository, VouchersRepository>();
+
             services.AddTransient<BalanceService>();
 
-            if (env.IsDevelopment())
+            services.AddIdentity<VoucherUser, VoucherRole>()
+                .AddEntityFrameworkStores<VouchersDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.Configure<IISOptions>(options => {
+                options.ForwardWindowsAuthentication = true;
+            });
+
+            services.AddMvc().AddJsonOptions(ser =>
             {
-                //https://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/CacheProfile/index.html#Microsoft.AspNetCore.Mvc.CacheProfile
-                services
-                .AddMvc()
-                .AddMvcOptions(options =>
-                {
-                    options.CacheProfiles.Add("NoCache", new CacheProfile
-                    {
-                        NoStore = true,
-                        Duration = 0
-                    });
-                })
-                .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            }
-            else
-            {
-                services
-                .AddMvc()
-                .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            }
+                ser.SerializerSettings.ContractResolver =
+                 new DefaultContractResolver();
+            });
+
+            services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDbContext dbcontext)
         {
             loggerFactory.AddConsole();
-            
             //https://github.com/NLog/NLog.Extensions.Logging
             loggerFactory.AddNLog();
             env.ConfigureNLog("nlog.config");
@@ -93,15 +92,17 @@ namespace Vouchers
             {
                 app.UseStaticFiles();
             }
+            app.UseIdentity();
+
             app.UseMvcWithDefaultRoute();
             SeedDatabase(dbcontext);
         }
 
-        private static void SeedDatabase(VouchersDBContext context)
+        private static void SeedDatabase(VouchersDbContext context)
         {
             //To Create the Code First DB go to Package Manager Console ->
             //PackageManagerConsole: 
-            //Install-Package Microsoft.EntityFrameworkCore.Tools -Pre
+            //Install-Package Microsoft.EntityFrameworkCore.Tools -Version 1.0.0-preview2-final -Pre
             //Add-Migration MigrationName
             //Update-Database
 

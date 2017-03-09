@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Vouchers
 {
     [Route("api/[controller]")]
-    public class AccountsController : Controller
+    public class AccountsController : Microsoft.AspNetCore.Mvc.Controller
     {
         private VouchersDBContext ctx;
         public AccountsController(VouchersDBContext context)
