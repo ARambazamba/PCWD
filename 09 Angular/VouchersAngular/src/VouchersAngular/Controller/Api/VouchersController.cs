@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Vouchers.Api
 {
     [Route("api/[controller]")]
-    public class VouchersController : Controller
+    public class VouchersController : Microsoft.AspNetCore.Mvc.Controller
     {
         private VouchersDBContext ctx;
 

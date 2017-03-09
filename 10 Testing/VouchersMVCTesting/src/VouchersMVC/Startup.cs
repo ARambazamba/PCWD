@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
+using NLog.Web;
 
 namespace Vouchers
 {
@@ -60,6 +61,7 @@ namespace Vouchers
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
         {
             loggerFactory.AddConsole();
+            
             //https://github.com/NLog/NLog.Extensions.Logging
             loggerFactory.AddNLog();
             env.ConfigureNLog("nlog.config");
