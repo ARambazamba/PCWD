@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html ng-app="eventApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Events</title>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="events.js"></script>
+</head>
+<body ng-controller="eventController">
+
+    <h1 ng-mousemove="count = count + 1" ng-click="getCount()">Mouse over me!</h1>
+    
+    <div id="divSomething" ng-click="doClick($event)">
+        Click here
+    </div>
+</body>
+</html>
