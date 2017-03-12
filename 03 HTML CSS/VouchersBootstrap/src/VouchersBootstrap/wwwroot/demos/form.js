@@ -14,10 +14,10 @@
                 required: true
             },
             submitHandler: function (form) {
-                alert('ajax being called...');
+                console.log('ajax being called...');
             },
             invalidHandler: function (event, validator) {
-                alert('number of invalid fields: ' + validator.numberOfInvalids());
+                console.log('number of invalid fields: ' + validator.numberOfInvalids());
             }
         }
     });
