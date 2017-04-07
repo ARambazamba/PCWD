@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html ng-app="nestedApp">
+<head>
+    <title>Nested Controllers</title>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="nestedControllers.js"></script>
+</head>
+<body>
+    <div ng-controller="HomeController">
+        <input type="text" ng-model="title">
+        <div ng-controller="ChildController"></div>
+    </div>
+</body>
+</html>

@@ -91,6 +91,7 @@ namespace Vouchers.Api
         //    if (v != null)
         //    {
         //        ctx.Vouchers.Attach(value);
+        //        ctx.Entry(value).State = EntityState.Modified;
         //        ctx.SaveChanges();
         //    }
         //}
