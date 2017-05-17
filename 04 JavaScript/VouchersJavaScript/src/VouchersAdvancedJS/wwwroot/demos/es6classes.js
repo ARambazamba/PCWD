@@ -1,6 +1,7 @@
 ﻿//# sourceURL=es6classes.js
 
 function simpleClass() {
+    debugger;
 
     class AnimalES6a {
         constructor(name) {
@@ -17,8 +18,28 @@ function simpleClass() {
     lionES6a.doSomething();
 }
 
+function thisInClasses() {
+    debugger;
+
+    class Dog {
+
+        constructor(name, breed) {
+            this.name = name;
+            this.breed = breed;
+        }
+
+        barkName() {
+            console.log(`I am ${this.name}`);
+        }
+    }
+
+    var giro = new Dog("Giro", "Spanish Sighthound");
+    console.log(`Giro is a ${giro.breed}`);
+
+}
 
 function classWithGetSet() {
+    debugger;
 
     class AnimalES6b {
         constructor(name) {
@@ -51,6 +72,7 @@ function classWithGetSet() {
 }
 
 function Inheritance() {
+    debugger;
 
     class Person {
 
@@ -82,6 +104,7 @@ function Inheritance() {
 }
 
 function overriding() {
+    debugger;
 
     class Worker {
 
@@ -128,3 +151,4 @@ function overriding() {
     var t = new Teacher("Dr.", "Superclever");
     console.log(t.doWork());
 }
+
