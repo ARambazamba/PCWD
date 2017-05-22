@@ -4,15 +4,22 @@
     <span>First Name</span><input type="text" autocomplete="on" name="first_name" placeholder="First Name"/><br/>
     <span>Datepicker</span><input type="date"/><br/>
     <span>E-Mail</span><input type="email" autofocus placeholder="Enter your Mail Adr"/><br/>
-    <span>Search</span><input type="search"/><br/>
-    <span>Color</span><input type="color"/><br/>
-    <span>Number</span><input type="range" min="0" max="10"/><br/>
+    <span>Pick a Number</span><input type="range" min="0" max="10"/><br/>
     <span>File Upload</span><input type="file"/><br/>
     <textarea name="Comments" maxlength="500" rows="3" wrap="hard">This is a multi-line text field</textarea><br/>
     <div>
         <span>Radio Button Group</span>
         <input type="radio" name="city" value="Lom"/>
         <input type="radio" name="city" value="Ruse"/>
+    </div>
+    <div>
+        <span>Select your favorite color:</span> 
+        <input type="color" name="favcolor">
+    </div>
+    <div>
+        <span>I prefer going by </span>
+        <input type="checkbox" value="Bike">Bikie
+        <input type="checkbox" value="Car">Car
     </div>
     <span>Dropdown</span>
     <select name="gender">
@@ -26,4 +33,5 @@
         <input type="text" id="fn"/>
     </div>
     <input type="submit"/>
+    <input type="reset">
 </form>

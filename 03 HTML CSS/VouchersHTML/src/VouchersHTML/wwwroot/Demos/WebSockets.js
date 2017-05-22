@@ -1,4 +1,6 @@
-﻿function initSample() {
+﻿//# sourceURL=websockets.js
+
+function initSample() {
     debugger;
     // Get references to elements on the page.
     document.getElementById('statusSocket').innerText = "Connecting...";
@@ -18,7 +20,7 @@
 
     // Show a connected message when the WebSocket is opened.
     socket.onopen = function (event) {
-        socketStatus.innerHTML = 'Connected to: ' + event.currentTarget.URL;
+        socketStatus.innerHTML = 'Connected to: ' + event.currentTarget.url;
         socketStatus.className = 'open';
     };
 

@@ -1,5 +1,9 @@
 ﻿table, th, td {
-        border: 1px solid black;
+        border: 1px solid black;     
+}
+
+td {
+    padding: 2px;              
 }
 
 tr:nth-child(even) {
@@ -35,4 +39,9 @@ table.FormattedTable td.Left {
 table.FormattedTable thead {
     text-align: left;
     background-color: coral;
+}
+
+div#tblhint>a {
+    display: inline;
+    text-decoration: none;  
 }
