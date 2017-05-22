@@ -26,10 +26,6 @@ namespace VouchersBootstrap
                 .AddJsonFile("appsettings.json");
             IConfigurationRoot Configuration = cfgBuilder.Build();
             services.Configure<VouchersConfig>(Configuration);
-
-            //string conStr = Configuration["ConnectionStrings:LocalDBConnection"];
-            //services.AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
-            //Fix as of https://github.com/aspnet/EntityFramework/issues/5385#issuecomment-220435119
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
             services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>();
 
