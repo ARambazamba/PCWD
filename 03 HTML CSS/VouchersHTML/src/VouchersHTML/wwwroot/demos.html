@@ -1,26 +1,33 @@
-﻿<!DOCTYPE html5>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
     <title>HTML 5 & CSS 3 - Demos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML 5 Basics">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Alexander Pajer">
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="css/demo.css" rel="stylesheet" />
     <script src="/lib/jquery/dist/jquery.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/lib/moment/moment.js"></script>
     <script src="demos.js"></script>
+    <style>
+        body {background-color: lavender}
+    </style>
 </head>
 <body>
     <div id="demoContainer" class="container-fluid">
         <div class="row">
             <header class="header" md->
-                <h3>PowerCamp: Web Development - JavaScript - Demos</h3><br />
+                <h3>PowerCamp: Web Development - HTML5 - Demos</h3><br />
             </header>
         </div>
         <div class="row">
             <div class="demoMenu col-xs-3">
                 <div id="status">Please choose:</div>
                 <a href="#" onclick="javascript: loadDemo('/demos/BasicTags.html', this, false);">Basic Tags</a>
-                <a href="#" onclick="javascript: loadDemo('/demos/CSSBasics.html', this, true);">CSS Basics</a>
+                <a href="#" onclick="javascript: loadDemo('/demos/CSSBasics.html', this, false);">CSS Basics</a>
                 <a href="#" onclick="javascript: loadDemo('/demos/CSSSelectors.html', this, true);">CSSSelectors</a>
                 <a href="#" onclick="javascript: loadDemo('/demos/Tables.html', this, true);">Tables</a>
                 <a href="#" onclick="javascript: loadDemo('/demos/InputTypes.html', this, true);">InputTypes</a>

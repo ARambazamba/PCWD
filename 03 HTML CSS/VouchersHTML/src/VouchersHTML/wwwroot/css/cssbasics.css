@@ -1,4 +1,16 @@
 ﻿
+div:lang(de) { 
+    background-color: yellow;
+}
+
+div:lang(en) { 
+    background-color: blue;
+}
+
+#title:before { content: "»"; }
+
+#title:after { content: "«"; }
+
 .topic {
     margin: 20px 10px 20px;
 }
