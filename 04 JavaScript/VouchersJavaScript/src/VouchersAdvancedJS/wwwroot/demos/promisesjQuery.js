@@ -38,27 +38,30 @@ function useGetJson() {
 }
 
 function simplePromises() {
-    
+    debugger;
+
     function createSite(working) {
         var dfd = $.Deferred();
         // mock an asynchronous function call
         if (working) {
-            dfd.resolve();
+            dfd.resolve("Site provisioned");
         } else {
-            dfd.reject();
+            dfd.reject("Site could not be created.");
         }
         //return the promise
         return dfd.promise();
     };
 
-    var working = $('#chkPromise').attr('checked');
+    var working = $('#chkPromise').is(':checked');
     createSite(working).then(
         // The Deferred object was successfully resolved
-        function() {
-            console.log("Site provisioned");
+        function(msg) {
+            console.log(msg);
         },
         // The Deferred object was rejected
-        function() { console.log("Site could not be created."); }
+        function (msg) {
+            console.log(msg);
+        }
     );
 }
 

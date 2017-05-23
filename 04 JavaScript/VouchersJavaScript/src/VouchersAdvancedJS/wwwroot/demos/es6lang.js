@@ -31,6 +31,30 @@ function stringFunctions() {
     console.log(`chars included in your string: ${countString("abheben")}`);
 }
 
+function shortHandProperties() {
+    debugger;
+
+    function createMonsterES5(name, power) {
+        return { type: 'Monster', name: name, power: power };
+    }
+    function createWitchES5(name) {
+        return { type: 'Witch', name: name };
+    }
+
+    var monster = createMonsterES5('Hulk', "strong");
+    console.log(monster);
+
+    function createMonster(name, power) {
+        return { type: 'Monster', name, power };
+    }
+    function createWitch(name) {
+        return { type: 'Witch', name };
+    }
+
+    var witch = createWitch('Hexi');
+    console.log(witch);
+}
+
 function letBasics() {
     debugger;
 
@@ -139,19 +163,12 @@ function arrayHelpers() {
     }, []);
     console.log(fruitNames);
 
-    //look for balanced parenthesis
-    function checkBalancedParanthesis(string) {
-        return string.split("")
-            .reduce(function(prev, char) {
-                if (prev < 0) {return prev;}
-                if (char === "(") {return ++prev;}
-                if (char === ")") {return --prev;}
-                return prev;
-            }, 0)===0;
-    }
-
-    console.log(checkBalancedParanthesis("(())"));
-    console.log(checkBalancedParanthesis("((())"));
+    //splice
+    var dogs = ['whippet', 'galgo espanol', 'magyar whistler', 'magyar agar' ];
+    dogs.splice(2, 0, 'chart polski');
+    console.log(dogs);
+    dogs.splice(3, 1);
+    console.log(dogs);
 }
 
 //-> C# Dictionary
@@ -209,6 +226,12 @@ function restParams() {
     store.add('dairy', 'milk', 'cheese', 'yoghurt');
     store.add('pastries', 'donuts', 'croissants');
     store.add('cleaning', 'soap', 'body lotion', 'shampoo', 'tooth brush');
+}
+
+function objAssign() {
+    var obj = { name: 'alex' , birth: new Date() };
+    var copy = Object.assign({}, obj, {birth: moment("19700402", "YYYYMMDD").format("MMM Do YY")});
+    console.log(copy); // { a: 1 }
 }
 
 function arrowFunctions() {
@@ -323,4 +346,8 @@ function destructuring() {
  
     // output: 1, ['hello'], true
     console.log(a, b, captureEvents());
+}
+
+function promisesES6() {
+    
 }
