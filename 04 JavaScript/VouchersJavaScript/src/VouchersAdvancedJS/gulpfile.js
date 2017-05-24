@@ -3,26 +3,29 @@ var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
+var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
     webroot: "./wwwroot/",
+    demos: "./wwwroot/demos/",
     scss: "./wwwroot/sass/**/*.scss",
     scssDest: "./wwwroot/css/"
 }
 
-paths.scriptSouce = "./Scripts/*";
+paths.scriptSource = "./wwwroot/demos/*.js";
 paths.scriptDest = paths.webroot + "js/";
 
 
 gulp.task('min:js', function () {
-    return gulp.src([paths.scriptSouce])
+    return gulp.src([paths.scriptSource])
         .pipe(concat(paths.scriptDest + "min/site.min.js"))
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
 
 gulp.task('copy:js', function () {
-    return gulp.src([paths.scriptSouce])
+    return gulp.src([paths.scriptSource])
         .pipe(gulp.dest(paths.scriptDest));
 });
 
@@ -38,3 +41,13 @@ gulp.task('watch:sass',function() {
     gulp.watch(paths.scss, ['compile:sass']);
 });
 
+gulp.task('babel2es5', () => {
+    return gulp.src([paths.demos + "es6*.js"])
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(concat('es5bundle.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(paths.demos));
+});
