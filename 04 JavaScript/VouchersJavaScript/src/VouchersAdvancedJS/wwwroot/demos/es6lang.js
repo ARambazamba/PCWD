@@ -349,5 +349,19 @@ function destructuring() {
 }
 
 function promisesES6() {
-    
+
+    function doAsyncTask() {
+        var promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log("Async Work Complete");
+                resolve("Promise resolvedd");
+            }, 1000);
+        });
+        return promise;
+    }
+
+    doAsyncTask().then((msg) => {
+        console.log(msg);
+        console.log("Async Task complete");
+    });
 }

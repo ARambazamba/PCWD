@@ -12,7 +12,7 @@ namespace Vouchers
         public bool Paid { get; set; }
         public bool Expense { get; set; }
         public bool Remark { get; set; }
-        public string Number { get; set; }
+        //public string Number { get; set; }
         
         public ICollection<VoucherDetail> Details { get; set; }
     }

@@ -13,6 +13,8 @@ function basicClasses() {
     v.ID = 0;
     v.Text = "Demo Voucher";
 
+    console.log("vouchertext is:" + v["Text"]);
+
     var vouchers = new Array<Voucher>();
     var vM: Voucher = { ID: 1, Text: "Media Markt", Amount: 22, Date: new Date() };
     vouchers.push(vM);
@@ -206,7 +208,6 @@ function inheritance() {
     
 }
 
-debugger;
 
 //Abstract Classes
 abstract class Department {

@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 function basicClasses() {
     debugger;
     var Voucher = (function () {
@@ -13,6 +18,7 @@ function basicClasses() {
     var v = new Voucher();
     v.ID = 0;
     v.Text = "Demo Voucher";
+    console.log("vouchertext is:" + v["Text"]);
     var vouchers = new Array();
     var vM = { ID: 1, Text: "Media Markt", Amount: 22, Date: new Date() };
     vouchers.push(vM);
@@ -148,8 +154,9 @@ function inheritance() {
     var Sighthound = (function (_super) {
         __extends(Sighthound, _super);
         function Sighthound(name) {
-            _super.call(this, name);
-            this.speed = "with up to 110 km/h";
+            var _this = _super.call(this, name) || this;
+            _this.speed = "with up to 110 km/h";
+            return _this;
         }
         Sighthound.prototype.move = function (meters) {
             if (meters === void 0) { meters = 500; }
@@ -173,8 +180,9 @@ function inheritance() {
     var Employee = (function (_super) {
         __extends(Employee, _super);
         function Employee(name, department) {
-            _super.call(this, name); //base c#
-            this.department = department;
+            var _this = _super.call(this, name) || this;
+            _this.department = department;
+            return _this;
         }
         Employee.prototype.getElevatorPitch = function () {
             return "Hello, my name is " + this.name + " and I work in " + this.department + ".";
@@ -185,7 +193,6 @@ function inheritance() {
     console.log(howard.getElevatorPitch());
     //console.log(howard.name); // error
 }
-debugger;
 //Abstract Classes
 var Department = (function () {
     function Department(name) {
@@ -199,7 +206,7 @@ var Department = (function () {
 var AccountingDepartment = (function (_super) {
     __extends(AccountingDepartment, _super);
     function AccountingDepartment() {
-        _super.call(this, 'Accounting and Auditing'); // constructors in derived classes must call super()
+        return _super.call(this, 'Accounting and Auditing') || this;
     }
     AccountingDepartment.prototype.printMeeting = function () {
         console.log('The Accounting Department meets each Monday at 10am.');
@@ -225,9 +232,9 @@ function staticProperties() {
             var yDist = (point.y - Grid.origin.y);
             return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
         };
-        Grid.origin = { x: 0, y: 0 };
         return Grid;
     }());
+    Grid.origin = { x: 0, y: 0 };
     var grid = new Grid(3);
     var p = { x: 10, y: 20 };
     var result = grid.calculateDistanceFromOrigin(p);

@@ -86,7 +86,7 @@ namespace Vouchers
                 context.BalanceAccounts.AddRange(a1, a2, a3, a4, a5, a6, a7);
                 context.SaveChanges();
 
-                var v1 = new Voucher { Date = DateTime.Now.AddDays(-2), Amount = 800, Text = "Reiser-ST", Paid = false, Expense = false, Remark = true };
+                var v1 = new Voucher { Date = DateTime.Now.AddDays(-2), Amount = 800, Text = "Demo AG", Paid = false, Expense = false, Remark = true };
                 var v2 = new Voucher { Date = DateTime.Now.AddDays(-2), Amount = 65, Text = "BP Tankstelle", Paid = false, Expense = true, Remark = true };
                 var v3 = new Voucher { Date = DateTime.Now.AddDays(-2), Amount = 56, Text = "Amazon", Paid = false, Expense = true };
                 var v4 = new Voucher { Date = DateTime.Now.AddDays(-3), Amount = 100, Text = "Media Markt", Paid = true, Expense = true };

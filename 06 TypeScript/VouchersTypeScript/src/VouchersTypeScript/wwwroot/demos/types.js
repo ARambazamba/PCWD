@@ -18,6 +18,13 @@ function basicVariables() {
     var strings = ["hubert", "Sam"];
     strings.push("Hans");
     //strings[1] = 1337; // compile time error
+    // Function returning never must have unreachable end point
+    function error(message) {
+        throw new Error(message);
+    }
+    // Not much else we can assign to these variables!
+    var u = undefined;
+    var n = null;
 }
 function useLetConst() {
     debugger;
