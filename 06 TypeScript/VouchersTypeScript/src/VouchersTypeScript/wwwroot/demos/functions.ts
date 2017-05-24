@@ -82,39 +82,3 @@ function functionOverloads() {
     let pickedCard2 = pickCard(15);
     console.log("card: " + pickedCard2.card + " of " + pickedCard2.suit);
 }
-
-function usingPromises() {
-    
-    function doAsyncTask(succeed: boolean) {
-        
-        var promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                console.log("Async Work Complete");
-                if (succeed) {
-                    resolve("Promise resolved");
-                } else {
-                    reject("Promise rejected");
-                }                
-            }, 1000);
-        });
-        return promise;
-    }
-
-    doAsyncTask(true).then((msg) => {
-        console.log(msg);
-        console.log("Async Task complete");
-    });
-}
-
-function usingFetchAwait() {
-
-    async function getAllVouchers() {
-        let response = await fetch("./demos/vouchers.json");
-        let voucher = await response.json();
-        console.log("Data received");
-        console.log(voucher);
-    }
-
-    getAllVouchers();
-}
-
