@@ -1,0 +1,44 @@
+﻿<md-dialog aria-label="Währungsrechner">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Währungsrechner</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="images/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <label>Währung</label><br />
+                <select ng-model="Settings.Currency" class="form-control-sm" required>
+                    <option ng-repeat="cur in Settings.Currencies" value="{{cur}}"> {{cur}}</option>
+                </select><br />
+
+                <label>Wert</label><br />
+                <input type="number" ng-model="Settings.ForeignValue" /><br />
+                
+                <label>Datum</label><br />
+                <md-datepicker ng-model="Settings.Date" md-placeholder="Enter date"></md-datepicker><br/>
+                <input type="text" ng-model="Settings.Date" bs-datepicker /><br />
+                
+                <label>Betrag</label><br />
+                <input type="text" ng-model="Settings.EuroValue" ng-input-currency ng-dblclick="doConvert()" />
+
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">  
+            <span flex></span>
+            <md-button ng-click="doConvert()">
+                Kurs holen
+            </md-button>
+            <md-button ng-click="exitCalc()">
+                Abbrechen
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

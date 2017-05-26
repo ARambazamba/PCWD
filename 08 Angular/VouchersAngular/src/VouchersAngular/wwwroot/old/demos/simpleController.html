@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="voucherApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Simple Controller</title>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="simpleController.js"></script>
+</head>
+<body ng-controller="simpleController">
+{{AppName}}
+<div>
+    <ul>
+        <li ng-repeat="voucher in vouchers">{{voucher.Text}}</li>
+    </ul>
+    <p></p>
+    <div>Filter by text</div>
+    <input type="text" ng-model="filterText"/>
+    <table>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Text</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="voucher in vouchers | filter: filterText">
+            <td>{{voucher.Date | date:'dd.MM.yyyy'}}</td>
+            <td>{{voucher.Text}}</td>
+            <td>{{voucher.Amount | currency}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p></p>
+    <div>Filter by amount greater than</div>
+    <input type="number" ng-model="amount" ng-init="amount=0">
+    <table>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Text</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="voucher in vouchers | filter: greaterThan('Amount', amount)">
+            <td>{{voucher.Date | date:'dd.MM.yyyy'}}</td>
+            <td>{{voucher.Text}}</td>
+            <td>{{voucher.Amount}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

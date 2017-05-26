@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Repeat</title>
+    <script src="/lib/angular/angular.js"></script>
+</head>
+<body>
+<div ng-init="persons=['Alex','Sonja','David','Giro', 'Soi']">
+    <h3>Participants in our contests are:</h3>
+    <ul>
+        <li ng-repeat="p in persons">{{p}}</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/ng-input-currency/dist/ng-input-currency.js"></script>
+    <script src="/lib/angular-strap/dist/angular-strap.js"></script>
+    <script src="/lib/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script src="dates.js"></script>
+</head>
+<body>
+<div ng-app="dateApp" ng-controller="dateController" style="padding-left: 20px;"><br />
+    <label>Enter a date </label><br/>
+    <input type="text" ng-model="date" bs-datepicker/><br />
+    <label>Enter a time </label><br />
+    <input type="text" ng-model="date" bs-timepicker /><br />
+    <label>Enter a Currency </label><br />
+    <input type="text" ng-model="amount" ng-input-currency  /><br />
+
+    <a ng-click="logDate()">Write to console</a>
+</div>
+</body>
+</html>

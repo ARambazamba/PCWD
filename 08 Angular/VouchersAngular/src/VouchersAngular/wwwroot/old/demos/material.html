@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html >
+<html ng-app="materialApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Angular Material</title>
+    <script src="../lib/jquery/dist/jquery.js"></script>
+    <script src="../lib/moment/min/moment.min.js"></script>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="../lib/angular-animate/angular-animate.js"></script>
+    <script src="/lib/angular-aria/angular-aria.js"></script>
+    <script src="/lib/angular-messages/angular-messages.js"></script>
+    <script src="/lib/angular-material/angular-material.js"></script>
+    <link href="../lib/angular-material/angular-material.css" rel="stylesheet" />
+    <script src="material.js"></script>
+</head>
+<body>
+<div ng-controller="materialCtrl">
+    <md-list flex="">
+        <md-subheader class="md-no-sticky">Our Vouchers</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="v in vouchers" ng-click="showItem(v, $event)">
+            <div class="md-list-item-text" layout="column">
+                <h3>{{ v.Text }}</h3>
+                <h4>{{ v.Amount | currency }}</h4>
+            </div>
+        </md-list-item>
+    </md-list> 
+</div>
+
+</body>
+</html>
