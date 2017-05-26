@@ -1,14 +1,16 @@
-﻿using System;
+using System;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.NodeServices;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Serialization;
-using System.Linq;
+using Vouchers;
 
-namespace Vouchers
+namespace VouchersAngular
 {
     public class Startup
     {
@@ -17,7 +19,15 @@ namespace Vouchers
         public Startup(IHostingEnvironment environment)
         {
             env = environment;
+            //var builder = new ConfigurationBuilder()
+            //    .SetBasePath(env.ContentRootPath)
+            //    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            //    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            //    .AddEnvironmentVariables();
+            //Configuration = builder.Build();
         }
+
+        public IConfigurationRoot Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -40,30 +50,34 @@ namespace Vouchers
                             NoStore = true,
                             Duration = 0
                         });
-                    }).AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
+                    });
             }
             else
             {
-                services
-                    .AddMvc()
-                    .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
+                services.AddMvc();
             }
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseStatusCodePages();
+
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true
+                });
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
             }
 
-            DefaultFilesOptions options = new DefaultFilesOptions();
-            options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
-            app.UseDefaultFiles(options);
             if (env.IsDevelopment())
             {
                 app.UseStaticFiles(new StaticFileOptions
@@ -80,8 +94,17 @@ namespace Vouchers
             {
                 app.UseStaticFiles();
             }
-            app.UseMvcWithDefaultRoute();
-            SeedDatabase(dbcontext);
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
+            });
         }
 
         private static void SeedDatabase(VouchersDBContext context)
