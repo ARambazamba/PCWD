@@ -9,7 +9,7 @@ var paths = {
     webroot: "./wwwroot/",
     scss: "./wwwroot/sass/**/*.scss",
     cssDest: "./wwwroot/css/"
-}
+};
 
 paths.scriptSouce = "./Scripts/*";
 paths.scriptDest = paths.webroot + "js/";

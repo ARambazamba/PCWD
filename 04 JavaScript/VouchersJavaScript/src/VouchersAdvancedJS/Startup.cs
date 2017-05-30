@@ -51,7 +51,7 @@ namespace Vouchers
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
+            options.DefaultFileNames.Add("demos.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -63,7 +63,7 @@ namespace Vouchers
                 }
             });
             app.UseMvcWithDefaultRoute();
-            SeedDatabase(dbcontext);
+            //SeedDatabase(dbcontext);
         }
 
         private static void SeedDatabase(VouchersDBContext context)
@@ -91,7 +91,7 @@ namespace Vouchers
                 {
                     Date = DateTime.Now.AddDays(-2),
                     Amount = 800,
-                    Text = "Reiser-ST",
+                    Text = "Bogus AG",
                     Paid = false,
                     Expense = false,
                     Remark = true

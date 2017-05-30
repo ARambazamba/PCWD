@@ -82,6 +82,21 @@ function classesConstructor() {
     console.log(dog.barkName());
     console.log(dog.sayName());
     console.log(dog.breed);
+    var DateHour = (function () {
+        function DateHour(dateOrYear, monthOrRelativeHour, day, relativeHour) {
+            if (typeof dateOrYear === "number") {
+                this.date = new Date(dateOrYear, monthOrRelativeHour, day);
+                this.relativeHour = relativeHour;
+            }
+            else {
+                var date = dateOrYear;
+                this.date = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                this.relativeHour = monthOrRelativeHour;
+            }
+        }
+        return DateHour;
+    }());
+    var dh = new DateHour(new Date(), 2);
     var Smurf = (function () {
         function Smurf(name) {
             if (name.length < 1) {
@@ -225,4 +240,3 @@ function staticProperties() {
     var result = grid.calculateDistanceFromOrigin(p);
     console.log("Grid result: " + result);
 }
-//# sourceMappingURL=Classes.js.map

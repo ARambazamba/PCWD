@@ -326,14 +326,3 @@ function usingPromises() {
     });
 }
 
-function usingFetchAwait() {
-
-    async function getAllVouchers() {
-        let response = await fetch("./demos/vouchers.json");
-        let voucher = await response.json();
-        console.log("Data received");
-        console.log(voucher);
-    }
-
-    getAllVouchers();
-}

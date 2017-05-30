@@ -1,10 +1,10 @@
 ﻿var gulp = require('gulp');
 var concat = require('gulp-concat');
-var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
 var traceur = require('gulp-traceur');
 var babel = require('gulp-babel');
 var plumber = require('gulp-plumber');
+var typescript = require('gulp-tsc');
 
 var paths = {
     webroot: "./wwwroot/"
@@ -35,3 +35,9 @@ gulp.task('babel', function () {
 });
 
 gulp.task("both:tasks", ["min:js", "copy:js"]);
+
+gulp.task('compilets', function(){
+  gulp.src(['wwwroot/**/*.ts'])
+    .pipe(typescript())
+    .pipe(gulp.dest('dest/'))
+});
