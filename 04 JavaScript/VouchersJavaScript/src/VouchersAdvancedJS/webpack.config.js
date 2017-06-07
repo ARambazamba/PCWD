@@ -11,8 +11,21 @@ module.exports = {
     output: {
         filename: './wwwroot/demos/webpack/js/bundle.js'
     },
-    devtool: 'eval-source-map',
-    module: {
-        loaders: []
-    }
+    devtool: 'eval-source-map'
+    //
+    //,
+    //module: {
+    //    rules: [
+    //        {
+    //            test: /\.js$/,
+    //            exclude: [/node_modules/],
+    //            use: [
+    //                {
+    //                    loader: "babel-loader",
+    //                    options: { presets: ["es2015"] }
+    //                }
+    //            ]
+    //        }
+    //    ]
+    //}
 };
