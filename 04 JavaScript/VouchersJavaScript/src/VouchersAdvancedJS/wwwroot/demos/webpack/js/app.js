@@ -1,7 +1,11 @@
 require('./utils.js');
 require('./login.js');
+
 import {login} from "./login.js"
+import {Utils} from "./utils.js"
 
 debugger;
 login('admin', 'pwd');
-console.log('App loaded');
+
+let u = new Utils();
+u.log("all loaded and executed");
