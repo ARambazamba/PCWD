@@ -3,6 +3,5 @@ require('./login.js');
 import {login} from "./login.js"
 
 debugger;
-login('admin', 'radical');
-document.write("Welcome to Big Hair Concerts!!");
+login('admin', 'pwd');
 console.log('App loaded');

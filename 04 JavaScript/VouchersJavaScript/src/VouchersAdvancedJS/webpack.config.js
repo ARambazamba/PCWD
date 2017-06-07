@@ -1,14 +1,15 @@
-﻿
+﻿const path = require('path');
+
 module.exports = {
+    context: path.resolve(__dirname, './wwwroot/demos/webpack/js'),
     entry: {
-        app: './wwwroot/demos/basics/js/app.js'
+        app: './app.js'
     },
     resolve: {
         extensions: ['.js']
     },
     output: {
-        path: './wwwroot/demos/basics/js/',
-        filename: 'bundle.js'
+        filename: './wwwroot/demos/webpack/js/bundle.js'
     },
     devtool: 'eval-source-map',
     module: {

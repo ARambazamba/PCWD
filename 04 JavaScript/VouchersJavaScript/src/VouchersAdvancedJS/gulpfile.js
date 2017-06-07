@@ -8,6 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
     webroot: "./wwwroot/",
+
     demos: "./wwwroot/demos/",
     scss: "./wwwroot/sass/**/*.scss",
     scssDest: "./wwwroot/css/"
