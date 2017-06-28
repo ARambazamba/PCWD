@@ -2,10 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace DBFirst.Models
+namespace VouchersAdvancedJS.Models
 {
     public partial class VoucherCodeFirstDBContext : DbContext
     {
+        public virtual DbSet<BalanceAccounts> BalanceAccounts { get; set; }
+        public virtual DbSet<VoucherDetails> VoucherDetails { get; set; }
+        public virtual DbSet<Vouchers> Vouchers { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
@@ -35,8 +39,6 @@ namespace DBFirst.Models
 
                 entity.Property(e => e.AccountId).HasColumnName("AccountID");
 
-                entity.Property(e => e.Vatrate).HasColumnName("VATRate");
-
                 entity.Property(e => e.VoucherId).HasColumnName("VoucherID");
 
                 entity.HasOne(d => d.Account)
@@ -55,9 +57,5 @@ namespace DBFirst.Models
                 entity.Property(e => e.Amount).HasColumnType("decimal");
             });
         }
-
-        public virtual DbSet<BalanceAccounts> BalanceAccounts { get; set; }
-        public virtual DbSet<VoucherDetails> VoucherDetails { get; set; }
-        public virtual DbSet<Vouchers> Vouchers { get; set; }
     }
 }

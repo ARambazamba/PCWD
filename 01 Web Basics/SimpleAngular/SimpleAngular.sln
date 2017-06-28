@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B2DCBEB7-B36E-408E-A1B9-6552A88C1D51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{603B753A-AADC-41F2-9858-0F50085ABCED}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimpleAngular", "src\SimpleAngular\SimpleAngular.xproj", "{AA63DB6C-2516-46C5-A6E1-EEB639E6737D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleAngular", "src\SimpleAngular\SimpleAngular.csproj", "{AA63DB6C-2516-46C5-A6E1-EEB639E6737D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

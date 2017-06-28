@@ -34,20 +34,13 @@ namespace SimpleAngular
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            SetStartupPage(app, "index.html");
-
-
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("app.html");
+            app.UseDefaultFiles(options);
+            
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
-
-        private static void SetStartupPage(IApplicationBuilder app, string page)
-        {
-            DefaultFilesOptions options = new DefaultFilesOptions();
-            options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add(page);
-            app.UseDefaultFiles(options);
-        }
-
     }
 }

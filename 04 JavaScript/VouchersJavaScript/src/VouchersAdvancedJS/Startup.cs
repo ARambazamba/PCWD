@@ -63,16 +63,15 @@ namespace Vouchers
                 }
             });
             app.UseMvcWithDefaultRoute();
-            //SeedDatabase(dbcontext);
+            SeedDatabase(dbcontext);
         }
 
         private static void SeedDatabase(VouchersDBContext context)
         {
-            //To Create the Code First DB go to Package Manager Console ->
-            //PackageManagerConsole: 
-            //Install-Package Microsoft.EntityFrameworkCore.Tools -Pre
-            //Add-Migration MigrationName
-            //Update-Database
+            //To Create the DB go to console:
+            //[dotnet restore]
+            //dotnet ef migrations add MIGRATION-NAME
+            //dotnet ef database update
 
             if (context.BalanceAccounts.FirstOrDefault() == null)
             {

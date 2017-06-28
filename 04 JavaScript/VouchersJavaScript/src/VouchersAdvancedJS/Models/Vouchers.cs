@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DBFirst.Models
+namespace VouchersAdvancedJS.Models
 {
     public partial class Vouchers
     {

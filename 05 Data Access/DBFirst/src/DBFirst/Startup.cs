@@ -30,7 +30,7 @@ namespace Vouchers
             //services.AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
             //Fix as of https://github.com/aspnet/EntityFramework/issues/5385#issuecomment-220435119
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
-            services.AddEntityFrameworkSqlServer();//.AddDbContext<VouchersDBContext>();
+            services.AddEntityFrameworkSqlServer();
 
             services.AddMvc().AddJsonOptions(ser =>
             {
@@ -56,9 +56,9 @@ namespace Vouchers
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
 
-            //Install-Package Microsoft.EntityFrameworkCore.Tools -Version 1.0.0-preview2-final -Pre
-            //Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design -Version 1.0.1
-            //Scaffold-DbContext "Server=.;Database=VoucherCodeFirstDB;Trusted_Connection=true;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+            //[dotnet restore]
+            //dotnet add package Microsoft.EntityFrameworkCore.SqlServer.Design
+            //dotnet ef dbcontext scaffold "Server=.;Database=VoucherCodeFirstDB;Trusted_Connection=true;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models
         }
     }
 }

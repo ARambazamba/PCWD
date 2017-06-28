@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DBFirst.Models
+namespace VouchersAdvancedJS.Models
 {
     public partial class VoucherDetails
     {
@@ -10,7 +10,6 @@ namespace DBFirst.Models
         public int Amount { get; set; }
         public string Comment { get; set; }
         public string Text { get; set; }
-        public int Vatrate { get; set; }
         public int VoucherId { get; set; }
 
         public virtual BalanceAccounts Account { get; set; }

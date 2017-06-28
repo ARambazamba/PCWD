@@ -13,7 +13,6 @@ namespace Vouchers.Controlers.Api
 
         public BalanceController(VouchersDBContext context)
         {
-            var x = 10;
             ctx = context;
         }
 
