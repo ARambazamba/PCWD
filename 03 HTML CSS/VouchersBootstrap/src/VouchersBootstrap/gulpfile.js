@@ -7,13 +7,12 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
     webroot: "./wwwroot/",
+    scriptSource: "./wwwroot/demos/*.js",
+    scriptDest: "./wwwroot/js/",
+    demos: "./wwwroot/demos/",
     scss: "./wwwroot/sass/**/*.scss",
     scssDest: "./wwwroot/css/"
 }
-
-paths.scriptSouce = "./Scripts/*";
-paths.scriptDest = paths.webroot + "js/";
-
 
 gulp.task('min:js', function () {
     return gulp.src([paths.scriptSouce])
