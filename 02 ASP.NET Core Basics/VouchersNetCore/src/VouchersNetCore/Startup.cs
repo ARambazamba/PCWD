@@ -38,7 +38,7 @@ namespace VouchersNetCore
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
-                //app.UseBrowserLink();
+                app.UseBrowserLink();
             }
 
             var startHTML = true;
@@ -60,7 +60,9 @@ namespace VouchersNetCore
                         }
                     });
                 else
+                {
                     app.UseStaticFiles();
+                }
             }
             else
             {

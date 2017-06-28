@@ -5,22 +5,20 @@ var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
 
 var paths = {
-    webroot: "./wwwroot/"
+    webroot: "./wwwroot/",
+    jsSource: "./Scripts/*",
+    jsDest: "./wwwroot/js/"
 }
 
-paths.dataRequest = "./Scripts/*";
-paths.jsDest = paths.webroot + "js/";
-
-
 gulp.task('min:js', function () {
-    return gulp.src([paths.dataRequest])
+    return gulp.src([paths.jsSource])
         .pipe(concat(paths.jsDest + "min/site.min.js"))
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
 
 gulp.task('copy:js', function () {
-    return gulp.src([paths.dataRequest])
+    return gulp.src([paths.jsSource])
         .pipe(gulp.dest(paths.jsDest));
 });
 
