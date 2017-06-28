@@ -51,7 +51,7 @@ namespace Vouchers
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("crud.html");
+            options.DefaultFileNames.Add("app.html");
             app.UseDefaultFiles(options);
 
             if (env.IsDevelopment())
