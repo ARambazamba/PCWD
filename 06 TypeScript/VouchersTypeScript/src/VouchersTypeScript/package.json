@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "compile": "tsc -p ./src",
-    "watch": "tsc -w -p ./src"
+    "watch": "tsc -w -p ./src",
+    "postinstall": "typings install dt~core-js@0.9.7+20161130133742 --global"
   },
   "devDependencies": {
     "babel-preset-es2015": "^x.x.x",

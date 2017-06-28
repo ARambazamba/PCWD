@@ -305,24 +305,32 @@ function consumeRessource() {
 
 function usingPromises() {
 
-    function doAsyncTask(succeed: boolean) {
-
-        var promise = new Promise((resolve, reject) => {
+    function doAsyncTask(succeed: boolean): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
             setTimeout(() => {
-                console.log("Async Work Complete");
+                console.log("Async Task Complete");
                 if (succeed) {
-                    resolve("Promise resolved");
+                    resolve("Outcome: Promise resolved");
                 } else {
-                    reject("Promise rejected");
+                    reject("Outcome: Promise rejected");
                 }
             }, 1000);
-        });
-        return promise;
+        });        
     }
 
     doAsyncTask(true).then((msg) => {
         console.log(msg);
-        console.log("Async Task complete");
     });
 }
 
+function usingFetchAwait() {
+
+    //async function getAllVouchers() {
+    //    let response = await fetch("./demos/vouchers.json");
+    //    let voucher = await response.json();
+    //    console.log("Data received using fetch - await");
+    //    console.log(voucher);
+    //}
+
+    //getAllVouchers();
+}
