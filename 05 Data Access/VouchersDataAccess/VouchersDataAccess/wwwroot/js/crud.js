@@ -194,12 +194,22 @@ function getVM() {
     });
 }
 
+//Execute once as it is and once with an id of 0
 function doSave() {
     debugger;
-    var url = "/api/vouchers/getsum/true";
+    var voucher = {
+        "ID": 2,
+        "Text": "BP Tankstelle",
+        "Date": "2017-06-27T14:30:04.8849651",
+        "Amount": 65,
+        "Paid": false,
+        "Expense": true,
+        "Remark": true
+    };
+    var url = "/api/vouchers/save/";
     $.ajax({
         type: "POST",
-        data: JSON.stringify({}),
+        data: JSON.stringify(voucher),
         url: url,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
