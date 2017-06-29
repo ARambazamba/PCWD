@@ -31,7 +31,8 @@ namespace Vouchers
             //Fix as of https://github.com/aspnet/EntityFramework/issues/5385#issuecomment-220435119
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
             services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>();
-            
+            services.AddSingleton<IVouchersRepository, VouchersRepository>();
+
             services.AddMvc().AddJsonOptions(ser =>
             {
                 ser.SerializerSettings.ContractResolver =
@@ -51,7 +52,7 @@ namespace Vouchers
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("app.html");
+            options.DefaultFileNames.Add("crud.html");
             app.UseDefaultFiles(options);
 
             if (env.IsDevelopment())

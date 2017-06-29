@@ -164,3 +164,49 @@ function deleteVoucherDetail() {
     });
 }
 
+function getSum() {
+    debugger;
+    var url = "/api/vouchers/getsum/true";
+    $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            output("query successful, data received: " + JSON.stringify(msg));
+        },
+        error: onErr
+    });
+}
+
+function getVM() {
+    debugger;
+    var url = "/api/vouchers/getvm/1";
+    $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            output("query successful, data received: " + JSON.stringify(msg));
+        },
+        error: onErr
+    });
+}
+
+function doSave() {
+    debugger;
+    var url = "/api/vouchers/getsum/true";
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify({}),
+        url: url,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            output("query successful, data received: " + JSON.stringify(msg));
+        },
+        error: onErr
+    });
+}
+
