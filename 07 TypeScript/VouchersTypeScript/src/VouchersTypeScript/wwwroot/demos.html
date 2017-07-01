@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript Demos Home</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/demo.css" rel="stylesheet" />
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="demos/mathFunctions.js"></script>
+    <script src="demos.js"></script>
+    <script src="demos/types.js"></script>
+    <script src="demos/Classes.js"></script>
+    <script src="demos/functions.js"></script>
+    <script src="demos/interfaces.js"></script>
+    <script src="demos/generics.js"></script>
+    <script src="demos/Service.js"></script>
+    <script src="demos/modules.js"></script>
+</head>
+<body>
+    <div id="demoContainer" class="container-fluid">
+        <div class="row">
+            <header class="header" md->
+                <h3>PowerCamp: Web Development - TypeScript - Demos</h3><br/>
+            </header>
+        </div>
+        <div class="row">
+            <div class="demoMenu col-xs-3">
+                <div id="status">Please choose:</div>
+                <a href="#" onclick="loadDemo('demos/types.html', this, false);">Types & Arrays</a>
+                <a href="#" onclick="loadDemo('demos/Classes.html', this, false);">Classes</a>
+                <a href="#" onclick="loadDemo('demos/functions.html', this, false);">Functions</a>
+                <a href="#" onclick="loadDemo('demos/interfaces.html', this, false);">Interfaces</a>
+                <a href="#" onclick="loadDemo('demos/generics.html', this, false);">Generics</a>
+                <a href="#" onclick="loadDemo('demos/modules.html', this, false);">Modules, Namespaces, Imports</a>
+                <a href="#" onclick="loadDemo('demos/Service.html', this, false);">Consuming Services</a>                
+            </div>
+            <div class="workbench col-xs-8 col-xs-offset-1"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

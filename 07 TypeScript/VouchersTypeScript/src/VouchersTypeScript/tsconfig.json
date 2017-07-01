@@ -1,0 +1,15 @@
+{
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "rootDir": "./wwwroot/",
+    "strict": false,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "experimentalDecorators": true
+  }
+}
