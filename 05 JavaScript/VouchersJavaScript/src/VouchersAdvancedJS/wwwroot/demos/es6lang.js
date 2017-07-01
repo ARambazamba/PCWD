@@ -409,26 +409,31 @@ function asyncAwait() {
 function usingFetch() {
     debugger;
 
+    //helpful reference: https://davidwalsh.name/fetch
+
     //classic fetch - no config
     fetch("./demos/vouchers.json").then((resp) => {
         console.log("Data received from fetch:");
         console.log(resp.json()); //Find Data in PromiseValue
     });
 
-    //fetch using config
+    //fetch using config with custom header
+    var url = "/api/vouchers";
+    var data = { Text: "Inserted by WebApi", Date: new Date() };
+
     var headers = new Headers();
+    headers.set("Content-Type", "application/json; charset=utf-8");
 
     var cfg = {
-        method: 'GET',
+        method: 'POST',
         headers: headers,
         mode: 'cors',
-        cache: 'default'
+        cache: 'default',
+        body: JSON.stringify(data)
     };
-
-    var url = "./demos/vouchers.json";
-
+    
     fetch(url, cfg).then((resp) => {
-
+        console.log("Data received from fetch using config:");
+        console.log(resp.json()); //Find Data in PromiseValue
     });
-
 }
