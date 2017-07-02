@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
+var cache = require('gulp-cached'); 
 
 var paths = {
     webroot: "./wwwroot/",
@@ -23,3 +24,16 @@ gulp.task('copy:js', function () {
 });
 
 gulp.task("both:tasks", ["min:js", "copy:js"]);
+
+gulp.task('copy:node', function () {
+try {
+    gulp.src('node_modules/**')
+        .pipe(cache('node_modules'))
+        .pipe(gulp.dest('wwwroot/node_modules'));
+    }
+    catch (e) 
+    {
+        return -1;
+    }
+    return 0;
+});

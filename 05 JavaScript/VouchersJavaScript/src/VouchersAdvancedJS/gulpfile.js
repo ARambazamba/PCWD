@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var sourcemaps = require('gulp-sourcemaps');
+var cache = require('gulp-cached'); 
 
 var paths = {
     webroot: "./wwwroot/",
@@ -48,4 +49,17 @@ gulp.task('babel:es5', () => {
         .pipe(concat('es5bundle.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.demos));
+});
+
+gulp.task('copy:node', function () {
+try {
+    gulp.src('node_modules/**')
+        .pipe(cache('node_modules'))
+        .pipe(gulp.dest('wwwroot/node_modules'));
+    }
+    catch (e) 
+    {
+        return -1;
+    }
+    return 0;
 });
