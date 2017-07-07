@@ -1,5 +1,7 @@
-﻿import "promise/polyfill"
-import "whatwg-fetch"
+﻿/// <reference path="jquery.d.ts"/>
+//import "promise/polyfill"
+//import "whatwg-fetch"
+
 import Servicemodel = require("./servicemodel");
 
 namespace Vouchers.Services {
@@ -309,32 +311,32 @@ function consumeRessource() {
 
 function usingPromises() {
 
-    function doAsyncTask(succeed: boolean): Promise<string> {
-        return new Promise<string>((resolve, reject) => {
-            setTimeout(() => {
-                console.log("Async Task Complete");
-                if (succeed) {
-                    resolve("Outcome: Promise resolved");
-                } else {
-                    reject("Outcome: Promise rejected");
-                }
-            }, 1000);
-        });        
-    }
+    //function doAsyncTask(succeed: boolean): Promise<string> {
+    //    return new Promise<string>((resolve, reject) => {
+    //        setTimeout(() => {
+    //            console.log("Async Task Complete");
+    //            if (succeed) {
+    //                resolve("Outcome: Promise resolved");
+    //            } else {
+    //                reject("Outcome: Promise rejected");
+    //            }
+    //        }, 1000);
+    //    });        
+    //}
 
-    doAsyncTask(true).then((msg) => {
-        console.log(msg);
-    });
+    //doAsyncTask(true).then((msg) => {
+    //    console.log(msg);
+    //});
 }
 
 function usingFetchAwait() {
 
-    async function getAllVouchers() {
-        let response = await fetch("./demos/vouchers.json");
-        let voucher = await response.json();
-        console.log("Data received using fetch - await");
-        console.log(voucher);
-    }
+    //async function getAllVouchers() {
+    //    let response = await fetch("./demos/vouchers.json");
+    //    let voucher = await response.json();
+    //    console.log("Data received using fetch - await");
+    //    console.log(voucher);
+    //}
 
-    getAllVouchers();
+    //getAllVouchers();
 }
