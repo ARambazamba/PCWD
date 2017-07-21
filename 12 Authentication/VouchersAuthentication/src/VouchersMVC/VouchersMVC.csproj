@@ -20,7 +20,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.2" />
@@ -32,19 +31,22 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.2" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.0.0-*" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="4.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
   </ItemGroup>
 

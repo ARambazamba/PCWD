@@ -11,7 +11,7 @@ namespace Vouchers
     {
         private IVouchersRepository rep;
 
-        private VouchersDbContext ctx;
+        private VouchersDBContext ctx;
 
         public Demo(IVouchersRepository repository)
         {

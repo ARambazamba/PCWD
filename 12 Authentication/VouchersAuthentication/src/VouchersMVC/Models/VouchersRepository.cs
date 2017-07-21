@@ -9,10 +9,10 @@ namespace Vouchers
 {
     public class VouchersRepository : IVouchersRepository
     {
-        private VouchersDbContext ctx;
+        private VouchersDBContext ctx;
         private ILogger<VouchersRepository> logger;
 
-        public VouchersRepository(VouchersDbContext context, ILogger<VouchersRepository> lg)
+        public VouchersRepository(VouchersDBContext context, ILogger<VouchersRepository> lg)
         {
             ctx = context;
             logger = lg;
