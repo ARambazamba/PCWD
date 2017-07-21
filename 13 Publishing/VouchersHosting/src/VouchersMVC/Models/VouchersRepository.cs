@@ -9,10 +9,10 @@ namespace Vouchers
 {
     public class VouchersRepository : IVouchersRepository
     {
-        private VouchersDbContext ctx;
+        private VouchersDBContext ctx;
         private ILogger<VouchersRepository> logger;
 
-        public VouchersRepository(VouchersDbContext context, ILogger<VouchersRepository> lg)
+        public VouchersRepository(VouchersDBContext context, ILogger<VouchersRepository> lg)
         {
             ctx = context;
             logger = lg;
@@ -63,26 +63,13 @@ namespace Vouchers
 
         //Details
 
-        public VoucherDetailsViewModel GetVoucher(int ID)
+        public VoucherViewModel GetVoucher(int ID)
         {
-            VoucherDetailsViewModel result = new VoucherDetailsViewModel();
-            if (ID == 0)
+            VoucherViewModel result = new VoucherViewModel
             {
-                result.CurrentVoucher = new Voucher();
-            }
-            else
-            {
-                result.CurrentVoucher = ctx.Vouchers.FirstOrDefault(f => f.ID == ID);
-                if (result.CurrentVoucher != null)
-                {
-                    result.Details = ctx.VoucherDetails.Where(f => f.VoucherID == ID).ToList();
-                    if (result.Details.Any())
-                    {
-                        result.EditDetail = result.Details[0];
-                    }
-                }
-            }
-            result.Accounts = ctx.BalanceAccounts.ToList();
+                CurrentVoucher = ID == 0 ? new Voucher() : ctx.Vouchers.Include(v => v.Details).FirstOrDefault(f => f.ID == ID),
+                Accounts = ctx.BalanceAccounts.ToList()
+            };
             return result;
         }
 

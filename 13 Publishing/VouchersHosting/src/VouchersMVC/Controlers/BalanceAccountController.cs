@@ -8,9 +8,9 @@ namespace Vouchers
 {
     public class BalanceAccountController : Controller
     {
-        private VouchersDbContext ctx;
+        private VouchersDBContext ctx;
 
-        public BalanceAccountController(VouchersDbContext dbcontext)
+        public BalanceAccountController(VouchersDBContext dbcontext)
         {
             ctx = dbcontext;
         }

@@ -7,8 +7,8 @@ namespace Vouchers
 {
     public class BalanceService
     {
-        private VouchersDbContext ctx;
-        public BalanceService(VouchersDbContext context)
+        private VouchersDBContext ctx;
+        public BalanceService(VouchersDBContext context)
         {
             ctx = context;
         }

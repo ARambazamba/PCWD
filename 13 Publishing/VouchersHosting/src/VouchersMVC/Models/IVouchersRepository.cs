@@ -6,7 +6,7 @@ namespace Vouchers
     public interface IVouchersRepository
     {
         IEnumerable<Voucher> GetAllVouchers();
-        VoucherDetailsViewModel GetVoucher(Int32 ID);
+        VoucherViewModel GetVoucher(Int32 ID);
         Voucher CreateVoucher(Voucher currentVoucher);
         Voucher UpdateVoucher(Voucher currentVoucher);
         void DeleteVoucher(int ID);

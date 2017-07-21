@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,9 +7,9 @@ namespace Vouchers
 {
     public class MarkedVouchers : ViewComponent
     {
-        private VouchersDbContext ctx;
+        private readonly VouchersDBContext ctx;
 
-        public MarkedVouchers(VouchersDbContext db)
+        public MarkedVouchers(VouchersDBContext db)
         {
             ctx = db;
         }
@@ -21,6 +19,5 @@ namespace Vouchers
             var model = await ctx.Vouchers.Where(f => f.Remark).ToListAsync();
             return View("Default", model);
         }
-
     }
 }

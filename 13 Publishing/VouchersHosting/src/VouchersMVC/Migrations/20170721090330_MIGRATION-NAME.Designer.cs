@@ -8,9 +8,10 @@ using Vouchers;
 namespace VouchersMVC.Migrations
 {
     [DbContext(typeof(VouchersDBContext))]
-    partial class VouchersDBContextModelSnapshot : ModelSnapshot
+    [Migration("20170721090330_MIGRATION-NAME")]
+    partial class MIGRATIONNAME
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

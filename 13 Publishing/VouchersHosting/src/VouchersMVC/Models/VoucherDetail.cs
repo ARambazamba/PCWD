@@ -20,6 +20,8 @@ namespace Vouchers
 
         public int Amount { get; set; }
 
+        public int VATRate { get; set; }
+
         public string Comment { get; set; }
 
     }
