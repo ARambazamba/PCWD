@@ -1,7 +1,8 @@
-﻿/// <reference path="jquery.d.ts"/>
+﻿
 //import "promise/polyfill"
 //import "whatwg-fetch"
 
+import * as moment from 'moment';
 import Servicemodel = require("./servicemodel");
 
 namespace Vouchers.Services {
@@ -188,6 +189,7 @@ namespace Vouchers.Services {
                     '<td>' + item.Paid + '</td>' +
                     '</tr>');
             });
+            
             $('#' + this.options.tblBody).append("</table>");
 
             this.doPaging({ pagerSelector: '#' + this.options.tblPager, showPrevNext: true, hidePageNumbers: false, perPage: this.options.pageSize, showAll: false }, $('#' + this.options.tblBody));

@@ -1,5 +1,6 @@
 ﻿import Servicemodel = require("./servicemodel");
-import Vouchers = Servicemodel.Vouchers;
+//import Vouchers = Servicemodel.Vouchers;
+var x = "alex";
 
 function genericFunctions() {
     debugger;
@@ -48,8 +49,8 @@ function genericClassesInterfaces() {
         }
     };
 
-    let cat = new Catalog<Vouchers.IVoucher>();
-    var v: Vouchers.IVoucher = { ID: 1, Text: "Media Markt", Amount: 22, Date: new Date(), Paid: false, Expense: true };
+    let cat = new Catalog<Servicemodel.Vouchers.IVoucher>();
+    var v: Servicemodel.Vouchers.IVoucher = { ID: 1, Text: "Media Markt", Amount: 22, Date: new Date(), Paid: false, Expense: true };
     cat.addItem(v);
 };
 

@@ -1,19 +1,18 @@
 {
-    "version": "0.1.0",
+    "version": "2.0.0",
+    "args": [],
     "tasks": [
         {
             "taskName": "tsc",
             "command": "tsc",
             "args": ["-w"],
-            "isShellCommand": true,
             "isBackground": true,
             "problemMatcher": "$tsc-watch"
         },
         {
             "taskName": "build",
-            "command": "dotnet",
-            "args": ["${workspaceRoot}/project.json"],
-            "isBuildCommand": true,
+            "command": "dotnet build",
+            "args": ["${workspaceRoot}/VouchersTypeScript.csproj"],
             "problemMatcher": "$msCompile"
         }       
     ]

@@ -1,5 +1,4 @@
 "use strict";
-/// <reference path="jquery.d.ts"/>
 //import "promise/polyfill"
 //import "whatwg-fetch"
 Object.defineProperty(exports, "__esModule", { value: true });

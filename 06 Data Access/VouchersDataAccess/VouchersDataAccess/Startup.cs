@@ -40,7 +40,7 @@ namespace Vouchers
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
         {
             loggerFactory.AddConsole();
 

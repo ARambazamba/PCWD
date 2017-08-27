@@ -16,6 +16,12 @@ var paths = {
     scssDest: "./wwwroot/css/"
 }
 
+gulp.task('compile:sass', function () {
+    gulp.src(paths.scss)
+        .pipe(sass())
+        .pipe(gulp.dest(paths.scssDest));
+});
+
 gulp.task('min:js', function () {
     return gulp.src([paths.scriptSource])
         .pipe(concat(paths.scriptDest + "min/site.min.js"))
