@@ -2,6 +2,7 @@
 //import "promise/polyfill"
 //import "whatwg-fetch"
 Object.defineProperty(exports, "__esModule", { value: true });
+var moment = require("moment");
 var Vouchers;
 (function (Vouchers) {
     var Services;
