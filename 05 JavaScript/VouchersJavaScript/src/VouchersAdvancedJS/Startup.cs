@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore;
 
 namespace Vouchers
 {
@@ -26,16 +27,13 @@ namespace Vouchers
                 .AddJsonFile("appsettings.json");
             IConfigurationRoot configuration = cfgBuilder.Build();
             services.Configure<VouchersConfig>(configuration);
-
             string conStr = configuration["ConnectionStrings:SQLServerDBConnection"];
-            //services.AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
-            //Fix as of https://github.com/aspnet/EntityFramework/issues/5385#issuecomment-220435119
+
             services.AddSingleton(typeof(IConfigurationRoot), configuration);
             services.AddEntityFrameworkSqlServer()
                 .AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
             services.AddScoped<IVouchersRepository, VouchersRepository>();
-            //services.AddSingleton<IVouchersRepository, VouchersRepository>();
-
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",
@@ -47,8 +45,7 @@ namespace Vouchers
 
             services.AddMvc().AddJsonOptions(ser =>
             {
-                ser.SerializerSettings.ContractResolver =
-                    new DefaultContractResolver();
+                ser.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
         }
 
