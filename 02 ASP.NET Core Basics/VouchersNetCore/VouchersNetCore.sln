@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{113E5F71-24B8-4C00-AC7B-AE00DC10651C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DA4CE858-404E-491E-84F3-1AB6ADC9637F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDK", "SDK", "{87480576-3DC7-4164-8737-F518397544C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VouchersNetCore", "src\VouchersNetCore\VouchersNetCore.csproj", "{249A2B69-3330-4914-BEF8-903984EF69C1}"
 EndProject
@@ -27,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{249A2B69-3330-4914-BEF8-903984EF69C1} = {113E5F71-24B8-4C00-AC7B-AE00DC10651C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E9AE90A-2949-4344-BCB9-917974273F11}
 	EndGlobalSection
 EndGlobal
