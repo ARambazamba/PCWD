@@ -42,13 +42,10 @@ namespace Vouchers
 
         public Voucher UpdateVoucher(Voucher voucher)
         {
-            var v = ctx.Vouchers.FirstOrDefault(f => f.ID == voucher.ID);
-            if (v != null)
-            {
-                Mapper.CopyData(voucher, v);
-                ctx.SaveChanges();
-            }
-            return v;
+            ctx.Vouchers.Attach(voucher);
+            ctx.Entry(voucher).State = EntityState.Modified;
+            voucher.ID = ctx.SaveChanges();
+            return voucher;
         }
 
         public void DeleteVoucher(int ID)

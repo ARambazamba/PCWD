@@ -1,25 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace Vouchers
 {
+    //To manage Migrations & create the DB go to console:
+    //[dotnet restore]
+    //dotnet ef migrations add MIGRATION-NAME
+    //dotnet ef database update
+
     public class VouchersDBContext : DbContext
     {
         private VouchersConfig config;
 
-        public VouchersDBContext(IOptions<VouchersConfig> cfg)
+        public VouchersDBContext(DbContextOptions<VouchersDBContext> options) : base(options)
         {
-            config = cfg.Value;
         }
 
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<VoucherDetail> VoucherDetails { get; set; }
         public DbSet<BalanceAccount> BalanceAccounts { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(config.ConnectionStrings.SQLServerDBConnection);
-            base.OnConfiguring(optionsBuilder);
-        }
     }
 }
