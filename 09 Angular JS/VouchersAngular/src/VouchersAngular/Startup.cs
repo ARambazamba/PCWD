@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Vouchers
 {
@@ -24,30 +25,26 @@ namespace Vouchers
             var cfgBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
-            IConfigurationRoot Configuration = cfgBuilder.Build();
-            services.Configure<VouchersConfig>(Configuration);
-            services.AddSingleton(typeof(IConfigurationRoot), Configuration);
-            services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>();
+            IConfigurationRoot configuration = cfgBuilder.Build();
+            services.Configure<VouchersConfig>(configuration);
+            string conStr = configuration["ConnectionStrings:SQLServerDBConnection"];
 
-            if (env.IsDevelopment())
+            services.AddSingleton(typeof(IConfigurationRoot), configuration);
+            services.AddEntityFrameworkSqlServer().AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
+            
+            services.AddCors(options =>
             {
-                services
-                    .AddMvc()
-                    .AddMvcOptions(options =>
-                    {
-                        options.CacheProfiles.Add("NoCache", new CacheProfile
-                        {
-                            NoStore = true,
-                            Duration = 0
-                        });
-                    }).AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            }
-            else
+                options.AddPolicy("AllowAll",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+
+            services.AddMvc().AddJsonOptions(ser =>
             {
-                services
-                    .AddMvc()
-                    .AddJsonOptions(opts => opts.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            }
+                ser.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
