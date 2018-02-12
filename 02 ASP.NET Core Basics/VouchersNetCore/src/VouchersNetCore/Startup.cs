@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 using Vouchers;
 
 namespace VouchersNetCore
@@ -18,6 +20,7 @@ namespace VouchersNetCore
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Config
             var cfgBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
@@ -26,6 +29,31 @@ namespace VouchersNetCore
             var conStr = configuration["ConnectionStrings:LocalDBConnection"];
             //Strong Typed
             services.Configure<VouchersConfig>(configuration);
+
+            //CORS
+            var corsBuilder = new CorsPolicyBuilder();
+            corsBuilder.AllowAnyHeader();
+            corsBuilder.AllowAnyMethod();
+            corsBuilder.AllowAnyOrigin();
+            // For specific URL 
+            // corsBuilder.WithOrigins("http://localhost:4200")
+            corsBuilder.AllowCredentials();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+
+            //Serialization Options
+            services.AddMvc().AddJsonOptions(ser =>
+            {
+                ser.SerializerSettings.ContractResolver =
+                    new DefaultContractResolver();
+            });
 
             services.AddMvc();
         }
@@ -41,6 +69,7 @@ namespace VouchersNetCore
                 app.UseBrowserLink();
             }
 
+            //Set Default Start Page
             var startHTML = true;
 
             if (startHTML)
@@ -59,15 +88,16 @@ namespace VouchersNetCore
                             context.Context.Response.Headers["Expires"] = "-1";
                         }
                     });
-                else
-                {
-                    app.UseStaticFiles();
-                }
             }
             else
             {
-                app.UseMvcWithDefaultRoute();
+                app.UseMvcWithDefaultRoute();                
             }
-        }
+
+            //Cors
+            app.UseCors("AllowAll");
+
+            app.UseStaticFiles();
+        }        
     }
 }
