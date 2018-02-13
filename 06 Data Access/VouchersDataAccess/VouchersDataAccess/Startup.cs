@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,17 +22,28 @@ namespace Vouchers
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Config
             var cfgBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
             IConfigurationRoot configuration = cfgBuilder.Build();
             services.Configure<VouchersConfig>(configuration);
+            services.AddSingleton(typeof(IConfigurationRoot), configuration);
             string conStr = configuration["ConnectionStrings:SQLServerDBConnection"];
 
-            services.AddSingleton(typeof(IConfigurationRoot), configuration);
+            //EF
             services.AddEntityFrameworkSqlServer()
                 .AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
             services.AddScoped<IVouchersRepository, VouchersRepository>();
+
+            //CORS
+            var corsBuilder = new CorsPolicyBuilder();
+            corsBuilder.AllowAnyHeader();
+            corsBuilder.AllowAnyMethod();
+            corsBuilder.AllowAnyOrigin();
+            // For specific URL 
+            // corsBuilder.WithOrigins("http://localhost:4200")
+            corsBuilder.AllowCredentials();
 
             services.AddCors(options =>
             {
@@ -42,9 +54,11 @@ namespace Vouchers
                         .AllowCredentials());
             });
 
+            //Serialization Options
             services.AddMvc().AddJsonOptions(ser =>
             {
-                ser.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                ser.SerializerSettings.ContractResolver =
+                    new DefaultContractResolver();
             });
         }
 
@@ -81,6 +95,7 @@ namespace Vouchers
             }
 
             app.UseCors("AllowAll");
+
             app.UseMvcWithDefaultRoute();
         }
     }

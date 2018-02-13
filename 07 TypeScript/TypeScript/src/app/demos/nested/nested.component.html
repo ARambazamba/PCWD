@@ -1,0 +1,19 @@
+<div class="selection">
+    <h4><a (click)="changeView(true)">Nested</a> | <a (click)="changeView(false)">Related</a></h4>
+</div>
+
+<div class="section" *ngIf="showNested">
+  <h4>List of Employees - Nested</h4>
+  <ul>
+    <li *ngFor="let e of employees">
+      <app-person [person]="e" [edit]="false" #personRef ></app-person>
+      <a (click)='personRef.doDelete()'>Delete Person</a>
+      <hr>
+    </li>
+  </ul>
+</div>
+
+<div class="section" *ngIf="!showNested">
+  <h4>List of Persons - Related / Master Detail</h4>
+  <app-persons></app-persons>
+</div>

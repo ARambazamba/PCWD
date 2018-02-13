@@ -1,0 +1,5 @@
+[
+    {"url": "promise", "title": "Using Promises CRUD", "component": "PromiseComponent"},
+    {"url": "observables", "title": "Using Observables CRUD", "component": "ObservablesComponent"},
+    {"url": "clients", "title": "Comparing HttpClients", "component": "HttpClientsComponent"}
+]

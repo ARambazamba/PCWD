@@ -1,0 +1,35 @@
+a {
+    display: block;
+    text-decoration: none;    
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+
+h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.panel {
+    background-color: white;
+    margin:  15px;
+    padding: 20px;
+}
+
+.menu {
+    border: 1px solid #0072C6;   
+    min-height: 250px;
+    width: 15%;
+    float: left;    
+    padding: 15px;
+}
+
+.workbench {    
+    min-height: 250px;
+}
+
+.imgCell{
+    padding-top: 5px;
+    vertical-align: middle;
+}

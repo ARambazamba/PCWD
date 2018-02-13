@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,15 @@ namespace Vouchers
             services.AddScoped<IVouchersRepository, VouchersRepository>();
             services.AddTransient<BalanceService>();
 
+            //CORS
+            var corsBuilder = new CorsPolicyBuilder();
+            corsBuilder.AllowAnyHeader();
+            corsBuilder.AllowAnyMethod();
+            corsBuilder.AllowAnyOrigin();
+            // For specific URL 
+            // corsBuilder.WithOrigins("http://localhost:4200")
+            corsBuilder.AllowCredentials();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",
@@ -44,9 +54,11 @@ namespace Vouchers
                         .AllowCredentials());
             });
 
+            //Serialization Options
             services.AddMvc().AddJsonOptions(ser =>
             {
-                ser.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                ser.SerializerSettings.ContractResolver =
+                    new DefaultContractResolver();
             });
         }
 
@@ -81,6 +93,9 @@ namespace Vouchers
             {
                 app.UseStaticFiles();
             }
+
+            //Cors
+            app.UseCors("AllowAll");
 
             app.UseMvcWithDefaultRoute();
         }
