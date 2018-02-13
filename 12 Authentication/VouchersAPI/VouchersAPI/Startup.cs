@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using JSNLog;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Facebook;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +18,7 @@ namespace Vouchers
 {
     public class Startup
     {
-        private IHostingEnvironment env;
+        private readonly IHostingEnvironment env;
 
         public Startup(IHostingEnvironment environment)
         {
@@ -33,14 +31,14 @@ namespace Vouchers
             var cfgBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
-            IConfigurationRoot configuration = cfgBuilder.Build();
+            var configuration = cfgBuilder.Build();
             services.Configure<VouchersConfig>(configuration);
             services.AddSingleton(typeof(IConfigurationRoot), configuration);
-            string conStr = configuration["ConnectionStrings:SQLServerDBConnection"];
+            var conStr = configuration["ConnectionStrings:SQLServerDBConnection"];
 
             //EF
             services.AddEntityFrameworkSqlServer()
-                    .AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
+                .AddDbContext<VouchersDBContext>(options => options.UseSqlServer(conStr));
             services.AddScoped<IVouchersRepository, VouchersRepository>();
 
             //Identity
@@ -52,7 +50,8 @@ namespace Vouchers
             //SetPasswordOptions(services);
 
             //Facebook Auth
-            services.AddAuthentication(options => {
+            services.AddAuthentication(options =>
+            {
                 options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -60,17 +59,18 @@ namespace Vouchers
             {
                 options.AppId = configuration["Authentication:Facebook:AppId"];
                 options.AppSecret = configuration["Authentication:Facebook:AppSecret"];
-            });
-            
+            }).AddCookie();
+
             //CORS
+            //Required if you develop Angular on a seperate proj
             var corsBuilder = new CorsPolicyBuilder();
             corsBuilder.AllowAnyHeader();
             corsBuilder.AllowAnyMethod();
             corsBuilder.AllowAnyOrigin();
-            // For specific URL use: 
+            // For specific URL ie. your Angular CLI Frontend use: 
             // corsBuilder.WithOrigins("http://localhost:4200")
             corsBuilder.AllowCredentials();
-
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",
@@ -84,11 +84,12 @@ namespace Vouchers
             services.AddMvc().AddJsonOptions(ser =>
             {
                 ser.SerializerSettings.ContractResolver =
-                 new DefaultContractResolver();
+                    new DefaultContractResolver();
             });
         }
-        
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, VouchersDBContext dbcontext)
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,
+            VouchersDBContext dbcontext)
         {
             //Logging
             loggerFactory.AddNLog();
@@ -112,7 +113,6 @@ namespace Vouchers
             //app.UseDefaultFiles(options);
 
             if (env.IsDevelopment())
-            {
                 app.UseStaticFiles(new StaticFileOptions
                 {
                     OnPrepareResponse = context =>
@@ -122,11 +122,8 @@ namespace Vouchers
                         context.Context.Response.Headers["Expires"] = "-1";
                     }
                 });
-            }
             else
-            {
                 app.UseStaticFiles();
-            }
 
 
             //Cors
