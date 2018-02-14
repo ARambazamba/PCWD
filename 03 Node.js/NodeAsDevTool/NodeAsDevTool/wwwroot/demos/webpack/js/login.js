@@ -1,5 +1,4 @@
 
-
 let login = function login(usrname, password) {
     if (usrname !== 'admin' || password !== 'pwd') {
         console.log('incorrect login');

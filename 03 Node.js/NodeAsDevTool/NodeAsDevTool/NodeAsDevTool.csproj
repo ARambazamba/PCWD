@@ -18,4 +18,7 @@
     <None Include="wwwroot\demos\webpack\js\login.js" />
     <None Include="wwwroot\demos\webpack\js\utils.js" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
 </Project>

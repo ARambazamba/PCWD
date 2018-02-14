@@ -1,6 +1,3 @@
-//require('./utils.js');
-//require('./login.js');
-
 import {login} from "./login.js"
 import {Utils} from "./utils.js"
 
