@@ -33,9 +33,6 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -63,29 +60,29 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return login; });\n\r\n\r\nlet login = function login(usrname, password) {\r\n    if (usrname !== 'admin' || password !== 'pwd') {\r\n        console.log('incorrect login');\r\n    } else {\r\n        console.log(`logged in using ${usrname} and ${password}`);\r\n    }\r\n}\r\n\r\n\r\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9sb2dpbi5qcz8xZGY5Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUVBO0FBQ0E7QUFDQTtBQUNBLEtBQUs7QUFDTCx1Q0FBdUMsUUFBUSxPQUFPLFNBQVM7QUFDL0Q7QUFDQTs7QUFFUSIsImZpbGUiOiIwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG5sZXQgbG9naW4gPSBmdW5jdGlvbiBsb2dpbih1c3JuYW1lLCBwYXNzd29yZCkge1xyXG4gICAgaWYgKHVzcm5hbWUgIT09ICdhZG1pbicgfHwgcGFzc3dvcmQgIT09ICdwd2QnKSB7XHJcbiAgICAgICAgY29uc29sZS5sb2coJ2luY29ycmVjdCBsb2dpbicpO1xyXG4gICAgfSBlbHNlIHtcclxuICAgICAgICBjb25zb2xlLmxvZyhgbG9nZ2VkIGluIHVzaW5nICR7dXNybmFtZX0gYW5kICR7cGFzc3dvcmR9YCk7XHJcbiAgICB9XHJcbn1cclxuXHJcbmV4cG9ydCB7bG9naW4gfVxyXG5cblxuXG4vLy8vLy8vLy8vLy8vLy8vLy9cbi8vIFdFQlBBQ0sgRk9PVEVSXG4vLyAuL2xvZ2luLmpzXG4vLyBtb2R1bGUgaWQgPSAwXG4vLyBtb2R1bGUgY2h1bmtzID0gMCJdLCJzb3VyY2VSb290IjoiIn0=");
+eval("\n\nvar _login = __webpack_require__(1);\n\nvar _utils = __webpack_require__(2);\n\ndebugger;\n(0, _login.login)('admin', 'pwd');\n\nvar u = new _utils.Utils();\nu.log(\"all loaded and executed!\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAuanM/ZDhlZSJdLCJuYW1lcyI6WyJ1IiwibG9nIl0sIm1hcHBpbmdzIjoiOztBQUFBOztBQUNBOztBQUVBO0FBQ0Esa0JBQU0sT0FBTixFQUFlLEtBQWY7O0FBRUEsSUFBSUEsSUFBSSxrQkFBUjtBQUNBQSxFQUFFQyxHQUFGLENBQU0sMEJBQU4iLCJmaWxlIjoiMC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7bG9naW59IGZyb20gXCIuL2xvZ2luLmpzXCJcclxuaW1wb3J0IHtVdGlsc30gZnJvbSBcIi4vdXRpbHMuanNcIlxyXG5cclxuZGVidWdnZXI7XHJcbmxvZ2luKCdhZG1pbicsICdwd2QnKTtcclxuXHJcbmxldCB1ID0gbmV3IFV0aWxzKCk7XHJcbnUubG9nKFwiYWxsIGxvYWRlZCBhbmQgZXhlY3V0ZWQhXCIpO1xuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyAuL2FwcC5qcyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///0\n");
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\n\r\nclass Utils {\r\n    log (msg) {\r\n        console.log(msg);\r\n    }\r\n}\n/* harmony export (immutable) */ __webpack_exports__[\"a\"] = Utils;\n\r\n\r\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi91dGlscy5qcz9lOGZiIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUFBO0FBQUEiLCJmaWxlIjoiMS5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5cclxuZXhwb3J0IGNsYXNzIFV0aWxzIHtcclxuICAgIGxvZyAobXNnKSB7XHJcbiAgICAgICAgY29uc29sZS5sb2cobXNnKTtcclxuICAgIH1cclxufVxyXG5cclxuXG5cblxuLy8vLy8vLy8vLy8vLy8vLy8vXG4vLyBXRUJQQUNLIEZPT1RFUlxuLy8gLi91dGlscy5qc1xuLy8gbW9kdWxlIGlkID0gMVxuLy8gbW9kdWxlIGNodW5rcyA9IDAiXSwic291cmNlUm9vdCI6IiJ9");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar login = function login(usrname, password) {\n    if (usrname !== 'admin' || password !== 'pwd') {\n        console.log('incorrect login');\n    } else {\n        console.log('logged in using ' + usrname + ' and ' + password);\n    }\n};\n\nexports.login = login;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9sb2dpbi5qcz8xZGY5Il0sIm5hbWVzIjpbImxvZ2luIiwidXNybmFtZSIsInBhc3N3b3JkIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQ0EsSUFBSUEsUUFBUSxTQUFTQSxLQUFULENBQWVDLE9BQWYsRUFBd0JDLFFBQXhCLEVBQWtDO0FBQzFDLFFBQUlELFlBQVksT0FBWixJQUF1QkMsYUFBYSxLQUF4QyxFQUErQztBQUMzQ0MsZ0JBQVFDLEdBQVIsQ0FBWSxpQkFBWjtBQUNILEtBRkQsTUFFTztBQUNIRCxnQkFBUUMsR0FBUixzQkFBK0JILE9BQS9CLGFBQThDQyxRQUE5QztBQUNIO0FBQ0osQ0FORDs7UUFRUUYsSyxHQUFBQSxLIiwiZmlsZSI6IjEuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcclxubGV0IGxvZ2luID0gZnVuY3Rpb24gbG9naW4odXNybmFtZSwgcGFzc3dvcmQpIHtcclxuICAgIGlmICh1c3JuYW1lICE9PSAnYWRtaW4nIHx8IHBhc3N3b3JkICE9PSAncHdkJykge1xyXG4gICAgICAgIGNvbnNvbGUubG9nKCdpbmNvcnJlY3QgbG9naW4nKTtcclxuICAgIH0gZWxzZSB7XHJcbiAgICAgICAgY29uc29sZS5sb2coYGxvZ2dlZCBpbiB1c2luZyAke3Vzcm5hbWV9IGFuZCAke3Bhc3N3b3JkfWApO1xyXG4gICAgfVxyXG59XHJcblxyXG5leHBvcnQge2xvZ2luIH1cclxuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vbG9naW4uanMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///1\n");
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_js__ = __webpack_require__(0);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_js__ = __webpack_require__(1);\n//require('./utils.js');\r\n//require('./login.js');\r\n\r\n\r\n\r\n\r\ndebugger;\r\n__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__login_js__[\"a\" /* login */])('admin', 'pwd');\r\n\r\nlet u = new __WEBPACK_IMPORTED_MODULE_1__utils_js__[\"a\" /* Utils */]();\r\nu.log(\"all loaded and executed!\");\r\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAuanM/ZDhlZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBO0FBQUE7QUFDQTs7QUFFYztBQUNBOztBQUVkO0FBQ0E7O0FBRUE7QUFDQSIsImZpbGUiOiIyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9yZXF1aXJlKCcuL3V0aWxzLmpzJyk7XHJcbi8vcmVxdWlyZSgnLi9sb2dpbi5qcycpO1xyXG5cclxuaW1wb3J0IHtsb2dpbn0gZnJvbSBcIi4vbG9naW4uanNcIlxyXG5pbXBvcnQge1V0aWxzfSBmcm9tIFwiLi91dGlscy5qc1wiXHJcblxyXG5kZWJ1Z2dlcjtcclxubG9naW4oJ2FkbWluJywgJ3B3ZCcpO1xyXG5cclxubGV0IHUgPSBuZXcgVXRpbHMoKTtcclxudS5sb2coXCJhbGwgbG9hZGVkIGFuZCBleGVjdXRlZCFcIik7XHJcblxuXG5cbi8vLy8vLy8vLy8vLy8vLy8vL1xuLy8gV0VCUEFDSyBGT09URVJcbi8vIC4vYXBwLmpzXG4vLyBtb2R1bGUgaWQgPSAyXG4vLyBtb2R1bGUgY2h1bmtzID0gMCJdLCJzb3VyY2VSb290IjoiIn0=");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Utils = exports.Utils = function () {\n    function Utils() {\n        _classCallCheck(this, Utils);\n    }\n\n    _createClass(Utils, [{\n        key: \"log\",\n        value: function log(msg) {\n            console.log(msg);\n        }\n    }]);\n\n    return Utils;\n}();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi91dGlscy5qcz9lOGZiIl0sIm5hbWVzIjpbIlV0aWxzIiwibXNnIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztJQUNhQSxLLFdBQUFBLEs7Ozs7Ozs7NEJBQ0pDLEcsRUFBSztBQUNOQyxvQkFBUUMsR0FBUixDQUFZRixHQUFaO0FBQ0giLCJmaWxlIjoiMi5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG5leHBvcnQgY2xhc3MgVXRpbHMge1xyXG4gICAgbG9nIChtc2cpIHtcclxuICAgICAgICBjb25zb2xlLmxvZyhtc2cpO1xyXG4gICAgfVxyXG59XG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vdXRpbHMuanMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///2\n");
 
 /***/ })
 /******/ ]);
