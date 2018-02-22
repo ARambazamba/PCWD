@@ -34,6 +34,7 @@ import { PersonEditComponent } from './demos/persons/person-edit/person-edit.com
 import { PersonService } from './demos/persons/person.service';
 import { RepeaterComponent } from './demos/repeater/repeater.component';
 import { ParentChildComponent } from './demos/parent-child/parent-child.component';
+import { AccountsService } from './accounts/accounts.service';
 
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
@@ -80,8 +81,9 @@ registerLocaleData(localeDe)
   ],
   providers: [
     VouchersService,
-    PersonService
-  // {provide: LOCALE_ID, useValue: "de-DE"}
+    AccountsService,
+    PersonService,
+    {provide: LOCALE_ID, useValue: "de-DE"}
   ],
   bootstrap: [AppComponent]
 })

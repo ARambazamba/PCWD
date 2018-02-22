@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountsService } from './accounts.service';
-import { BalanceAccount } from '../shared';
 
 @Component({
   selector: 'app-accounts',
@@ -9,12 +7,9 @@ import { BalanceAccount } from '../shared';
 })
 export class AccountsComponent implements OnInit {
 
-  constructor(private as: AccountsService) { }
-
-  accounts: BalanceAccount[]
+  constructor() { }
 
   ngOnInit() {
-    this.as.getAccounts().then(data=>this.accounts = data)
   }
 
 }
