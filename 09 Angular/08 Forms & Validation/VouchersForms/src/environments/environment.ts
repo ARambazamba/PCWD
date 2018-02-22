@@ -4,8 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-    production: false,
-    authEnabled: true,
-    vouchersAPI: '/assets/vouchers.json',
-    apiUri: "http://localhost:500/api/"
+  production: false,
+  authEnabled: false
 };

@@ -7,18 +7,17 @@ import {
   } from '@angular/router';
   import { Observable } from 'rxjs/Observable';
   import { Injectable } from '@angular/core';
-
   import { environment } from 'environments/environment';
 
 
   @Injectable()
   export class RouteGuard implements CanActivate, CanActivateChild {
-    
-    allowAccess: boolean = !environment.authEnabled;
+
+    allow: boolean = !environment.authEnabled;
     constructor(private router: Router) {}
   
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      if(this.allowAccess){
+      if(this.allow){
         return true;
       }
       else{
