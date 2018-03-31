@@ -313,7 +313,7 @@ export class TypesComponent implements OnInit {
   maps() {
     debugger;
 
-    var myMap = new Map();
+    var myMap = new Map<string, any>();
     var keyString = "a string";
     var keyObj = {};
     var keyFunc = function() {
@@ -321,27 +321,27 @@ export class TypesComponent implements OnInit {
     };
 
     // setting the values
-    myMap.set(keyString, "value associated with 'a string'");
-    myMap.set(keyObj, "value associated with keyObj");
-    myMap.set(keyFunc(), "value associated with keyFunc");
+    myMap.set("stringContent", keyString);
+    myMap.set("objContent",keyObj);
+    myMap.set("functionContent", keyFunc());
 
     console.log("Map size: " + myMap.size); // 3
 
     // getting the values
-    myMap.get(keyString); // "value associated with 'a string'"
-    myMap.get("a string"); // "value associated with 'a string'" because keyString === 'a string'
-    myMap.get(keyObj); // "value associated with keyObj"
+    myMap.get("stringContent"); // "value associated with 'a string'"
+    myMap.get("objContent"); // "value associated with 'a string'" because keyString === 'a string'
+    myMap.get("functionContent"); // "value associated with keyObj"
 
-    myMap.delete(keyString)
+    myMap.delete("stringContent")
     myMap.clear()    
 
   }
 
-  //-> Indexed Array
+  //-> Indexed Array ... Somehow Generic List
   sets() {
     debugger;
 
-    var mySet = new Set();
+    var mySet = new Set<any>();
     mySet.add(1);
     mySet.add("some text");
     var o = { a: 1, b: 2 };
@@ -354,7 +354,7 @@ export class TypesComponent implements OnInit {
     mySet.has(o); // true
     var size = mySet.size; // 4
     mySet.delete(5); // removes 5 fro
-  }
+}
 
   restParams() {
     debugger;
