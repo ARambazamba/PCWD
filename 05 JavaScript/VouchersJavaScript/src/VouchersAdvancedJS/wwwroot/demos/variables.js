@@ -56,6 +56,9 @@ function arrays() {
     arr.sort(function(a, b) {
         return a - b;
     });
+
+    arr.sort((a, b) => a - b);
+
     console.log('sorting again using a function');
     arr.forEach(function (el) {
         console.log(el);
