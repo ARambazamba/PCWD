@@ -25,6 +25,7 @@ namespace VouchersNetCore
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
             var configuration = cfgBuilder.Build();
+
             //Weak Typed
             var conStr = configuration["ConnectionStrings:LocalDBConnection"];
             //Strong Typed
@@ -58,7 +59,7 @@ namespace VouchersNetCore
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole();
 
@@ -78,6 +79,7 @@ namespace VouchersNetCore
                 options.DefaultFileNames.Clear();
                 options.DefaultFileNames.Add("app.html");
                 app.UseDefaultFiles(options);
+
                 if (env.IsDevelopment())
                     app.UseStaticFiles(new StaticFileOptions
                     {

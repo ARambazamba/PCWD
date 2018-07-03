@@ -4,6 +4,10 @@ function changeLamp() {
     debugger;
 
     var state = document.getElementById("chkLampState").checked ? "on" : "off";
+    var jqstate = $("#chkLampState");
+    var stateES6 = document.querySelector("#chkLamp");
+
+
     var img = "/css/images/lamp_" + state + ".png";
     var lampImg = document.getElementById("imgLamp");
     lampImg.src = img;
