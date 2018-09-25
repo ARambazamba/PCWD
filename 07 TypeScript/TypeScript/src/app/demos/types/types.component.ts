@@ -21,7 +21,7 @@ export class TypesComponent implements OnInit {
     //Numbers
     var age: number;
     var weight: number = 83.12;
-    var dogWeight = 25.4;    
+    var dogWeight = 25.4;
     // dogWeight = "heavy"
     var rand = Math.random();
 
@@ -70,7 +70,7 @@ export class TypesComponent implements OnInit {
     const pi = 3.14;
     //pi = 2;
 
-    const person = {name: "john", age: 22};
+    const person = { name: "john", age: 22 };
     person.name = "franz";
   }
 
@@ -145,7 +145,7 @@ export class TypesComponent implements OnInit {
       happy = 2,
       unhappy = 4,
       ok = 6
-    }   
+    }
 
     let isHappy: Happyness = Happyness.happy;
 
@@ -156,7 +156,7 @@ export class TypesComponent implements OnInit {
     }
 
     enum VoucherStatus {
-      draft,      
+      draft,
       complete,
       pending
     }
@@ -187,7 +187,10 @@ export class TypesComponent implements OnInit {
       }
     }
 
-    handleVoucher(<Voucher>{ ID: 1, Text: "Media Markt", Amount: 22, Date: new Date() },status);
+    handleVoucher(
+      <Voucher>{ ID: 1, Text: "Media Markt", Amount: 22, Date: new Date() },
+      status
+    );
   }
 
   useTypings() {
@@ -225,7 +228,7 @@ export class TypesComponent implements OnInit {
 
     // array destructuring
     let arrNbr = [8, 4, 100, -5, 20];
-    let [first, second, third] = arrNbr;   
+    let [first, second, third] = arrNbr;
     console.log(third, second, first); // output: 100, 4, 8
 
     let myArray = [1, ["hello"], true],
@@ -260,7 +263,7 @@ export class TypesComponent implements OnInit {
     });
 
     fruits.forEach((item: any) => {
-      item.quantity++;     
+      item.quantity++;
     });
 
     fruits.forEach(item => item.quantity++);
@@ -279,7 +282,7 @@ export class TypesComponent implements OnInit {
 
     //map -> shape arr
     var names = fruits.map(function(item) {
-      return item.name;
+      return { name: item.name, value: item.price * item.quantity };
     });
 
     //reduce:  You want to find a cumulative or concatenated value based on elements across the array
@@ -297,7 +300,7 @@ export class TypesComponent implements OnInit {
       return prevVal + elem.launches;
     }, 0);
 
-    launches = rockets.reduce((prevVal, elem) => prevVal + elem.launches, 0);  //same as above
+    launches = rockets.reduce((prevVal, elem) => prevVal + elem.launches, 0); //same as above
 
     console.log("launche so far: ", launches);
 
@@ -322,7 +325,7 @@ export class TypesComponent implements OnInit {
 
     // setting the values
     myMap.set("stringContent", keyString);
-    myMap.set("objContent",keyObj);
+    myMap.set("objContent", keyObj);
     myMap.set("functionContent", keyFunc());
 
     console.log("Map size: " + myMap.size); // 3
@@ -332,9 +335,8 @@ export class TypesComponent implements OnInit {
     myMap.get("objContent"); // "value associated with 'a string'" because keyString === 'a string'
     myMap.get("functionContent"); // "value associated with keyObj"
 
-    myMap.delete("stringContent")
-    myMap.clear()    
-
+    myMap.delete("stringContent");
+    myMap.clear();
   }
 
   //-> Indexed Array ... Somehow Generic List
@@ -354,7 +356,7 @@ export class TypesComponent implements OnInit {
     mySet.has(o); // true
     var size = mySet.size; // 4
     mySet.delete(5); // removes 5 fro
-}
+  }
 
   restParams() {
     debugger;
@@ -390,7 +392,6 @@ export class TypesComponent implements OnInit {
   }
 
   spreadOperator() {
-    
     console.log(Math.max(3, 5, 1)); // 5
 
     let arr = [3, 5, 1];

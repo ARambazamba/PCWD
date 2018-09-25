@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Vouchers.Models;
 
 namespace Vouchers
 {
@@ -39,6 +40,16 @@ namespace Vouchers
         {
             var model = await ctx.Vouchers.Where(f => f.ID == 2).FirstOrDefaultAsync();
             return View(model);
+        }
+
+        public IActionResult DoIteration()
+        {
+            var p1 = new Person {Name = "Hugo"};
+            var p2 = new Person {Name = "Paul"};
+            var p3 = new Person {Name = "Alex"};
+            p1.Friends = new List<Person> {p2, p3};
+
+            return View(p1);
         }
     }
 }
