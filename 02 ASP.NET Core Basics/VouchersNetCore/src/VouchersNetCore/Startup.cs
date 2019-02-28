@@ -61,7 +61,7 @@ namespace VouchersNetCore
 
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
+            //loggerFactory.AddConsole();
 
             if (env.IsDevelopment())
             {
